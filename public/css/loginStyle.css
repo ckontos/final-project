@@ -1,0 +1,39 @@
+#userLogin {
+    margin-top: 100px;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
+#userRegister {
+    margin-top: 50px;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#userEmail:focus,
+#userFirstName:focus,
+#userLastName:focus,
+#registerEmail:focus,
+#userPassword:focus,
+#registerPassword:focus {
+    border-bottom: 1px solid #b0bec5;
+    -webkit-box-shadow: 0 1px 0 0 #b0bec5;
+    -moz-box-shadow: 0 1px 0 0 #b0bec5;
+    box-shadow: 0 1px 0 0 #b0bec5;
+}
+
+.active {
+    color: #b0bec5!important;
+}
+
+.dropdown-content li>span {
+    color: black !important;
+}

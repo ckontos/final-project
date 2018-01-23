@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="css/userProStyle.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div class="row">
+            <!---------------- Search Bar Column ------------------------------->
+            <div class="col s3">
+                <div class="card blue-grey darken-2" id="searchCard">
+                    <div class="card-content black-text">
+                        <span class="card-title white-text center-align">Find People to Jam With!</span>
+                        <div class="row">
+                            <div class="col s12">
+                                <ul class="collapsible popout" data-collapsible="accordion">
+                                    <li>
+                                        <div class="collapsible-header"><i class="material-icons">place</i>Location</div>
+                                        <div class="collapsible-body white">
+                                            <span>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                      <input id="locationSearchInput" type="text" class="validate">
+                                                      <label for="locationSearchInput">Location</label>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header"><i class="material-icons">headset</i>What do you need?</div>
+                                        <div class="collapsible-body white">
+                                            <form action="#">
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForGuitarists" />
+                                                    <label for="lookingForGuitarists" class="black-text">Guitarists</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForDrummers" />
+                                                    <label for="lookingForDrummers" class="black-text">Drummers</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForBassists" />
+                                                    <label for="lookingForBassists" class="black-text">Bassists</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForPercussionists" />
+                                                    <label for="lookingForPercussionists" class="black-text">Percussionist</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForVocalists" />
+                                                    <label for="lookingForVocalists" class="black-text">Vocalists</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingforOthers" />
+                                                    <label for="lookingforOthers" class="black-text">Other</label>
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header"><i class="material-icons">done</i>Band</div>
+                                        <div class="collapsible-body white">
+                                            <span>
+                                                Are you looking for someone in a band?
+                                            </span>
+                                            <form action="#">
+                                                <p>
+                                                    <input class="with-gap" name="group2" type="radio" id="lookingForBand" />
+                                                    <label for="lookingForBand" class="black-text">Yes</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group2" type="radio" id="notLookingForBand" />
+                                                    <label for="notLookingForBand" class="black-text">No</label>
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header"><i class="material-icons">face</i>Search For User</div>
+                                        <div class="collapsible-body white">
+                                            <span>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                      <input id="profileSearchInput" type="text" class="validate">
+                                                      <label for="profileSearchInput">Friend Search</label>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="center-align">
+                                <a href="#" id="searchUser" class="btn waves-effect waves-light blue-grey lighten-3" style="margin-top: 15px; width: 150px;"><span class="black-text"><i class="material-icons">search</i> Search</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--------------------- Profile queries column ----------------------------->
+            <div class="col s9">
+                <div class="card blue-grey darken-2" id="searchedUsersCard">
+                    <div class="card-content black-text">
+                        <div class="row">
+                            <!--------------------- card ----------------------------->
+                            <div class="col s10">
+                                <div class="card horizontal">
+                                    <div class="card-image">
+                                        <img src="https://www.ctvnews.ca/polopoly_fs/1.1640896.1389819488!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg">
+                                    </div>
+                                    <div class="card-stacked ">
+                                        <div class="card-content ">
+                                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                                        </div>
+                                        <div class="card-action ">
+                                            <a href="# ">This is a link</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--------------------- card ----------------------------->
+                        </div>
+                        <div class="row">
+                            <!--------------------- card ----------------------------->
+                            <div class="col s10">
+                                <div class="card horizontal">
+                                    <div class="card-image">
+                                        <img src="https://www.ctvnews.ca/polopoly_fs/1.1640896.1389819488!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg">
+                                    </div>
+                                    <div class="card-stacked ">
+                                        <div class="card-content ">
+                                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                                        </div>
+                                        <div class="card-action ">
+                                            <a href="# ">This is a link</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--------------------- card ----------------------------->
+                        </div>
+                        <div class="row">
+                            <!--------------------- card ----------------------------->
+                            <div class="col s10">
+                                <div class="card horizontal">
+                                    <div class="card-image">
+                                        <img src="https://www.ctvnews.ca/polopoly_fs/1.1640896.1389819488!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg">
+                                    </div>
+                                    <div class="card-stacked ">
+                                        <div class="card-content ">
+                                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                                        </div>
+                                        <div class="card-action ">
+                                            <a href="# ">This is a link</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--------------------- card ----------------------------->
+                        </div>
+                    </div>
+                </div>
+    </main>
+    <footer class="page-footer blue-grey lighten-3 ">
+        <div class="footer-copyright ">
+            <div class="container black-text ">
+                © 2018
+                <a class="black-text text-lighten-4 right " href="#! ">More Links</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js " integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin=" anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js "></script>
+    <script>
+        $(document).ready(function() {
+            $('.collapsible').collapsible();
+        });
+    </script>
+</body>
+</html>
