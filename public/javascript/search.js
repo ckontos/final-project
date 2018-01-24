@@ -206,3 +206,16 @@ $("#viewProfile").on("click", function(event) {
 
 
 });
+
+
+
+// button to logout
+$("#logout").on("click", function(event) {
+  // event.preventDefault();
+ $.get("/logout", function(data) {
+
+    window.location.href='/userProfile';
+  
+  });
+
+});

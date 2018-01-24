@@ -8,9 +8,9 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-    // If the user already has an account send them to the members page
+    // If the user already has an account send them to the search page
     if (req.user) {
-      res.redirect("/search.html");
+      res.redirect("/search");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
@@ -21,16 +21,21 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/register.html"));
   });
   
-   // takes you to the main
+   // takes you to the search
   app.get("/search", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/search.html"));
   });
   
+   // takes you to the main
+  app.get("/main", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/main.html"));
+  });
+  
 
   app.get("/login", function(req, res) {
-    // If the user already has an account send them to the main page
+    // If the user already has an account send them to the search page
     if (req.user) {
-      res.redirect("/search.html");
+      res.redirect("/search");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
