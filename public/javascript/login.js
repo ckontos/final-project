@@ -29,7 +29,7 @@ $(document).ready(function() {
       email: email,
       password: password
     }).done(function(data) {
-      window.location.href='/search.html';
+      window.location.href='/search';
       // If there's an error, log the error
     }).catch(function(err) {
       console.log(err);
