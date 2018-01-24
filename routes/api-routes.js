@@ -52,7 +52,9 @@ app.get("/api/users", function(req, res) {
         instrumentsPlayed: req.user.instrumentsPlayed,
         searchingFor: req.user.searchingFor,
         genre: req.user.genre,
-        about: req.user.about
+        about: req.user.about,
+        userImage: req.user.userImage
+        
         
       });
     }
@@ -85,7 +87,8 @@ app.get("/api/users", function(req, res) {
       searchingFor: req.body.searchingFor,
       genre: req.body.genre,
       about: req.body.about,
-      userLocation: req.body.userLocation
+      userLocation: req.body.userLocation,
+      userImage: req.body.userImage
     }).then(function(dbUser) {
            console.log("at the end of api/users");
       res.json(dbUser);

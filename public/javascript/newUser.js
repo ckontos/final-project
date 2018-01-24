@@ -53,7 +53,7 @@ getLocation();
     var instrumentsPlayed = $("#instrumentsPlayed").val();
     var searchingFor = $("#searchingFor").val();
      var username = $("#username").val();
-    // var location = userAddress;
+    var userImage = $("#userImage").val();
 
 
     event.preventDefault();
@@ -73,7 +73,8 @@ getLocation();
       searchingFor: searchingFor,
       genre: genre,
       about: about,
-      userLocation: userAddress
+      userLocation: userAddress,
+      userImage: userImage
 
 
     }; // submit the new user 
