@@ -15,16 +15,16 @@ app.get("/api/users", function(req, res) {
   });
   
   // get user by email
-  app.get("/api/users/:email", function(req, res) {
+  // app.get("/api/users/:email", function(req, res) {
   
-    db.User.findOne({
-      where: {
-        email: req.params.email
-      } 
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
-  });
+  //   db.User.findOne({
+  //     where: {
+  //       email: req.params.email
+  //     } 
+  //   }).then(function(dbUser) {
+  //     res.json(dbUser);
+  //   });
+  // });
 
  // Route for logging user out
   app.get("/logout", function(req, res) {
@@ -140,19 +140,30 @@ app.get("/api/users", function(req, res) {
 
 
 // route to search users by genre they like
-app.get("/api/users", function(req, res) {
+ app.get("/api/users/:userFirstName", function(req, res) {
+  console.log("===============" + req.params.userFirstName)
    db.User.findAll({
       where: {
-        genre: req.params.genre
+        userFIrstName: req.params.userFirstName
       }
     }).then(function(dbUser) {
       res.json(dbUser);
     });
   });
-
-
-// route to search users by instrumentsPlayed
-app.get("/api/users", function(req, res) {
+  
+  app.get("/api/isBand/:isBand", function(req, res) {
+  
+   db.User.findAll({
+      where: {
+        isBand: req.params.isBand
+      }
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+  
+  app.get("/api/instrumentsPlayed/:instrumentsPlayed", function(req, res) {
+  
    db.User.findAll({
       where: {
         instrumentsPlayed: req.params.instrumentsPlayed
@@ -162,42 +173,16 @@ app.get("/api/users", function(req, res) {
     });
   });
 
-
-// route to search users by who they want to jam with
-app.get("/api/users", function(req, res) {
+app.get("/api/genre", function(req, res) {
    db.User.findAll({
       where: {
-        searchingFor: req.params.searchingFor
+        genre: req.params.genre
       }
     }).then(function(dbUser) {
       res.json(dbUser);
     });
   });
 
-
-
-// route to search users where it is a band looking for a new member
-app.get("/api/users", function(req, res) {
-   db.User.findAll({
-      where: {
-        isBand: true
-      }
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
-  });
-  
-  
-  // route to search users where it is a band looking for a new member that plays this instrument
-app.get("/api/users", function(req, res) {
-   db.User.findAll({
-      where: {
-        isBand: true,
-        searchingFor: req.params.searchingFor
-      }
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
-  });
-
-};
+// route to search users by genre they like
+ 
+}

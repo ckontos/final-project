@@ -164,11 +164,11 @@ function renderUsers(data) {
 
       var div = $("<div>");
 
-      div.append("<h2>" + data[i].user + "</h2>");
+      div.append("<h2>" + data[i].userFirstName + "</h2>");
       div.append("<p>instrumentsPlayed: " + data[i].instrumentsPlayed + "</p>");
     //   div.append("<p>genre: " + data[i].genre + "</p>");
       div.append("<p>searchingFor: " + data[i].searchingFor + "</p>");
-    //   div.append("<button class='delete' data-id='" + data[i].id + "'>DELETE User</button>");
+      div.append("<button class='delete' data-id='" + data[i].id + "'>Contact User</button>");
 
       $("#stats").append(div);
 
