@@ -11,11 +11,10 @@
 <body>
     <header></header>
     <main>
-        <div class="row">
+        <div class="row" id="registerContainer">
             <div class="container col s3"></div>
             <div class="container col s6 center-align">
                 <div class="card blue-grey darken-2" id="userRegister">
-                    <div class="menuItem"><a href="/login">Login</a>
                     <div class="card-content white-text">
                         <span class="card-title">User Register</span>
                         <div class="row">
@@ -32,7 +31,7 @@
                                         <label for="lastName">Last Name</label>
                                     </div>
                                 </div>
-                                 <div class="row">
+                                <div class="row">
                                     <div class="input-field col s12">
                                         <select id="isBand">
                                               <option value = "" disabled selected>Do you already have an existing band?</option>
@@ -53,7 +52,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                  <div class="row">
+                                <div class="row">
                                     <div class="input-field col s12">
                                         <select id="searchingFor">
                                               <option value = "" disabled selected>Who are you looking to jam with?</option>
@@ -65,30 +64,40 @@
                                         </select>
                                     </div>
                                 </div>
-                                  <div class="row">
+                                <div class="row">
                                     <div class="input-field col s12">
                                         <select id="genre">
                                               <option value = "" disabled selected>What genre(s) are you into?</option>
-                                              <option value = "Metal">Metal</option>
-                                              <option value = "Jazz">Jazz</option>
-                                              <option value = "Hip-hop">Hip-hop</option>
-                                              <option value = "Rock">Rock</option>
-                                              <option value = "Blues">Blues</option>
-                                              <option value = "Country">Country</option>
+                                              <option value = "1">Metal</option>
+                                              <option value = "2">Jazz</option>
+                                              <option value = "3">Hip-hop</option>
+                                              <option value = "4">Rock</option>
+                                              <option value = "5">Blues</option>
+                                              <option value = "6">Country</option>
                                         </select>
                                     </div>
                                 </div>
-                                  <div class="row">
+                                <div class="row">
                                     <div class="input-field col s12">
                                         <input id="about" type="text" class="validate">
                                         <label for="about.....">Tell us a little about yourself.</label>
                                     </div>
                                 </div>
-                                 <div class="row">
+                                <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="username" type="text" class="validate">
-                                        <label for="username">Username</label>
+                                        <form action="#">
+                                            <div class="file-field input-field">
+                                                <div class="btn">
+                                                    <span>Upload Profile Image</span>
+                                                    <input type="file">
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
+                                </div>
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="registerEmail" type="email" class="validate">
@@ -102,32 +111,33 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="input-field">
-                                        <a href="#" id="registerUser" class="btn waves-effect waves-light blue-grey lighten-3 col s5 offset-s1" style="margin-left: 180px; margin-top: 15px;"><span class="black-text">Register</span></a>
+                                    <div class="center-align">
+                                        <a href="#" id="registerUser" class="btn waves-effect waves-light blue-grey lighten-3 center-align" style="margin-top: 15px; width:200px;"><span class=" black-text ">Register</span></a>
                                     </div>
                                 </div>
+                                <div class="row "><a href="/login ">Login</a></div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container col s3"></div>
+            <div class="container col s3 "></div>
         </div>
     </main>
 
-    <footer class="page-footer blue-grey lighten-3">
-        <div class="footer-copyright">
-            <div class="container">
+    <footer class="page-footer blue-grey lighten-3 ">
+        <div class="footer-copyright ">
+            <div class="container black-text ">
                 © 2018
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                <a class="black-text text-lighten-4 right " href="#! ">More Links</a>
             </div>
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="./javascript/newUser.js"></script>
-    <script type="text/javascript">
+    <script src="https://code.jquery.com/jquery-3.2.1.js " integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin=" anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js "></script>
+    <script src="./javascript/newUser.js "></script>
+    <script type="text/javascript ">
         $(document).ready(function() {
             $('select').material_select();
         });

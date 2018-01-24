@@ -41,15 +41,15 @@
 
                                             <form action="#">
                                                 <p>
-                                                    <input class="with-gap" name="group1" type="radio" id="lookingForGuitarists" value="1"/>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForGuitarists" />
                                                     <label for="lookingForGuitarists" class="black-text">Guitarists</label>
                                                 </p>
                                                 <p>
-                                                    <input class="with-gap" name="group1" type="radio" id="lookingForDrummers" value="2"/>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForDrummers" />
                                                     <label for="lookingForDrummers" class="black-text">Drummers</label>
                                                 </p>
                                                 <p>
-                                                    <input class="with-gap" name="group1" type="radio" id="lookingForBassists" value="3"/>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForBassists" />
                                                     <label for="lookingForBassists" class="black-text">Bassists</label>
                                                 </p>
                                                 <p>
@@ -57,10 +57,9 @@
                                                     <label for="lookingForPercussionists" class="black-text">Keyboard</label>
                                                 </p>
                                                 <p>
-                                                    <input class="with-gap" name="group1" type="radio" id="lookingForVocalists" value="5"/>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForVocalists" />
                                                     <label for="lookingForVocalists" class="black-text">Vocalists</label>
                                                 </p>
-                                               
                                             </form>
 
                                         </div>
@@ -72,14 +71,14 @@
                                                 Are you looking for someone in a band?
                                             </span>
 
-                                            <form action id="time">
+                                            <form action="#">
                                                 <p>
-                                                    <input class="with-gap" name="group2" type="radio" id="lookingForBand" value="Yes" />
-                                                    <label for="lookingForBand" class="black-text" >Yes</label>
+                                                    <input class="with-gap" name="group2" type="radio" id="lookingForBand" />
+                                                    <label for="lookingForBand" class="black-text">Yes</label>
                                                 </p>
                                                 <p>
-                                                    <input class="with-gap" name="group2" type="radio" id="notLookingForBand" value="No"/>
-                                                    <label for="notLookingForBand" class="black-text" >No</label>
+                                                    <input class="with-gap" name="group2" type="radio" id="notLookingForBand" />
+                                                    <label for="notLookingForBand" class="black-text">No</label>
                                                 </p>
                                             </form>
 
@@ -100,14 +99,16 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="input-field">
-                                <a href="#" id="searchUser" class="btn waves-effect waves-light blue-grey lighten-3 col s5 offset-s1" style="margin-left: 320px; margin-top: 15px;"><span class="black-text"><i class="material-icons">search</i> Search</span></a>
+                            <div class="center-align">
+                                <a href="#" id="searchUser" class="btn waves-effect waves-light blue-grey lighten-3" style="margin-top: 15px; width: 250px;"><span class="black-text"><i class="material-icons">search</i> Search</span></a>
+                            </div>
+                            <div class="center-align">
+                                <a href="#" id="viewProfile" class="btn waves-effect waves-light blue-grey lighten-3" style="margin-top: 15px; width: 250px;"><span class="black-text"> View Profile</span></a>
+                            </div>
+                            <div class="center-align">
+                                <a href="#" id="logout" class="btn waves-effect waves-light blue-grey lighten-3" style="margin-top: 15px; width: 250px;"><span class="black-text"> Logout</span></a>
                             </div>
                             <div class="col s1"></div>
-                            <a href="#" id="viewProfile" class="btn waves-effect waves-light blue-grey lighten-3 col s5 offset-s1" style="margin-left: 320px; margin-top: 15px;"><span class="black-text"><i class="material-icons">view profile</i> My Profile</span></a>
-                            <div class="col s1"></div>
-                            <a href="#" id="logout" class="btn waves-effect waves-light blue-grey lighten-3 col s5 offset-s1" style="margin-left: 320px; margin-top: 15px;"><span class="black-text"><i class="material-icons">Logout</i> Logout</span></a>
-                            
                         </div>
                     </div>
                 </div>
@@ -132,7 +133,6 @@
             $('.collapsible').collapsible();
         });
     </script>
-    <script src='./javascript/search.js'></script>
 
 
 
