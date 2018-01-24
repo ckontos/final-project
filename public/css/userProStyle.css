@@ -1,6 +1,5 @@
 #userImage {
-    padding: 80px;
-    margin-top: 50px;
+    padding-top: 10%;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
 
 }
@@ -8,18 +7,20 @@
 
 .userInfo {
     padding: 20px;
+    margin-top: 5%;
+    margin-right: 10%;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
-    background-color: grey
+    
 }
 
 .imageBox {
-    margin-left: 20px;
+    margin-left: 5%;
+    margin-top: 5%;
 }
 
 #editProfile {
     margin-left: 9%;
-    background-color: grey;
-    color: black;
+    color: white;
 
 }
 
@@ -55,6 +56,10 @@ main {
 
 .active {
     color: black!important;
+}
+
+#accountHead{
+    text-align: center
 }
 
 .footerLink {
