@@ -194,3 +194,15 @@ function renderUsers(data) {
 
   }
 }
+
+
+
+
+// view profile button
+$("#viewProfile").on("click", function(event) {
+  event.preventDefault();
+// go to the profile
+  window.location.href='/userProfile';
+
+
+});
