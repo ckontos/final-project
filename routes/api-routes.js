@@ -173,7 +173,18 @@ app.get("/api/users", function(req, res) {
     });
   });
 
-
+app.get('/api/users/:userFirstName?/:isBand?/:instrumentsPlayed?', function(req, res){
+ db.User.findAll({
+   where: {
+     userFirstName: req.params.userFirstName,
+     isBand: req.params.isBand,
+     instrumentsPlayed: req.params.instrumentsPlayed
+     
+   }
+ }).then(function(dbUser) {
+   res.json(dbUser)
+ })
+})
 // route to search users by genre they like
  
 }
