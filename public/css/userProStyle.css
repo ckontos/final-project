@@ -14,6 +14,7 @@
 
 .imageBox {
     margin-left: 20px;
+   
 }
 
 #editProfile {
@@ -40,9 +41,10 @@ main {
 }
 
 #searchCard,
-#searchedUsersCard {
+#stats {
     margin-top: 40px;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
+    
 }
 
 #locationSearchInput:focus,
@@ -72,7 +74,7 @@ main {
     border: 2px solid #90a4ae;
 }
 
-#searchedUsersCard {
+#stats {
     overflow: auto;
     position: fixed;
     top: 0;
