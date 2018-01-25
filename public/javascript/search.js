@@ -3,6 +3,7 @@
 // looking for yes or no in the band looking for category in yes
 
 // looking for users with specific names
+
 $("#searchUser").on("click", function(event) {
   event.preventDefault();
 
