@@ -113,6 +113,22 @@ app.get("/api/users", function(req, res) {
 
   });
 
+app.get('/api/users/', function(req, res){
+  console.log("****++++******")
+  console.log(req.query)
+  let where = {}
+  
+  db.User.findAll({
+    where: {
+      userFirstName: req.params.userFirstName,
+      isBand: req.params.isBand,
+      instrumentsPlayed: req.params.instrumentsPlayed
+      
+    }
+  }).then(function(dbUser) {
+    res.json(dbUser)
+  })
+})
 
  // PUT route for updating user profile
   app.put("/api/users/username", function(req, res) {
@@ -173,18 +189,6 @@ app.get("/api/users", function(req, res) {
     });
   });
 
-app.get('/api/users/:userFirstName?/:isBand?/:instrumentsPlayed?', function(req, res){
- db.User.findAll({
-   where: {
-     userFirstName: req.params.userFirstName,
-     isBand: req.params.isBand,
-     instrumentsPlayed: req.params.instrumentsPlayed
-     
-   }
- }).then(function(dbUser) {
-   res.json(dbUser)
- })
-})
 // route to search users by genre they like
  
 }

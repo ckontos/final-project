@@ -12,18 +12,20 @@
 $("#searchUser").on("click", function(event) {
   event.preventDefault();
   var userFirstName = $("#profileSearchInput").val().trim();
-  var isBand = $("input[name=group2]:checked").val();
-  var instrumentsPlayed = $("input[name=group1]:checked").val();
+  var  isBand = $("input[name=group2]:checked").val();
+  var  instrumentsPlayed = $("input[name=group1]:checked").val();
   var params = {
-    "userFirstName": userFirstName,
-    "isBand": isBand,
+    "userFirstName":userFirstName,
+    "isBand":isBand,
     "instrumentsPlayed": instrumentsPlayed
   }
+  
 
 
-  $.get('/api/users', $.param(params, true), function(data) {
+    $.get('/api/users/', params, function(data){
     console.log(data);
-    console.log(params)
+    console.log(params);
+   
 
     renderUsers(data);
 
