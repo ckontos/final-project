@@ -113,22 +113,22 @@ app.get("/api/users", function(req, res) {
 
   });
 
-app.get('/api/users/', function(req, res){
-  console.log("****++++******")
-  console.log(req.query)
-  let where = {}
+// app.get('/api/users/', function(req, res){
+//   console.log("****++++******")
+//   console.log(req.query)
+//   let where = {}
   
-  db.User.findAll({
-    where: {
-      userFirstName: req.params.userFirstName,
-      isBand: req.params.isBand,
-      instrumentsPlayed: req.params.instrumentsPlayed
+//   db.User.findAll({
+//     where: {
+//       userFirstName: req.params.userFirstName,
+//       isBand: req.params.isBand,
+//       instrumentsPlayed: req.params.instrumentsPlayed
       
-    }
-  }).then(function(dbUser) {
-    res.json(dbUser)
-  })
-})
+//     }
+//   }).then(function(dbUser) {
+//     res.json(dbUser)
+//   })
+// })
 
  // PUT route for updating user profile
   app.put("/api/users/username", function(req, res) {
@@ -153,42 +153,72 @@ app.get('/api/users/', function(req, res){
       res.json(err);
     });
   });
-
-
-// route to search users by genre they like
- app.get("/api/users/:userFirstName", function(req, res) {
-  console.log("===============" + req.params.userFirstName)
-   db.User.findAll({
-      where: {
-        userFIrstName: req.params.userFirstName
+  app.get('/api/users/search', function(req, res){
+  console.log("****++++******")
+  console.log(req.query)
+  let where = {}
+  let conditionals = function() {
+    if (req.query.userFirstName) {
+    if (req.query.isBand) {
+      if (req.query.instrumentsPlayed) {
+        //all true
+        return where = {
+          userFirstName: req.query.userFirstName,
+          isBand: req.query.isBand,
+          instrumentsPlayed: req.query.instrumentsPlayed
+        }
       }
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
-  });
-  
-  app.get("/api/isBand/:isBand", function(req, res) {
-  
-   db.User.findAll({
-      where: {
-        isBand: req.params.isBand
+      else{
+        //first 2 true last false
+        return where = {
+          userFirstName: req.query.userFirstName,
+          isBand: req.query.isBand
+        }
       }
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
-  });
-  
-  app.get("/api/instrumentsPlayed/:instrumentsPlayed", function(req, res) {
-  
-   db.User.findAll({
-      where: {
-        instrumentsPlayed: req.params.instrumentsPlayed
+    } else if (req.query.instrumentsPlayed) {
+      //first and 3rd true 2nd false
+      return where = {
+        userFirstName: req.query.userFirstName,
+        instrumentsPlayed: req.query.instrumentsPlayed
       }
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
-  });
-
-// route to search users by genre they like
- 
+    } else {
+      //first true
+      return where = {
+        userFirstName: req.query.userFirstName
+      }
+    }
+  }
+  if(req.query.isBand) {
+    if (req.query.instrumentsPlayed) {
+      // first false 2 and last true
+      return where = {
+        isBand: req.query.isBand,
+        instrumentsPlayed: req.query.instrumentsPlayed
+      }
+    } else {
+      // just 2 is true
+      return where = {
+        isBand: req.query.isBand
+      }
+    }
+  }
+  if (req.query.instrumentsPlayed) {
+    // just 3 is true
+    return where = {
+      instrumentsPlayed: req.query.instrumentsPlayed
+    }
+  } else {
+    //all false -> query all users
+    return where = {}
+  }
+}
+conditionals();
+  
+  console.log("*********" + JSON.stringify(where))
+  db.User.findAll({
+    where: where
+  }).then(function(dbUser) {
+    res.json(dbUser)
+  })
+})
 }
