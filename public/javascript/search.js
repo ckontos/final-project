@@ -7,11 +7,11 @@ $("#searchUser").on("click", function(event) {
   event.preventDefault();
 
   // Save the book they typed into the book-search input
-  var userFirstName = $("#profileSearchInput").val().trim();
+  // var userFirstName = $("#profileSearchInput").val().trim();
 
   // Make an AJAX get request to our api, including the user's book in the url
-  $.get("/api/users/" + userFirstName, function(data) {
-
+  // $.get("/api/users/" + userFirstName, function(data) {
+    $.get('/api/users', function(data){
     console.log(data);
     // Call our renderBooks function to add our books to the page
     renderUsers(data);
@@ -19,6 +19,18 @@ $("#searchUser").on("click", function(event) {
   });
 
 });
+$("#user-search-btn").on("click", function(event) {
+  event.preventDefault();
+  var userFirstName = $("#profileSearchInput").val().trim();
+  $.get("/api/users/" + userFirstName, function(data) {
+        console.log(data);
+    // Call our renderBooks function to add our books to the page
+    renderUsers(data);
+
+  });
+
+});
+
 
 $("#band-search-btn").on("click", function(event) {
   event.preventDefault();
@@ -56,107 +68,6 @@ $("#band-search-btn").on("click", function(event) {
   });
   });
 
-
-// // looking for in band category in no
-// $("#band-search-btn").on("click", function(event) {
-//   event.preventDefault();
-
-//   // Save the book they typed into the book-search input
-//   var  isBand = $("#notLookingForBand").val();
-
-//   // Make an AJAX get request to our api, including the user's book in the url
-//   $.get("/api/isBand/" + isBand, function(data) {
-
-//     console.log(data);
-//     // Call our renderBooks function to add our books to the page
-//     renderUsers(data);
-
-//   });
-
-// });
-
-
-// // looking for in band category in no
-// $("#searchUser").on("click", function(event) {
-//   event.preventDefault();
-
-//   // Save the book they typed into the book-search input
-//   var  instrumentsPlayed = $("#lookingForGuitarists").val();
-
-//   // Make an AJAX get request to our api, including the user's book in the url
-//   $.get("/api/instrumentsPlayed/" + instrumentsPlayed, function(data) {
-
-//     console.log(data);
-//     // Call our renderBooks function to add our books to the page
-//     renderUsers(data);
-
-//   });
-
-// });
-
-// // looking for in band category in no
-// $("#searchUser").on("click", function(event) {
-//   event.preventDefault();
-
-//   // Save the book they typed into the book-search input
-//   var  instrumentsPlayed = $("#lookingForDrummers").val();
-
-//   // Make an AJAX get request to our api, including the user's book in the url
-//   $.get("/api/instrumentsPlayed/" + instrumentsPlayed, function(data) {
-
-//     console.log(data);
-//     // Call our renderBooks function to add our books to the page
-//     renderUsers(data);
-
-//   });
-// });
-
-// $("#searchUser").on("click", function(event) {
-//   event.preventDefault();
-
-//   // Save the book they typed into the book-search input
-//   var  instrumentsPlayed = $("#lookingForPercussionists").val();
-
-//   // Make an AJAX get request to our api, including the user's book in the url
-//   $.get("/api/instrumentsPlayed/" + instrumentsPlayed, function(data) {
-
-//     console.log(data);
-//     // Call our renderBooks function to add our books to the page
-//     renderUsers(data);
-
-//   });
-// });
-//   $("#searchUser").on("click", function(event) {
-//   event.preventDefault();
-
-//   // Save the book they typed into the book-search input
-//   var  instrumentsPlayed = $("#lookingForVocalists").val();
-
-//   // Make an AJAX get request to our api, including the user's book in the url
-//   $.get("/api/instrumentsPlayed/" + instrumentsPlayed, function(data) {
-
-//     console.log(data);
-//     // Call our renderBooks function to add our books to the page
-//     renderUsers(data);
-
-//   });
-//   });
-
-// $("#searchUser").on("click", function(event) {
-//   event.preventDefault();
-
-//   // Save the book they typed into the book-search input
-//   var  instrumentsPlayed = $("#lookingForOther").val();
-
-//   // Make an AJAX get request to our api, including the user's book in the url
-//   $.get("/api/instrumentsPlayed/" + instrumentsPlayed, function(data) {
-
-//     console.log(data);
-//     // Call our renderBooks function to add our books to the page
-//     renderUsers(data);
-
-//   });
-// });
 
 
 
