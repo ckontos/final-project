@@ -3,18 +3,28 @@
 // looking for yes or no in the band looking for category in yes
 
 // looking for users with specific names
+// var params = {
+//   "otherParam": "x",
+//   "q": [ text, title ]
+// };
 
+// $.get(url, $.param(params, true), mySuccessFunction);
 $("#searchUser").on("click", function(event) {
   event.preventDefault();
+  var userFirstName = $("#profileSearchInput").val().trim();
+  var  isBand = $("input[name=group2]:checked").val();
+  var  instrumentsPlayed = $("input[name=group1]:checked").val();
+  var params = {
+    "userFirstName":userFirstName,
+    "isBand":isBand,
+    "instrumentsPlayed": instrumentsPlayed
+  }
 
-  // Save the book they typed into the book-search input
-  // var userFirstName = $("#profileSearchInput").val().trim();
 
-  // Make an AJAX get request to our api, including the user's book in the url
-  // $.get("/api/users/" + userFirstName, function(data) {
-    $.get('/api/users', function(data){
+    $.get('/api/users', $.param(params, true), function(data){
     console.log(data);
-    // Call our renderBooks function to add our books to the page
+    console.log(params)
+
     renderUsers(data);
 
   });
@@ -87,7 +97,7 @@ function renderUsers(data) {
       div.append("<p>instrumentsPlayed: " + data[i].instrumentsPlayed + "</p>");
       div.append("<p>userLocation: " + data[i].userLocation + "</p");
       div.append("<p>searchingFor: " + data[i].searchingFor + "</p>");
-      div.append("<button class='delete' data-id='" + data[i].id + "'>Contact User</button>");
+      div.append("<button data-target='contactModal' class='btn modal-trigger contact'  data-id='" + data[i].email + "'>Contact User</button>");
 
       $("#stats").append(div);
 

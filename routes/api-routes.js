@@ -173,15 +173,6 @@ app.get("/api/users", function(req, res) {
     });
   });
 
-app.get("/api/genre", function(req, res) {
-   db.User.findAll({
-      where: {
-        genre: req.params.genre
-      }
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
-  });
 
 // route to search users by genre they like
  

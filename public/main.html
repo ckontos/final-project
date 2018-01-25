@@ -92,7 +92,7 @@
                                                       <label for="profileSearchInput">Friend Search</label>
                                                     </div>
                                                 </div>
-                                            <button class="btn btn-primary btn-md" id="looking-search-btn"><span class="glyphicon glyphicon-search"></span> Search</button>
+                                            <button class="btn btn-primary btn-md" id="user-search-btn"><span class="glyphicon glyphicon-search"></span> Search</button>
                                             </span>
                                         </div>
                                     </li>
@@ -168,6 +168,35 @@
                         </div>
                     </div>
                 </div>
+                
+                    <!-- contact modal -->
+          <div id="contactModal" class="modal blue-grey darken-2">
+            <div class="modal-content">
+              <h4>Message</h4>
+               <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="message" type="text" class="validate">
+                                        <input id="toEmail" type="hidden">
+                                        <label for="message">Input message here</label>
+                                    </div>
+                                </div>
+                               
+                                <div class="row">
+                                    <div class="input-field">
+                                        <a href="#" id="submitMessage" class="btn waves-effect waves-light blue-grey lighten-3 col s5 offset-s1" style="margin-left: 180px; margin-top: 15px;"><span class="black-text">Send</span></a>
+                                    </div>
+                                </div>
+                    </form>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+          </div>
+                <!--end modal-->
+                
+                
+                
     </main>
     <footer class="page-footer blue-grey lighten-3 ">
         <div class="footer-copyright ">
@@ -185,5 +214,6 @@
         });
     </script>
     <script src="./javascript/search.js"></script>
+      <script src="./javascript/message.js"></script>
 </body>
 </html>
