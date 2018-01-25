@@ -1,50 +1,28 @@
 $(document).ready(function() {
+    
     var sender;
     var reciever;
     var username;
     // initialize modal
-
     $('select').material_select();
     $('.modal').modal({
         ready: function(modal, trigger) {
-            // Do whatever you want to do with your modal and trigger button
-            // For example here 'id' and 'data-id' attributes of trigger are displayed in modal
+          // gets the reciever email and hides it in #toEmail
             modal.find('#toEmail').text(trigger.data('id'));
         }
 
     });
 
 
-    // when you click on contact button
-    $(".contact").on("click", function(event) {
-        console.log("we made a click");
-        event.preventDefault();
-        // get recipient email
-        //   reciever = $(this).attr("data-id");
-
-        // get the senders email
-        $.get("api/user_data", {}, function(data) {
-            console.log(data);
-            sender = data.email;
-            username = data.username;
-            console.log("sender: " + sender + "  username: " + username);
-        }).done(function() {
-            // pop the modal
-            $('#contactModal').modal('open');
-        });
-
-    });
-
-
-
     // when you click on the submitMessage button in modal
     $("#submitMessage").on("click", function(event) {
         event.preventDefault();
-        // get the input from modal
+        // get the recievers email
         reciever = $("#toEmail").text();
         console.log("reciever: " + reciever);
+        // message to be sent
         let message = $("#message").val().trim();
-
+        // get the sender information
         $.get("api/user_data", {}, function(data) {
             console.log(data);
             sender = data.email;
@@ -52,8 +30,6 @@ $(document).ready(function() {
             console.log("sender: " + sender + "  username: " + username);
         }).done(function() {
             
-     
-        // console.log(reciever);
         // send the message
         $.get("/send", {
                 to: reciever,
