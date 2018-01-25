@@ -1,7 +1,18 @@
 
 const nodemailer = require('nodemailer');
 // using this email for test purposes right now
-var smtpTransport = nodemailer.createTransport({
+// var smtpTransport = nodemailer.createTransport({
+//     service: "gmail",
+//     host: "joshjanculawebpage@gmail.com",
+//     auth: {
+//         user: "joshjanculawebpage@gmail.com",
+//         pass: "gmailPassword"
+//     }
+// });
+
+
+
+var Transport = nodemailer.createTransport({
     service: "gmail",
     host: "joshjanculawebpage@gmail.com",
     auth: {
@@ -22,7 +33,7 @@ app.get('/send',function(req,res){
         html : req.query.html
     }
     console.log(mailOptions);
-    smtpTransport.sendMail(mailOptions, function(error, response){
+    Transport.sendMail(mailOptions, function(error, response){
      if(error){
             console.log(error);
         res.end("error");
