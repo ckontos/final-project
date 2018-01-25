@@ -32,6 +32,8 @@
                                                       <label for="locationSearchInput">Location</label>
                                                     </div>
                                                 </div>
+                                        <button class="btn btn-primary btn-md" id="location-search-btn"><span class="glyphicon glyphicon-search"></span> Search</button>
+
                                             </span>
                                         </div>
                                     </li>
@@ -41,45 +43,48 @@
 
                                             <form action="#">
                                                 <p>
-                                                    <input class="with-gap" name="group1" type="radio" id="lookingForGuitarists" />
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForGuitarists" value="guitar" />
                                                     <label for="lookingForGuitarists" class="black-text">Guitarists</label>
                                                 </p>
                                                 <p>
-                                                    <input class="with-gap" name="group1" type="radio" id="lookingForDrummers" />
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForDrummers" value="drums"/>
                                                     <label for="lookingForDrummers" class="black-text">Drummers</label>
                                                 </p>
                                                 <p>
-                                                    <input class="with-gap" name="group1" type="radio" id="lookingForBassists" />
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForBassists" value="bass"/>
                                                     <label for="lookingForBassists" class="black-text">Bassists</label>
                                                 </p>
                                                 <p>
-                                                    <input class="with-gap" name="group1" type="radio" id="lookingForPercussionists" value="4"/>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForPercussionists" value="keyboard"/>
                                                     <label for="lookingForPercussionists" class="black-text">Keyboard</label>
                                                 </p>
                                                 <p>
-                                                    <input class="with-gap" name="group1" type="radio" id="lookingForVocalists" />
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForVocalists" value="vocals"/>
                                                     <label for="lookingForVocalists" class="black-text">Vocalists</label>
                                                 </p>
+                                                    <button class="btn btn-primary btn-md" id="looking-search-btn"><span class="glyphicon glyphicon-search"></span> Search</button>
                                             </form>
 
                                         </div>
                                     </li>
                                     <li>
                                         <div class="collapsible-header"><i class="material-icons">done</i>Band</div>
+                                        
                                         <div class="collapsible-body white">
                                             <span>
                                                 Are you looking for someone in a band?
                                             </span>
 
-                                            <form action="#">
+                                            <form action id="time">
                                                 <p>
-                                                    <input class="with-gap" name="group2" type="radio" id="lookingForBand" />
+                                                    <input class="with-gap" name="group2" type="radio" id="lookingForBand" value="yes" />
                                                     <label for="lookingForBand" class="black-text">Yes</label>
                                                 </p>
                                                 <p>
-                                                    <input class="with-gap" name="group2" type="radio" id="notLookingForBand" />
+                                                    <input class="with-gap" name="group2" type="radio" id="notLookingForBand" value="no" />
                                                     <label for="notLookingForBand" class="black-text">No</label>
                                                 </p>
+                                                <button class="btn btn-primary btn-md" id="band-search-btn"><span class="glyphicon glyphicon-search"></span> Search</button>
                                             </form>
 
                                         </div>
@@ -94,6 +99,8 @@
                                                       <label for="profileSearchInput">Friend Search</label>
                                                     </div>
                                                 </div>
+                                            <button class="btn btn-primary btn-md" id="user-search-btn"><span class="glyphicon glyphicon-search"></span> Search</button>
+
                                             </span>
                                         </div>
                                     </li>
@@ -115,7 +122,11 @@
             </div>
             <div class="col s1"></div>
         </div>
+        <div id="stats">
+            
+        </div>
     </main>
+    
 
     <footer class="page-footer blue-grey lighten-3">
         <div class="footer-copyright">
@@ -133,7 +144,7 @@
             $('.collapsible').collapsible();
         });
     </script>
-
+    <script src="./javascript/search.js"></script>
 
 
 </body>

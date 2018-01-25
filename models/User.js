@@ -69,6 +69,10 @@ module.exports = function(sequelize, DataTypes) {
     userLocation: {
       type: DataTypes.TEXT,
       allowNull: true
+    },
+     userImage: {
+      type: DataTypes.BLOB,
+      allowNull: true
     }
     
   });

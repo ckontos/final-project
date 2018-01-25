@@ -2,33 +2,39 @@
 
 // looking for yes or no in the band looking for category in yes
 
-$("#searchUser").on("click", function(event) {
-  event.preventDefault();
-
-  // Save the book they typed into the book-search input
-  var  isBand = $("#lookingForBand").val();
-
-  // Make an AJAX get request to our api, including the user's book in the url
-  $.get("/api/isBand/" + isBand, function(data) {
-
-    console.log(data);
-    // Call our renderBooks function to add our books to the page
-    renderUsers(data);
-
-  });
-
-});
 // looking for users with specific names
+// var params = {
+//   "otherParam": "x",
+//   "q": [ text, title ]
+// };
+
+// $.get(url, $.param(params, true), mySuccessFunction);
 $("#searchUser").on("click", function(event) {
   event.preventDefault();
-
-  // Save the book they typed into the book-search input
   var userFirstName = $("#profileSearchInput").val().trim();
+  var  isBand = $("input[name=group2]:checked").val();
+  var  instrumentsPlayed = $("input[name=group1]:checked").val();
+  var params = {
+    "userFirstName":userFirstName,
+    "isBand":isBand,
+    "instrumentsPlayed": instrumentsPlayed
+  }
 
-  // Make an AJAX get request to our api, including the user's book in the url
-  $.get("/api/users/" + userFirstName, function(data) {
 
+    $.get('/api/users', $.param(params, true), function(data){
     console.log(data);
+    console.log(params)
+
+    renderUsers(data);
+
+  });
+
+});
+$("#user-search-btn").on("click", function(event) {
+  event.preventDefault();
+  var userFirstName = $("#profileSearchInput").val().trim();
+  $.get("/api/users/" + userFirstName, function(data) {
+        console.log(data);
     // Call our renderBooks function to add our books to the page
     renderUsers(data);
 
@@ -36,12 +42,15 @@ $("#searchUser").on("click", function(event) {
 
 });
 
- // looking for in band category in no
-$("#searchUser").on("click", function(event) {
+
+$("#band-search-btn").on("click", function(event) {
   event.preventDefault();
 
   // Save the book they typed into the book-search input
-  var  isBand = $("#notLookingForBand").val();
+  var  isBand = $("input[name=group2]:checked").val();
+  // so if i do this it only searches for no
+  //and i also tried group 2 but i wasnt using input ect 
+  //i also 
 
   // Make an AJAX get request to our api, including the user's book in the url
   $.get("/api/isBand/" + isBand, function(data) {
@@ -53,80 +62,15 @@ $("#searchUser").on("click", function(event) {
   });
 
 });
-
-
- // looking for in band category in no
-$("#searchUser").on("click", function(event) {
+  $("#looking-search-btn").on("click", function(event) {
   event.preventDefault();
 
   // Save the book they typed into the book-search input
-  var  instrumentsPlayed = $("#lookingForGuitarists").val();
+  var  instrumentsPlayed = $("input[name=group1]:checked").val();
 
   // Make an AJAX get request to our api, including the user's book in the url
   $.get("/api/instrumentsPlayed/" + instrumentsPlayed, function(data) {
-
-    console.log(data);
-    // Call our renderBooks function to add our books to the page
-    renderUsers(data);
-
-  });
-
-});
-
-// looking for in band category in no
-$("#searchUser").on("click", function(event) {
-  event.preventDefault();
-
-  // Save the book they typed into the book-search input
-  var  instrumentsPlayed = $("#lookingForDrummers").val();
-
-  // Make an AJAX get request to our api, including the user's book in the url
-  $.get("/api/instrumentsPlayed/" + instrumentsPlayed, function(data) {
-
-    console.log(data);
-    // Call our renderBooks function to add our books to the page
-    renderUsers(data);
-
-  });
-});
-  $("#searchUser").on("click", function(event) {
-  event.preventDefault();
-
-  // Save the book they typed into the book-search input
-  var  instrumentsPlayed = $("#lookingForBassists").val();
-
-  // Make an AJAX get request to our api, including the user's book in the url
-  $.get("/api/instrumentsPlayed/" + instrumentsPlayed, function(data) {
-
-    console.log(data);
-    // Call our renderBooks function to add our books to the page
-    renderUsers(data);
-
-  });
-  });
-$("#searchUser").on("click", function(event) {
-  event.preventDefault();
-
-  // Save the book they typed into the book-search input
-  var  instrumentsPlayed = $("#lookingForPercussionists").val();
-
-  // Make an AJAX get request to our api, including the user's book in the url
-  $.get("/api/instrumentsPlayed/" + instrumentsPlayed, function(data) {
-
-    console.log(data);
-    // Call our renderBooks function to add our books to the page
-    renderUsers(data);
-
-  });
-});
-  $("#searchUser").on("click", function(event) {
-  event.preventDefault();
-
-  // Save the book they typed into the book-search input
-  var  instrumentsPlayed = $("#lookingForVocalists").val();
-
-  // Make an AJAX get request to our api, including the user's book in the url
-  $.get("/api/instrumentsPlayed/" + instrumentsPlayed, function(data) {
+    console.log(instrumentsPlayed)
 
     console.log(data);
     // Call our renderBooks function to add our books to the page
@@ -135,21 +79,6 @@ $("#searchUser").on("click", function(event) {
   });
   });
 
-$("#searchUser").on("click", function(event) {
-  event.preventDefault();
-
-  // Save the book they typed into the book-search input
-  var  instrumentsPlayed = $("#lookingForOther").val();
-
-  // Make an AJAX get request to our api, including the user's book in the url
-  $.get("/api/instrumentsPlayed/" + instrumentsPlayed, function(data) {
-
-    console.log(data);
-    // Call our renderBooks function to add our books to the page
-    renderUsers(data);
-
-  });
-});
 
 
 
@@ -164,11 +93,11 @@ function renderUsers(data) {
 
       var div = $("<div>");
 
-      div.append("<h2>" + data[i].user + "</h2>");
+      div.append("<h2>" + data[i].userFirstName + "</h2>");
       div.append("<p>instrumentsPlayed: " + data[i].instrumentsPlayed + "</p>");
-    //   div.append("<p>genre: " + data[i].genre + "</p>");
+      div.append("<p>userLocation: " + data[i].userLocation + "</p");
       div.append("<p>searchingFor: " + data[i].searchingFor + "</p>");
-    //   div.append("<button class='delete' data-id='" + data[i].id + "'>DELETE User</button>");
+      div.append("<button data-target='contactModal' class='btn modal-trigger contact'  data-id='" + data[i].email + "'>Contact User</button>");
 
       $("#stats").append(div);
 

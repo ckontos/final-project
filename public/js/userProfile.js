@@ -12,6 +12,6 @@ $(document).ready(function(){
         $("#instrument").text(data.instrumentsPlayed);
         $("#genre").text(data.genre);
         $("#inBand").text(data.isBand);
-        
+         $(".profilePic").attr("src", data.userImage);
     })
 })
