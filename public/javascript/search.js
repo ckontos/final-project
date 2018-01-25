@@ -11,36 +11,38 @@
 // $.get(url, $.param(params, true), mySuccessFunction);
 $("#searchUser").on("click", function(event) {
   event.preventDefault();
-  var userFirstName = $("#profileSearchInput").val().trim();
-  var isBand = $("input[name=group2]:checked").val();
-  var instrumentsPlayed = $("input[name=group1]:checked").val();
+  var userFirstName = $("#profileSearchInput").val();
+  var  isBand = $("input[name=group2]:checked").val();
+  var  instrumentsPlayed = $("input[name=group1]:checked").val();
   var params = {
-    "userFirstName": userFirstName,
-    "isBand": isBand,
+    "userFirstName":userFirstName,
+    "isBand":isBand,
     "instrumentsPlayed": instrumentsPlayed
   }
+  
 
 
-  $.get('/api/users', $.param(params, true), function(data) {
+    $.get('/api/users/search', params, function(data){
     console.log(data);
-    console.log(params)
+    console.log(params);
+   
 
     renderUsers(data);
 
   });
 
 });
-$("#user-search-btn").on("click", function(event) {
-  event.preventDefault();
-  var userFirstName = $("#profileSearchInput").val().trim();
-  $.get("/api/users/" + userFirstName, function(data) {
-    console.log(data);
-    // Call our renderBooks function to add our books to the page
-    renderUsers(data);
+// $("#user-search-btn").on("click", function(event) {
+//   event.preventDefault();
+//   var userFirstName = $("#profileSearchInput").val().trim();
+//   $.get("/api/users/" + userFirstName, function(data) {
+//     console.log(data);
+//     // Call our renderBooks function to add our books to the page
+//     renderUsers(data);
 
-  });
+//   });
 
-});
+// });
 
 
 $("#band-search-btn").on("click", function(event) {
