@@ -14,4 +14,28 @@ $(document).ready(function(){
         $("#inBand").text(data.isBand);
          $(".profilePic").attr("src", data.userImage);
     })
+    
+    
+    
+    
+  // button to logout
+  $("#logout").on("click", function(event) {
+    // event.preventDefault();
+    $.get("/logout", function(data) {
+      window.location.href = '/login';
+    });
+  });
+
+
+
+  // view profile button
+  $("#backToMain").on("click", function(event) {
+    event.preventDefault();
+    // go to the profile
+    window.location.href = '/main';
+  });
+
+    
+    
+    
 })

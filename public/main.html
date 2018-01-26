@@ -35,7 +35,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="collapsible-header"><i class="material-icons">headset</i>What do you need?</div>
+                                        <div class="collapsible-header"><i class="material-icons">headset</i>Who are you looking to jam with?</div>
                                         <div class="collapsible-body white">
                                             <form action="#">
                                                 <p>
@@ -62,7 +62,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="collapsible-header"><i class="material-icons">done</i>Band</div>
+                                        <div class="collapsible-header"><i class="material-icons">done</i>Looking to join a Band</div>
                                         <div class="collapsible-body white">
                                             <span>
                                                 Are you looking for someone in a band?
@@ -96,6 +96,12 @@
                             </div>
                             <div class="center-align">
                                 <a href="#" id="searchUser" class="btn waves-effect waves-light blue-grey lighten-3" style="margin-top: 15px; width: 150px;"><span class="black-text"><i class="material-icons">search</i> Search</span></a>
+                            </div>
+                             <div class="center-align">
+                                <a href="#" id="myProfile" class="btn waves-effect waves-light blue-grey lighten-3" style="margin-top: 15px; width: 150px;"><span class="black-text">My Profile</span></a>
+                            </div>
+                             <div class="center-align">
+                                <a href="#" id="logout" class="btn waves-effect waves-light blue-grey lighten-3" style="margin-top: 15px; width: 150px;"><span class="black-text">Logout</span></a>
                             </div>
                         </div>
                     </div>
@@ -196,7 +202,7 @@
           <div id="viewProfileModal" class="modal blue-grey darken-2">
             <div class="modal-content">
                  <input id="toSearch" type="hidden">
-              <h4 id="accountName"></h4>
+              <!--<h4 id="accountName"></h4>-->
                <div class="col s12">
                                     <h3 id = "accountHead">Account Info</h3>
                                     <h5 class = "white-text">Username: <span class = "accountInfo" id ="username"></span></h5>
@@ -205,14 +211,15 @@
                                     <h5 class = "white-text">Instrument: <span class = "accountInfo" id ="instrument"></span></h5>
                                     <h5 class = "white-text">Prefered Genre: <span class = "accountInfo" id ="genre"></span></h5>
                                     <h5 class = "white-text">In a Band: <span class = "accountInfo" id ="inBand"></span></h5>
+                                     <h5 class = "white-text">About: <span class = "accountInfo" id ="about"></span></h5>
                                 
                                
                                
                     </div>
             </div>
-            <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-            </div>
+            <!--<div class="modal-footer">-->
+            <!--  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>-->
+            <!--</div>-->
           </div>
                 <!--end modal-->
                 
@@ -237,6 +244,5 @@
     </script>
     <script src="./javascript/search.js"></script>
       <script src="./javascript/message.js"></script>
-      <!--<script src="./javascript/viewProfile.js"></script>-->
 </body>
 </html>
