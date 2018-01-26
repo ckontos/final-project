@@ -9,20 +9,22 @@ function getLocation() {
 
 		var startLat = position.coords.latitude;
 		var startLng = position.coords.longitude;
-		myLatLng = { lat: startLat, lng: startLng }
+		myLatLng = {lat: startLat, lng: startLng }
+		userAddress = JSON.stringify(myLatLng)
 		//Request the formatted address of the users current coordinates and saves them in userAddress variable
-		var URL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + startLat + "," + startLng + "&key=AIzaSyDjWf9MWH_TDbfwMltYVP5kCHgHFJcc5VI";
-		$.ajax({
-			url: URL,
-			method: "GET"
-		}).done(function(response) {
-			userAddress = response.results["0"].formatted_address;
-			console.log("User's address from browser: " + userAddress);
+		// var URL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + startLat + "," + startLng + "&key=AIzaSyDjWf9MWH_TDbfwMltYVP5kCHgHFJcc5VI";
+		// $.ajax({
+		// 	url: URL,
+		// 	method: "GET"
+		// }).done(function(response) {
+		//   userAddress = JSON.stringify(myLatLng)
+		// // 	userAddress = response.results["0"].formatted_address;
+		// 	console.log("User's address from browser: " + userAddress);
 
-			//Once the user's address is saved in the userAddress variable, call the initMap function to load the map
+		// 	//Once the user's address is saved in the userAddress variable, call the initMap function to load the map
 			console.log(myLatLng)
 
-		});
+		// });
 	};
 	//if geolocation is supported, the getCurrentPosition will be called
 	if (navigator.geolocation) {
@@ -33,9 +35,11 @@ function getLocation() {
 	}
 
 }
-  
-getLocation();  
-  
+
+getLocation(); 
+
+
+  /// its in meters that is the  compared lon and lat
 
   // Adding an event listener for when the form is submitted
   $("#registerUser").on('click', handleFormSubmit);
