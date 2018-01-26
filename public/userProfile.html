@@ -45,34 +45,35 @@
         </main>
         
                  <!-- Modal Structure -->
+        
           <div id="modal1" class="modal blue-grey darken-2">
             <div class="modal-content">
               <h4>Edit Profile</h4>
-               <form class="col s12">
+               <form action = "api/user/username"class="col s12">
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="userFirstName" type="text" class="validate">
+                                        <input id="userFirstNameModal" type="text" class="validate">
                                         <label for="firstName">First Name</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="userLastName" type="text" class="validate">
+                                        <input id="userLastNameModal" type="text" class="validate">
                                         <label for="lastName">Last Name</label>
                                     </div>
                                 </div>
                                  <div class="row">
-                                    <div class="input-field col s12" id="isBand">
-                                        <select>
+                                    <div class="input-field col s12">
+                                        <select id="inBandModal">
                                               <option value = "" disabled selected>Do you already have an existing band?</option>
-                                              <option value = "1">Yes</option>
-                                              <option value = "2">No</option>
+                                              <option value = "Yes">Yes</option>
+                                              <option value = "No">No</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="input-field col s12" id="instrumentsPlayed">
-                                        <select>
+                                    <div class="input-field col s12">
+                                        <select id="instrumentsPlayedModal">
                                               <option value = "" disabled selected>What do you play?</option>
                                               <option value = "Guitar">Guitar</option>
                                               <option value = "Drums">Drums</option>
@@ -84,21 +85,20 @@
                                     </div>
                                 </div>
                                   <div class="row">
-                                    <div class="input-field col s12" id="searchingFor">
-                                        <select>
+                                    <div class="input-field col s12">
+                                       <select id="searchingForModal">
                                               <option value = "" disabled selected>Who are you looking to jam with?</option>
-                                              <option value = "1">Guitarists</option>
-                                              <option value = "2">Drummers</option>
-                                              <option value = "3">Bassists</option>
-                                              <option value = "4">Percussionist</option>
-                                              <option value = "5">Vocalists</option>
-                                              <option value = "6">Other</option>
+                                              <option value = "Guitar">Guitarists</option>
+                                              <option value = "Drums">Drummers</option>
+                                              <option value = "Bass">Bassists</option>
+                                              <option value = "keyboard">Keyboard</option>
+                                              <option value = "Vocalist">Vocalists</option>
                                         </select>
                                     </div>
                                 </div>
                                   <div class="row">
-                                    <div class="input-field col s12" id="genre">
-                                        <select>
+                                    <div class="input-field col s12">
+                                        <select id="genreModal">
                                               <option value = "" disabled selected>What genre(s) are you into?</option>
                                               <option value = "Metal">Metal</option>
                                               <option value = "Jazz">Jazz</option>
@@ -111,25 +111,20 @@
                                 </div>
                                   <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="about" type="text" class="validate">
+                                        <input id="aboutModal" type="text" class="validate">
                                         <label for="about.....">Tell us a little about yourself.</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="registerEmail" type="email" class="validate">
+                                        <input id="registerEmailModal" type="email" class="validate">
                                         <label for="email">Email</label>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="registerPassword" type="password" class="validate">
-                                        <label for="password">Password</label>
-                                    </div>
-                                </div>
-                                <div class="row">
                                     <div class="input-field">
-                                        <a href="#" id="updateAccount" class="btn waves-effect waves-light blue-grey lighten-3 col s5 offset-s1" style="margin-left: 180px; margin-top: 15px;"><span class="black-text">Update Profile</span></a>
+                                        <button id = "updateAccount">Update Profile</button>
+                                        <!--<a href="#" id="updateAccount" class="btn waves-effect waves-light blue-grey lighten-3 col s5 offset-s1" style="margin-left: 180px; margin-top: 15px;"><span class="black-text">Update Profile</span></a>-->
                                     </div>
                                 </div>
                     </form>
