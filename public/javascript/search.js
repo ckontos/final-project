@@ -98,6 +98,7 @@ window.onload = function() {
           "<p> User is: " + result.distance + ' miles away' + "</p>" +
           "<p> Looking to jam with: " + result.searchingFor + "</p>" +
           "<button data-target='contactModal' class='btn modal-trigger contact'  data-id='" + result.email + "'>Contact User</button>" +
+            "<button data-target='viewProfileModal' class='btn modal-trigger view'  data-id='" + result.username + "'>View Profile</button>" +
           "</div>" +
           "</div>" +
           "</div>" +
