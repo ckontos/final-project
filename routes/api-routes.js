@@ -14,19 +14,19 @@ app.get("/api/users", function(req, res) {
     });
   });
   
-  // get user by email
-  // app.get("/api/users/:email", function(req, res) {
+  //get user by username
+  app.get("/api/users/username/:username", function(req, res) {
   
-  //   db.User.findOne({
-  //     where: {
-  //       email: req.params.email
-  //     } 
-  //   }).then(function(dbUser) {
-  //     res.json(dbUser);
-  //   });
-  // });
+    db.User.findOne({
+      where: {
+        username: req.params.username
+      } 
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
 
- // Route for logging user out
+// Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");

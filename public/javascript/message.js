@@ -5,7 +5,7 @@ $(document).ready(function() {
     var username;
     // initialize modal
     $('select').material_select();
-    $('.modal').modal({
+    $('#contactModal').modal({
         ready: function(modal, trigger) {
           // gets the reciever email and hides it in #toEmail
             modal.find('#toEmail').text(trigger.data('id'));
