@@ -138,14 +138,14 @@ window.onload = function() {
   $("#logout").on("click", function(event) {
     // event.preventDefault();
     $.get("/logout", function(data) {
-      window.location.href = '/userProfile';
+      window.location.href = '/login';
     });
   });
 
 
 
   // view profile button
-  $("#viewProfile").on("click", function(event) {
+  $("#myProfile").on("click", function(event) {
     event.preventDefault();
     // go to the profile
     window.location.href = '/userProfile';
@@ -165,12 +165,13 @@ window.onload = function() {
 
       console.log("console logging data: " + data);
 
-      $("#accountName").text(data.username);
+      $("#username").text(data.username);
       $("#name").text((data.userFirstName) + " " + (data.userLastName));
       $("#email").text(data.email);
       $("#instrument").text(data.instrumentsPlayed);
       $("#genre").text(data.genre);
       $("#inBand").text(data.isBand);
+      $("#about").text(data.about);
       $(".profilePic").attr("src", data.userImage);
     });
     }
