@@ -2,9 +2,11 @@ $(document).ready(function() {
   $('.modal').modal();
   $('select').material_select();
 
+
+
   $.get("api/user_data", {}, function(data) {
-    console.log("getting all user_data: " + data );
-   
+    console.log("getting all user_data: " + data);
+
 
     // Sets account info into account info card
     $("#username").text(data.username);
@@ -17,13 +19,16 @@ $(document).ready(function() {
     $("#about").text(data.about);
     $(".profilePic").attr("src", data.userImage);
 
+    // set value in delete
+
+
 
     //Sets account info into edit profile modal
     $("label").addClass('active');
     $("#userFirstNameModal").val(data.userFirstName);
     $("#userLastNameModal").val(data.userLastName);
-     $("#usernameModal").val(data.username);
-    
+    $("#usernameModal").val(data.username);
+
     $("#inBandModal").val(data.isBand);
     $("#inBandModal").material_select();
 
@@ -33,10 +38,10 @@ $(document).ready(function() {
 
     $("#searchingForModal").val(data.searchingFor);
     $("#searchingForModal").material_select();
-    
+
     $("#genreModal").val(data.genre);
     $("#genreModal").material_select();
-    
+
     $("#aboutModal").val(data.about);
     $("#registerEmailModal").val(data.email);
   });
@@ -44,10 +49,10 @@ $(document).ready(function() {
 
 
 
-$("#updateAccount").on("click", handleSubmitForm);
-    
-    function handleSubmitForm (event){
-       
+  $("#updateAccount").on("click", handleSubmitForm);
+
+  function handleSubmitForm(event) {
+
     var about = $("#aboutModal").val().trim();
     var firstName = $("#userFirstNameModal").val().trim();
     var lastName = $("#userLastNameModal").val().trim();
@@ -57,28 +62,28 @@ $("#updateAccount").on("click", handleSubmitForm);
     var instrumentsPlayed = $("#instrumentsPlayedModal").val();
     var searchingFor = $("#searchingForModal").val();
     var username = $("#usernameModal").val();
-     event.preventDefault();
-    
+    event.preventDefault();
+
     console.log("isBand content in form: " + isBand);
-    
-    
-    
+
+
+
     var editedInfo = {
-        
-        about: about,
-        userFirstName: firstName,
-        userLastName: lastName,
-        registerEmail: email,
-        genre: genre,
-        isBand: isBand,
-        instrumentsPlayed: instrumentsPlayed,
-        searchingFor: searchingFor,
-        username: username
+
+      about: about,
+      userFirstName: firstName,
+      userLastName: lastName,
+      registerEmail: email,
+      genre: genre,
+      isBand: isBand,
+      instrumentsPlayed: instrumentsPlayed,
+      searchingFor: searchingFor,
+      username: username
     };
-    
+
     console.log("about to update the user line 75: " + JSON.stringify(editedInfo));
-        updateUser(username, editedInfo);
-        
+    updateUser(username, editedInfo);
+
 
     // empty out the input fields
     $("#aboutModal").val("")
@@ -89,42 +94,67 @@ $("#updateAccount").on("click", handleSubmitForm);
     $("#isBandModal").val("")
     $("#instrumentsPlayedModal").val("")
     $("#searchingForModal").val("")
-    };
-    
+  };
 
 
 
-function updateUser(username, user) {
-  console.log("inside updateUser ajax: " + JSON.stringify(user));
+  // delete user account
+  $("#handleDelete").click(function() {
+
+// get the users id
+    $.get("api/user_data", {}, function(data) {
+      var id = data.id
+      console.log("email1: " + id);
+    }).done(function(user) {
+      $.ajax({ // go delete that shit
+        method: "DELETE",
+        url: "/api/users/" + user.id
+      }).done(function(data) { // tell me something good
+        console.log("delete was successful: " + JSON.stringify(data));
+        window.location.href = '/logout'; // redirect to login page
+      });
+    });
+  });
+
+
+
+  function updateUser(username, user) {
+    console.log("inside updateUser ajax: " + JSON.stringify(user));
     $.ajax({
       method: "PUT",
-      url: "/api/users/username", username, 
+      url: "/api/users/username",
+      username,
       data: user
     }).done(function(data) {
-        console.log("data from updateUser: " + JSON.stringify(data));
-        window.location.href='/logout';
+      console.log("data from updateUser: " + JSON.stringify(data));
+      window.location.href = '/logout';
     });
-    
-};
+
+  };
 
 });
 
-  // button to logout
-  $("#logout").on("click", function(event) {
-    // event.preventDefault();
-    $.get("/logout", function(data) {
-      window.location.href = '/login';
-    });
+// button to logout
+$("#logout").on("click", function(event) {
+  // event.preventDefault();
+  $.get("/logout", function(data) {
+    window.location.href = '/login';
   });
+});
 
 
 
-  // view profile button
-  $("#main").on("click", function(event) {
-    event.preventDefault();
-    // go to the profile
-    window.location.href = '/main';
-  });
+// view profile button
+$("#main").on("click", function(event) {
+  event.preventDefault();
+  // go to the profile
+  window.location.href = '/main';
+});
 
-    
-    
+
+// route to search in nav
+$("#searchNav").on("click", function(event) {
+  event.preventDefault();
+  // go to the profile
+  window.location.href = '/search';
+});
