@@ -2,6 +2,8 @@ $(document).ready(function() {
   
   var emailInput = $("#userEmail");
   var passwordInput = $("#userPassword");
+  
+  
 
   // When the form is submitted, we validate there's an email and password entered
  
@@ -37,3 +39,12 @@ $(document).ready(function() {
   }
 
 });
+var hotbod = document.querySelector("body");
+
+function doStuff() {
+    hotbod.className += " animate";
+}
+
+window.onload = function() {
+    doStuff();
+};
