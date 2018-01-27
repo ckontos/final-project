@@ -99,7 +99,8 @@ function updateUser(username, user) {
       url: "/api/users/username", username, 
       data: user
     }).done(function(data) {
-        console.log("data from updateUser: " + JSON.stringify(data))
+        console.log("data from updateUser: " + JSON.stringify(data));
+        window.location.href='/logout';
     });
     
 };
