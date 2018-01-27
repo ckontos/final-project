@@ -119,11 +119,10 @@ $(document).ready(function() {
 
 
   function updateUser(username, user) {
-    console.log("inside updateUser ajax: " + JSON.stringify(user));
+    console.log("before updateUser ajax: " + JSON.stringify(user));
     $.ajax({
       method: "PUT",
-      url: "/api/users/username",
-      username,
+      url: "/api/users/username", username,
       data: user
     }).done(function(data) {
       console.log("data from updateUser: " + JSON.stringify(data));

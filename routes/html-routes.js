@@ -15,6 +15,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
   
+   // takes you to the FAQ page
+  app.get("/faq", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/faq.html"));
+  });
+  
   
    // takes you to the registration page
   app.get("/register", function(req, res) {
