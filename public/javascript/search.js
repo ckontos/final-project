@@ -2,7 +2,7 @@ window.onload = function() {
   var distanceAllowed = 60;
   var startLat;
   var startLng;
-  var username = "test"
+ 
 
   function distance(startLng, startLat, lon2, lat2, cb) {
     var R = 6371; // Radius of the earth in km

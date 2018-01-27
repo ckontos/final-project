@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="css/userProStyle.css" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
@@ -24,19 +25,19 @@
         </nav>
         <div class="row">
             <!---------------- Search Bar Column ------------------------------->
-            <div class="col s3">
+            <div class="col m3">
                 <div class="card blue-grey darken-2" id="searchCard">
                     <div class="card-content black-text">
                         <span class="card-title white-text center-align">Find People to Jam With!</span>
                         <div class="row">
-                            <div class="col s12">
+                            <div class="col m12">
                                 <ul class="collapsible popout" data-collapsible="accordion">
                                     <li>
                                         <div class="collapsible-header"><i class="material-icons">place</i>Location</div>
                                         <div class="collapsible-body white">
                                             <span>
                                                 <div class="row">
-                                                    <div class="input-field col s12">
+                                                    <div class="input-field col m12">
                                                       <input id="locationSearchInput" type="text" class="validate">
                                                       <label for="locationSearchInput">Location</label>
                                                     </div>
@@ -94,7 +95,7 @@
                                         <div class="collapsible-body white">
                                             <span>
                                                 <div class="row">
-                                                    <div class="input-field col s12">
+                                                    <div class="input-field col m12">
                                                       <input id="profileSearchInput" type="text" class="validate">
                                                       <label for="profileSearchInput">Friend Search</label>
                                                     </div>
@@ -113,7 +114,7 @@
                 </div>
             </div>
             <!--------------------- Profile queries column ----------------------------->
-            <div class="col s9">
+            <div class="col m9">
                 <div class="card blue-grey darken-2 center-align" id="stats">
                     <div  id="siteInfo">
                     <div class="card-content white-text">
@@ -129,9 +130,9 @@
                 <div id="contactModal" class="modal blue-grey darken-2">
                     <div class="modal-content">
                         <h4>Message</h4>
-                        <form class="col s12">
+                        <form class="col m12">
                             <div class="row">
-                                <div class="input-field col s12">
+                                <div class="input-field col m12">
                                     <input id="message" type="text" class="validate">
                                     <input id="toEmail" type="hidden">
                                     <label for="message">Input message here</label>
@@ -140,7 +141,7 @@
 
                             <div class="row">
                                 <div class="input-field">
-                                    <a href="#" id="submitMessage" class="btn waves-effect waves-light blue-grey lighten-3 col s5 offset-s1" style="margin-left: 180px; margin-top: 15px;"><span class="black-text">Send</span></a>
+                                    <a href="#" id="submitMessage" class="btn waves-effect waves-light blue-grey lighten-3 col m5 offset-s1" style="margin-left: 180px; margin-top: 15px;"><span class="black-text">Send</span></a>
                                 </div>
                             </div>
                         </form>
@@ -157,7 +158,7 @@
                     <div class="modal-content">
                         <input id="toSearch" type="hidden">
                         <!--<h4 id="accountName"></h4>-->
-                        <div class="col s12">
+                        <div class="col m12">
                             <h3 id="accountHead">Account Info</h3>
                             <h5 class="white-text">Username: <span class="accountInfo" id="username"></span></h5>
                             <h5 class="white-text">Name: <span class="accountInfo" id="name"></span></h5>

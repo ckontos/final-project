@@ -17,11 +17,9 @@
 
 }
 
-#editProfile {
-    margin-left: 9%;
-    background-color: grey;
-    color: black;
-
+#editProfile #deleteModal{
+    margin-top: 5%px;
+   
 }
 
 body {
@@ -88,6 +86,7 @@ main {
 
 #profileContents {
     margin-top: 60px;
+    margin-bottom: 5%;
 }
 
 
