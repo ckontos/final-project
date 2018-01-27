@@ -78,6 +78,7 @@ $("#updateAccount").on("click", handleSubmitForm);
     console.log("about to update the user line 75: " + JSON.stringify(editedInfo));
         updateUser(username, editedInfo);
         
+
     // empty out the input fields
     $("#aboutModal").val("")
     $("#userFirstNameModal").val("")
@@ -106,3 +107,26 @@ function updateUser(username, user) {
 };
 
 });
+
+  // button to logout
+  $("#logout").on("click", function(event) {
+    // event.preventDefault();
+    $.get("/logout", function(data) {
+      window.location.href = '/login';
+    });
+  });
+
+
+
+  // view profile button
+  $("#backToMain").on("click", function(event) {
+    event.preventDefault();
+    // go to the profile
+    window.location.href = '/main';
+  });
+
+    
+    
+    
+})
+
