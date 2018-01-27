@@ -12,6 +12,16 @@
 <body>
     <header></header>
     <main>
+        <nav class="blue-grey darken-2">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo" style="margin-left: 10px;">Jam-Clash</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#" id="logout">Search</a></li>
+                    <li><a href="#" id="myProfile">My Profile</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
         <div class="row">
             <!---------------- Search Bar Column ------------------------------->
             <div class="col s3">
@@ -43,11 +53,11 @@
                                                     <label for="lookingForGuitarists" class="black-text">Guitarists</label>
                                                 </p>
                                                 <p>
-                                                    <input class="with-gap" name="group1" type="radio" id="lookingForDrummers" value="drums"/>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForDrummers" value="drums" />
                                                     <label for="lookingForDrummers" class="black-text">Drummers</label>
                                                 </p>
                                                 <p>
-                                                    <input class="with-gap" name="group1" type="radio" id="lookingForBassists" value="bass"/>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForBassists" value="bass" />
                                                     <label for="lookingForBassists" class="black-text">Bassists</label>
                                                 </p>
                                                 <p>
@@ -55,7 +65,7 @@
                                                     <label for="lookingForPercussionists" class="black-text">Keyboard</label>
                                                 </p>
                                                 <p>
-                                                    <input class="with-gap" name="group1" type="radio" id="lookingForVocalists" value="vocalist"/>
+                                                    <input class="with-gap" name="group1" type="radio" id="lookingForVocalists" value="vocalist" />
                                                     <label for="lookingForVocalists" class="black-text">Vocalists</label>
                                                 </p>
                                             </form>
@@ -69,11 +79,11 @@
                                             </span>
                                             <form action="#">
                                                 <p>
-                                                    <input class="with-gap" name="group2" type="radio" id="lookingForBand" value="yes"/>
+                                                    <input class="with-gap" name="group2" type="radio" id="lookingForBand" value="yes" />
                                                     <label for="lookingForBand" class="black-text">Yes</label>
                                                 </p>
                                                 <p>
-                                                    <input class="with-gap" name="group2" type="radio" id="notLookingForBand" value="no"/>
+                                                    <input class="with-gap" name="group2" type="radio" id="notLookingForBand" value="no" />
                                                     <label for="notLookingForBand" class="black-text">No</label>
                                                 </p>
                                             </form>
@@ -97,12 +107,7 @@
                             <div class="center-align">
                                 <a href="#" id="searchUser" class="btn waves-effect waves-light blue-grey lighten-3" style="margin-top: 15px; width: 150px;"><span class="black-text"><i class="material-icons">search</i> Search</span></a>
                             </div>
-                             <div class="center-align">
-                                <a href="#" id="myProfile" class="btn waves-effect waves-light blue-grey lighten-3" style="margin-top: 15px; width: 150px;"><span class="black-text">My Profile</span></a>
-                            </div>
-                             <div class="center-align">
-                                <a href="#" id="logout" class="btn waves-effect waves-light blue-grey lighten-3" style="margin-top: 15px; width: 150px;"><span class="black-text">Logout</span></a>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -170,62 +175,62 @@
                         </div>
                     </div>
                 </div>
-                
-                    <!-- contact modal -->
-          <div id="contactModal" class="modal blue-grey darken-2">
-            <div class="modal-content">
-              <h4>Message</h4>
-               <form class="col s12">
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="message" type="text" class="validate">
-                                        <input id="toEmail" type="hidden">
-                                        <label for="message">Input message here</label>
-                                    </div>
+
+                <!-- contact modal -->
+                <div id="contactModal" class="modal blue-grey darken-2">
+                    <div class="modal-content">
+                        <h4>Message</h4>
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="message" type="text" class="validate">
+                                    <input id="toEmail" type="hidden">
+                                    <label for="message">Input message here</label>
                                 </div>
-                               
-                                <div class="row">
-                                    <div class="input-field">
-                                        <a href="#" id="submitMessage" class="btn waves-effect waves-light blue-grey lighten-3 col s5 offset-s1" style="margin-left: 180px; margin-top: 15px;"><span class="black-text">Send</span></a>
-                                    </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field">
+                                    <a href="#" id="submitMessage" class="btn waves-effect waves-light blue-grey lighten-3 col s5 offset-s1" style="margin-left: 180px; margin-top: 15px;"><span class="black-text">Send</span></a>
                                 </div>
-                    </form>
-            </div>
-            <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-            </div>
-          </div>
-                <!--end modal-->
-                
-                
-                <!-- profile modal -->
-          <div id="viewProfileModal" class="modal blue-grey darken-2">
-            <div class="modal-content">
-                 <input id="toSearch" type="hidden">
-              <!--<h4 id="accountName"></h4>-->
-               <div class="col s12">
-                                    <h3 id = "accountHead">Account Info</h3>
-                                    <h5 class = "white-text">Username: <span class = "accountInfo" id ="username"></span></h5>
-                                    <h5 class = "white-text">Name: <span class = "accountInfo" id ="name"></span></h5>
-                                    <h5 class = "white-text">Email: <span class = "accountInfo" id ="email"></span></h5>
-                                    <h5 class = "white-text">Instrument: <span class = "accountInfo" id ="instrument"></span></h5>
-                                    <h5 class = "white-text">Prefered Genre: <span class = "accountInfo" id ="genre"></span></h5>
-                                    <h5 class = "white-text">In a Band: <span class = "accountInfo" id ="inBand"></span></h5>
-                                     <h5 class = "white-text">About: <span class = "accountInfo" id ="about"></span></h5>
-                                
-                               
-                               
+                            </div>
+                        </form>
                     </div>
-            </div>
-            <!--<div class="modal-footer">-->
-            <!--  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>-->
-            <!--</div>-->
-          </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                    </div>
+                </div>
                 <!--end modal-->
-                
-                
-                
-                
+
+
+                <!-- profile modal -->
+                <div id="viewProfileModal" class="modal blue-grey darken-2">
+                    <div class="modal-content">
+                        <input id="toSearch" type="hidden">
+                        <!--<h4 id="accountName"></h4>-->
+                        <div class="col s12">
+                            <h3 id="accountHead">Account Info</h3>
+                            <h5 class="white-text">Username: <span class="accountInfo" id="username"></span></h5>
+                            <h5 class="white-text">Name: <span class="accountInfo" id="name"></span></h5>
+                            <h5 class="white-text">Email: <span class="accountInfo" id="email"></span></h5>
+                            <h5 class="white-text">Instrument: <span class="accountInfo" id="instrument"></span></h5>
+                            <h5 class="white-text">Prefered Genre: <span class="accountInfo" id="genre"></span></h5>
+                            <h5 class="white-text">In a Band: <span class="accountInfo" id="inBand"></span></h5>
+                            <h5 class="white-text">About: <span class="accountInfo" id="about"></span></h5>
+
+
+
+                        </div>
+                    </div>
+                    <!--<div class="modal-footer">-->
+                    <!--  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>-->
+                    <!--</div>-->
+                </div>
+                <!--end modal-->
+
+
+
+
     </main>
     <footer class="page-footer blue-grey lighten-3 ">
         <div class="footer-copyright ">
@@ -243,6 +248,7 @@
         });
     </script>
     <script src="./javascript/search.js"></script>
-      <script src="./javascript/message.js"></script>
+    <script src="./javascript/message.js"></script>
 </body>
+
 </html>

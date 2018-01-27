@@ -14,7 +14,7 @@
 
 .imageBox {
     margin-left: 20px;
-   
+
 }
 
 #editProfile {
@@ -25,7 +25,6 @@
 }
 
 body {
-    overflow: hidden;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -44,7 +43,7 @@ main {
 #stats {
     margin-top: 40px;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
-    
+
 }
 
 #locationSearchInput:focus,
@@ -76,11 +75,17 @@ main {
 
 #stats {
     overflow: auto;
-    position: fixed;
-    top: 0;
-    left: 300;
-    right: 100;
-    bottom: 0;
+    position: absolute;
+    height: 550px;
     margin-bottom: 100px;
     margin-right: 10px;
+}
+
+#searchCard {
+    padding-bottom: 108px;
+    overflow: auto;
+}
+
+#profileContents {
+    margin-top: 60px;
 }

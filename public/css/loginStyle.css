@@ -4,7 +4,7 @@
 }
 
 #userRegister {
-    margin-top: 50px;
+
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -16,6 +16,7 @@
     right: 0;
     bottom: 0;
     margin-bottom: 100px;
+    margin-top: 100px;
 }
 
 body {
