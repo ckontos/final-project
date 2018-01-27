@@ -127,11 +127,18 @@ window.onload = function() {
     }
   }
 
-  // view profile button
-  $("#viewProfile").on("click", function(event) {
+  // route to search in nav
+  $("#searchNav").on("click", function(event) {
     event.preventDefault();
     // go to the profile
-    window.location.href = '/userProfile';
+    window.location.href = '/search';
+  });
+  
+  // route to main in nav
+  $("#main").on("click", function(event) {
+    event.preventDefault();
+    // go to the profile
+    window.location.href = '/main';
   });
 
   // button to logout
