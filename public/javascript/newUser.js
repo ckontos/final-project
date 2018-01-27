@@ -11,20 +11,11 @@ function getLocation() {
 		var startLng = position.coords.longitude;
 		myLatLng = {lat: startLat, lng: startLng }
 		userAddress = JSON.stringify(myLatLng)
-		//Request the formatted address of the users current coordinates and saves them in userAddress variable
-		// var URL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + startLat + "," + startLng + "&key=AIzaSyDjWf9MWH_TDbfwMltYVP5kCHgHFJcc5VI";
-		// $.ajax({
-		// 	url: URL,
-		// 	method: "GET"
-		// }).done(function(response) {
-		//   userAddress = JSON.stringify(myLatLng)
-		// // 	userAddress = response.results["0"].formatted_address;
-		// 	console.log("User's address from browser: " + userAddress);
-
+	
 		// 	//Once the user's address is saved in the userAddress variable, call the initMap function to load the map
 			console.log(myLatLng)
 
-		// });
+	
 	};
 	//if geolocation is supported, the getCurrentPosition will be called
 	if (navigator.geolocation) {
@@ -123,6 +114,12 @@ getLocation();
     $("#alert").fadeIn(500);
   }
 
+ // login button up in nav
+  $("#loginNav").on("click", function(event) {
+    event.preventDefault();
+    // go to the profile
+    window.location.href = '/login';
+  });
 
 
 };

@@ -120,7 +120,7 @@ function updateUser(username, user) {
 
 
   // view profile button
-  $("#backToMain").on("click", function(event) {
+  $("#main").on("click", function(event) {
     event.preventDefault();
     // go to the profile
     window.location.href = '/main';
