@@ -47,7 +47,7 @@ getLocation();
     var password = $("#registerPassword").val().trim();
     var instrumentsPlayed = $("#instrumentsPlayed").val();
     var searchingFor = $("#searchingFor").val();
-     var username = $("#username").val();
+    var username = $("#username").val();
     var userImage = $("#userImage").val();
 
 
