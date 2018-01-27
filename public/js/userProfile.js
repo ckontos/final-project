@@ -13,7 +13,8 @@ $(document).ready(function() {
     $("#instrument").text(data.instrumentsPlayed);
     $("#genre").text(data.genre);
     $("#inBand").text(data.isBand);
-     $("#about").text(data.about);
+    $("#searchingFor").text(data.searchingFor);
+    $("#about").text(data.about);
     $(".profilePic").attr("src", data.userImage);
 
 
@@ -127,6 +128,3 @@ function updateUser(username, user) {
 
     
     
-    
-})
-
