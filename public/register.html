@@ -126,8 +126,11 @@
                                 </div>
                                 <div class="row">
                                     <div class="center-align">
-                                        <a href="#" id="registerUser" class="btn waves-effect waves-light blue-grey lighten-3 center-align" style="margin-top: 15px; width:200px;"><span class=" black-text ">Register</span></a>
+                                         <button data-target="termsModal" class="btn modal-trigger">Register</button>
+                                        <!--<a href="#" data-target="termsModal" class="btn modal-trigger waves-effect waves-light blue-grey lighten-3 center-align " style="margin-top: 15px; width:200px;"><span class=" black-text ">Register</span></a>-->
                                     </div>
+                                   
+
                                 </div>
                                 <div class="row "><a href="/login ">Login</a></div>
                             </form>
@@ -137,6 +140,52 @@
             </div>
             <div class="container col s3"></div>
         </div>
+
+
+
+
+        <!-- terms modal -->
+        <div id="termsModal" class="modal blue-grey darken-2">
+            <div class="modal-content">
+
+                <h2 class="white-text">TERMS AND CONDITIONS<span class="accountInfo"></span></h2>
+                <h5 class="white-text">IN ORDER TO CREATE AN ACCOUNT YOU MUST AGREE TO THE FOLLOWING TERMS AND CONDITIONS: <span class="accountInfo"></span></h5>
+                
+                <p class="white-text">
+                    <ul>
+                    <li>You agree not be rude, vulgar, obscene, cyber bully other users, post innapropriate content, pretty much anything of that nature. Essentially don't be a douche. </li>
+                    <li>You agree not use this site for any form of illegal activity or spam any of our users. </li>
+                    <li>You agree to allow Jam-Clash to use your provided email for our messaging system. </li>
+                    <li>You agree to tell your friends about Jam-Clash and how awesome it is and encourage them to join.</li>
+                    <li>You agree to have one of your kidneys removed in the event that our webmaster needs a transplant and you are a positive match.</li>
+                    <li>You agree to allow Jam-Clash to access your file system or phone for photo upload, also you agree to make those photos G-rated (we are not that kind of site)</li>
+                    <li>You agree to allow Jam-Clash to access and store your location for our tracking of users within your area.</li>
+                    </ul>
+                    </p>
+                    
+                    
+                    
+                    <span class="accountInfo"></span></p>
+
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">No</a>
+
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="registerUser">I Agree</a>
+            </div>
+        </div>
+        </div>
+        <!--end modal-->
+
+
+
+
+
+
+
+
     </main>
 
     <footer class="page-footer blue-grey lighten-3 ">
@@ -154,6 +203,7 @@
     <script type="text/javascript ">
         $(document).ready(function() {
             $('select').material_select();
+             $('.modal').modal();
         });
     </script>
 
