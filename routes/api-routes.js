@@ -132,7 +132,7 @@ app.get("/api/users", function(req, res) {
 
  // PUT route for updating user profile
   app.put("/api/users/username", function(req, res) {
-    console.log(req.body);
+    console.log("begining of PUT: " + JSON.stringify(req.body));
     db.User.update({ // allow them to update these fields
       userFirstName: req.body.userFirstName,
       userLastName: req.body.userLastName,
@@ -147,7 +147,7 @@ app.get("/api/users", function(req, res) {
         username: req.body.username
       }
     }).then(function(dbUser) {
-      console.log("working");
+      console.log("working inside put route: " + dbUser);
       res.json(dbUser);
       // res.redirect("http://google.com");
     })

@@ -3,8 +3,8 @@ $(document).ready(function() {
   $('select').material_select();
 
   $.get("api/user_data", {}, function(data) {
-    console.log(data);
-    console.log(data.instrumentsPlayed);
+    console.log("getting all user_data: " + data );
+   
 
     // Sets account info into account info card
     $("#username").text(data.username);
@@ -13,6 +13,7 @@ $(document).ready(function() {
     $("#instrument").text(data.instrumentsPlayed);
     $("#genre").text(data.genre);
     $("#inBand").text(data.isBand);
+     $("#about").text(data.about);
     $(".profilePic").attr("src", data.userImage);
 
 
@@ -20,6 +21,7 @@ $(document).ready(function() {
     $("label").addClass('active');
     $("#userFirstNameModal").val(data.userFirstName);
     $("#userLastNameModal").val(data.userLastName);
+     $("#usernameModal").val(data.username);
     
     $("#inBandModal").val(data.isBand);
     $("#inBandModal").material_select();
@@ -41,17 +43,6 @@ $(document).ready(function() {
 
 
 
-
-  // This function updates a todo in our database
-  //   function updateTodo(todo) {
-  //     $.ajax({
-  //       method: "PUT",
-  //       url: "/api/todos",
-  //       data: todo
-  //     }).done(getTodos);
-  //   }
-});
-
 $("#updateAccount").on("click", handleSubmitForm);
     
     function handleSubmitForm (event){
@@ -67,7 +58,7 @@ $("#updateAccount").on("click", handleSubmitForm);
     var username = $("#usernameModal").val();
      event.preventDefault();
     
-    console.log(about);
+    console.log("isBand content in form: " + isBand);
     
     
     
@@ -83,9 +74,11 @@ $("#updateAccount").on("click", handleSubmitForm);
         searchingFor: searchingFor,
         username: username
     };
-        updateUser(editedInfo);
+    
+    console.log("about to update the user line 75: " + JSON.stringify(editedInfo));
+        updateUser(username, editedInfo);
         
-           // empty out the input fields
+    // empty out the input fields
     $("#aboutModal").val("")
     $("#userFirstNameModal").val("")
     $("#userLastNameModal").val("")
@@ -99,16 +92,16 @@ $("#updateAccount").on("click", handleSubmitForm);
 
 
 
-function updateUser(user) {
-  
+function updateUser(username, user) {
+  console.log("inside updateUser ajax: " + JSON.stringify(user));
     $.ajax({
       method: "PUT",
-      url: "/api/users/username",
+      url: "/api/users/username", username, 
       data: user
-    }).done();
+    }).done(function(data) {
+        console.log("data from updateUser: " + JSON.stringify(data))
+    });
     
 };
 
-
-
-
+});
