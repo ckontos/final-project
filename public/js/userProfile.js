@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $('.modal').modal();
   $('select').material_select();
-
+   
 
 
   $.get("api/user_data", {}, function(data) {
