@@ -32,6 +32,7 @@
         <ul id="slide-out" class="side-nav hide-on-large blue-grey darken-2">
        <li><a href="/main" class="white-text" id="mainSide">Main</a></li>
         <li><a href="/userProfile" class="white-text" id="myProfileSide">My Profile</a></li>
+         <li><a href="/search" class="white-text" id="sideSearch">Search</a></li>
         <li><a href="/logout" class="white-text" id="logoutSide">Logout</a></li>
     </ul>
    
@@ -49,7 +50,7 @@
                         <p>Although this site is designed to work properly, sometimes things happen. Try again and if the problem persists contact the webmaster</p>
                         <h5>What should I do if I notice any innapropriate content or activity?</h5>
                         <p>You can either contact the webmaster or grow a set and move on with life.</p>
-                        <h5>I accidentally deleted my accout, what now?</h5>
+                        <h5>I accidentally deleted my account, what now?</h5>
                         <p>Sorry, we asked you if you were sure that you wanted to delete it and said it cannot be undone. Suck it up and deal with it.</p>
                         <h5>I am moving to another city, how will others know how close I am if I'm in a new state?</h5>
                         <p>You can either quickly delete and recreate your account to get a new location added to your profile. Or our browser gets your current GPS location every time you search. So if you're profile says you live in North Carolina but
@@ -67,12 +68,38 @@
             <div class="container col m3"></div>
         </div>
     </main>
+    
+    
+      <!-- contactWebmaster modal -->
+                <div id="contactWebmaster" class="modal blue-grey darken-2">
+                    <div class="modal-content">
+                        <h4>Message</h4>
+                        <form class="col m12">
+                            <div class="row">
+                                <div class="input-field col m12">
+                                    <input id="message" type="text" class="validate">
+                                    <label for="message">Input message here</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field">
+                                    <a href="#" id="submitMessage" class="btn waves-effect waves-light blue-grey lighten-3 col m5 offset-s1" style="margin-left: 180px; margin-top: 15px;"><span class="black-text">Send</span></a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                    </div>
+                </div>
+                <!--end modal-->
 
     <footer class="page-footer blue-grey darken-2 ">
         <div class="footer-copyright ">
             <div class="container white-text ">
                 © 2018
-                <a class="white-text text-lighten-4 right " href='/main'>Main</a>
+                <a class="white-text text-lighten-4 right modal-trigger" href="" data-target="contactWebmaster">Contact Webmaster</a>
             </div>
         </div>
     </footer>
@@ -85,7 +112,7 @@
         $(document).ready(function() {
             $('.collapsible').collapsible();
             $(".button-collapse").sideNav();
-
+             $('.modal').modal();
 
         });
     </script>

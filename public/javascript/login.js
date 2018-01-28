@@ -37,6 +37,80 @@ $(document).ready(function() {
       console.log(err);
     });
   }
+  
+  
+   // route to main in nav
+  $("#main").on("click", function(event) {
+    event.preventDefault();
+    // go to the profile
+    window.location.href = '/main';
+  });
+
+  // button to logout
+  $("#logout").on("click", function(event) {
+    // event.preventDefault();
+    $.get("/logout", function(data) {
+      window.location.href = '/login';
+    });
+  });
+
+
+
+  // view profile button
+  $("#myProfile").on("click", function(event) {
+    event.preventDefault();
+    // go to the profile
+    window.location.href = '/userProfile';
+  });
+
+    var sender;
+    var username;
+    // initialize modal
+    $('select').material_select();
+    $('#webmasterModal').modal()
+
+
+    // when you click on submitMessage in modal
+    $("#submitMessage").on("click", function(event) {
+        event.preventDefault();
+     
+        // message to be sent
+        let message = $("#message").val().trim();
+        // get the sender information
+        $.get("api/user_data", {}, function(data) {
+            console.log(data);
+            sender = data.email;
+            username = data.username;
+            console.log("sender: " + sender + "  username: " + username);
+        }).done(function() {
+            
+        // send the message
+        $.get("/send", {
+                to: "joshjanculawebpage@gmail.com",
+                subject: "New Message",
+                html: "<h4>" + "email: " + sender + "</h4>" +
+                      "<h4>" + "name: " + username + "</h4>" +
+                      "<p>" + "message: " + message + "</p>"
+
+            },
+            function(data) {
+                if (data == "sent") {
+                    console.log("Great Success!");
+                }
+            });
+        // close the modal 
+        $('#contactWebmaster').modal('close');
+        // clear text box
+        $("#message").val("")
+    });
+
+   });
+
+  
+  
+  
+  
+  
 
 });
 var hotbod = document.querySelector("body");

@@ -46,6 +46,8 @@ $(document).ready(function() {
             });
         // close the modal 
         $('#contactModal').modal('close');
+        // empty text field
+        $("#message").val("");
     });
 
    });
