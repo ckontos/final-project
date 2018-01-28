@@ -92,7 +92,7 @@ window.onload = function() {
 
         var div = $("<div>").append(
           "<div class='row'>" +
-          "<div class='col s10'>" + "<div class='card horizontal'>" + "<div class='card-image'>" + "<img src='https://www.ctvnews.ca/polopoly_fs/1.1640896.1389819488!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg'>" +
+          "<div class='col s10'>" + "<div class='card horizontal'>" + "<div class='card-image'>" + "<img src="+ result.userImage + ">" +
           "</div>" +
           "<div class='card-stacked'>" + "<div class='card-content'>" +
           "<h2>" + result.userFirstName + "</h2>" +
