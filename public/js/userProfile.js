@@ -6,9 +6,10 @@
 $(document).ready(function() {
   $('.modal').modal();
   $('select').material_select();
-c
   /* global firebase */
-
+  /* global Firebase */
+  
+   
 
   $.get("api/user_data", {}, function(data) {
     console.log("getting all user_data: " + data);
