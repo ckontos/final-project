@@ -6,13 +6,66 @@
 $(document).ready(function() {
   $('.modal').modal();
   $('select').material_select();
-
-
+  /* global firebase */
+  /* global Firebase */
+  
+   
 
   $.get("api/user_data", {}, function(data) {
     console.log("getting all user_data: " + data);
-
-
+    var config = {
+   apiKey: "AIzaSyBPF8oijoFmwqXhADisW_z9OJUb46kkmZM",
+   authDomain: "jam-clash.firebaseapp.com",
+   databaseURL: "https://jam-clash.firebaseio.com",
+   projectId: "jam-clash",
+   storageBucket: "jam-clash.appspot.com",
+   messagingSenderId: "135488279188"
+      };
+   firebase.initializeApp(config);
+  
+  // get elemtents
+  
+  var uploader = document.getElementById('uploader');
+  var fileButton = document.getElementById('fileButton');
+  
+  
+  //listen for file selection
+  fileButton.addEventListener('change', function(e) {
+      //get file
+  var file = e.target.files[0];
+      // create a storage ref
+  var storageRef = firebase.storage().ref('profileImages/' + data.email +'/+file_name') 
+  var path = ('profileImages/' + data.email +'/+file_name')
+  console.log(path)
+  
+      //upload file
+  var task = storageRef.put(file);
+  storageRef.getDownloadURL().then(function(url){
+    console.log(url)
+    var img = document.getElementById("profilePic");
+    img.src = url
+  })
+      // update progress bar
+  task.on('state_changed',
+      
+      function progress(snapshot) {
+          var percentage = (snapshot.bytesTransferred /
+          snapshot.totalBytes) * 100;
+          uploader.value = percentage;
+          
+      },
+      function error(err) {
+          throw err
+      },
+      function complete() {
+          
+      }
+      
+  )
+  
+  })
+  
+  
     // Sets account info into account info card
     $("#username").text(data.username);
     $("#name").text((data.userFirstName) + " " + (data.userLastName));
@@ -22,7 +75,7 @@ $(document).ready(function() {
     $("#inBand").text(data.isBand);
     $("#searchingFor").text(data.searchingFor);
     $("#about").text(data.about);
-    $(".profilePic").attr("src", data.userImage);
+    
 
     // set value in delete
 
