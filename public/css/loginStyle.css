@@ -175,8 +175,9 @@ span1
     opacity: 1;
 
     filter: alpha(opacity=100);
-    
+
 }
+
 
 #questions {
     overflow: auto;
