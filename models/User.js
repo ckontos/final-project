@@ -71,7 +71,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
      userImage: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
       allowNull: true
     }
     
