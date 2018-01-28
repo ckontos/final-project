@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="./css/loginStyle.css" type="text/css" />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -14,6 +15,8 @@
         <nav class="blue-grey darken-2">
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo" style="margin-left: 10px;">Jam-Clash</a>
+                <a href="#" data-activates="slide-out" class="button-collapse show-on-med-and-down"><i class="material-icons">menu</i></a>
+
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="#" id="myProfile">My Profile</a></li>
                     <li><a href="#" id="main">Main</a></li>
@@ -21,9 +24,22 @@
                 </ul>
             </div>
         </nav>
+
+      
+        
+         <!--sideNav hidden on large scrrens-->
+      
+        <ul id="slide-out" class="side-nav hide-on-large blue-grey darken-2">
+       <li><a href="/main" class="white-text" id="mainSide">Main</a></li>
+        <li><a href="/userProfile" class="white-text" id="myProfileSide">My Profile</a></li>
+        <li><a href="/logout" class="white-text" id="logoutSide">Logout</a></li>
+    </ul>
+   
+    <!--end side nav-->
+
         <div class="row">
-            <div class="container col s3"></div>
-            <div class="container col s6 center-align">
+            <div class="container col m3"></div>
+            <div class="container col m6 center-align">
                 <div class="card blue-grey darken-2" id="questions">
                     <div class="card-content white-text">
                         <span class="card-title">Frequently Asked Questions</span>
@@ -34,26 +50,29 @@
                         <h5>What should I do if I notice any innapropriate content or activity?</h5>
                         <p>You can either contact the webmaster or grow a set and move on with life.</p>
                         <h5>I accidentally deleted my accout, what now?</h5>
-                        <p>Sorry, we asked you a second time if you wanted to delete it and said it cannot be undone. Suck it up and deal with it.</p>
+                        <p>Sorry, we asked you if you were sure that you wanted to delete it and said it cannot be undone. Suck it up and deal with it.</p>
                         <h5>I am moving to another city, how will others know how close I am if I'm in a new state?</h5>
-                        <p>You can either quickly delete and recreate your account to get a new location added to your profile. Or our browser gets your current GPS location every time you search. So if you're profile says you live in North Carolina but you are currently in Colorado, you will only get results within your area.</p>
+                        <p>You can either quickly delete and recreate your account to get a new location added to your profile. Or our browser gets your current GPS location every time you search. So if you're profile says you live in North Carolina but
+                            you are currently in Colorado, you will only get results within your area.</p>
                         <h5>My profile isn't updating....</h5>
                         <p>First check to make sure all required fields are complete before submitting and if they are and the problem exists contact the webmaster.</p>
+                        <h5>Why does it log me out whenever I update my profile?</h5>
+                        <p>In order to update and display your new changes you we automatically log you out and update your account. You can log right back in with no problem, sorry for the inconvenience.</p>
                         <div class="row">
-                           
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container col s3"></div>
+            <div class="container col m3"></div>
         </div>
     </main>
 
-    <footer class="page-footer blue-grey lighten-3">
-        <div class="footer-copyright">
-            <div class="container black-text">
+    <footer class="page-footer blue-grey darken-2 ">
+        <div class="footer-copyright ">
+            <div class="container white-text ">
                 © 2018
-                <a class="black-text text-lighten-4 right" href="/main">Home</a>
+                <a class="white-text text-lighten-4 right " href='/main'>Main</a>
             </div>
         </div>
     </footer>
@@ -61,6 +80,15 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="./javascript/login.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.collapsible').collapsible();
+            $(".button-collapse").sideNav();
+
+
+        });
+    </script>
 </body>
 
 </html>

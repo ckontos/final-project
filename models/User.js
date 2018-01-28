@@ -72,8 +72,10 @@ module.exports = function(sequelize, DataTypes) {
     },
      userImage: {
       type: DataTypes.STRING,
+
       allowNull: true,
       isUrl: true
+
     }
     
   });
