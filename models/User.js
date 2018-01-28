@@ -71,8 +71,9 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
      userImage: {
-      type: DataTypes.BLOB,
-      allowNull: true
+      type: DataTypes.STRING,
+      allowNull: true,
+      isUrl: true
     }
     
   });

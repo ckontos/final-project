@@ -14,6 +14,19 @@ app.get("/api/users", function(req, res) {
     });
   });
   
+  app.put("/api/userPhoto", function(req, res) {
+      console.log("+++++++++++++++++++")
+      console.log(req.body.path)
+      console.log(req.body.email)
+      db.User.update({
+        userImage: req.body.path
+      }, {
+      where: {
+        email: req.body.email
+      }
+    })
+  })
+  
   //get user by username
   app.get("/api/users/username/:username", function(req, res) {
   
