@@ -38,6 +38,20 @@ app.get("/api/users", function(req, res) {
       res.json(dbUser);
     });
   });
+  
+  
+  //get user by email
+  app.get("/api/users/email/:email", function(req, res) {
+  
+    db.User.findOne({
+      where: {
+        email: req.params.email
+      } 
+    }).then(function(dbUser) {
+      res.json(dbUser);
+     
+    });
+  });
 
 // Route for logging user out
   app.get("/logout", function(req, res) {

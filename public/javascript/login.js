@@ -101,18 +101,18 @@ $(document).ready(function() {
         // close the modal 
         $('#contactWebmaster').modal('close');
         // clear text box
-        $("#message").val("")
+        $("#message").val("");
     });
 
    });
+   
+   
 
-  
-  
-  
-  
   
 
 });
+
+
 var hotbod = document.querySelector("body");
 
 function doStuff() {
@@ -122,3 +122,46 @@ function doStuff() {
 window.onload = function() {
     doStuff();
 };
+
+
+
+
+  // when the user forgets password
+  $("#getPassword").on("click", function() {
+  event.preventDefault();
+    // get the users email
+    var email = $("#forgot").val().trim();
+   
+      $.get("/api/users/email/" + email, function(data, err) {
+      if (err != "success") {// if theres an error...
+        console.log(err);
+      }
+      else{// get password 
+       console.log(data);
+       
+      }
+      // now send them their password
+    }).done(function(data) {
+      console.log("sending lost password: email= " + data.email + " password= " + data.password);
+       // send the message
+        $.get("/send", {
+                to: data.email,
+                subject: "Your Password",
+                html: "<p>" + "Your password is: " + data.password + "</p>"
+
+            },
+            function(data) {
+                if (data == "sent") {
+                    console.log("Great Success!");
+                }
+            });
+        // close the modal 
+        $('#forgotPassword').modal('close');
+        // clear text box
+        $("#forgot").val("")
+      
+    })
+    
+  })
+  
+  
