@@ -58,12 +58,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     genre: {// what music they're into
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         len: [1]
     },
     about: {// a bit about the user
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
         len: [1]
     },
     userLocation: {
@@ -75,8 +75,24 @@ module.exports = function(sequelize, DataTypes) {
 
       allowNull: true,
       isUrl: true
-
-    }
+    },
+     faceBook: {// link to facebook
+        type: DataTypes.TEXT,
+        allowNull: true,
+        len: [1]
+    },
+     reverbNation: {// link to reverbNation
+        type: DataTypes.TEXT,
+        allowNull: true,
+        len: [1]
+    },
+     
+      soundCloud: {// link to soundcloud
+        type: DataTypes.TEXT,
+        allowNull: true,
+        len: [1]
+    },
+     
     
   });
  User.prototype.validPassword = function(password) {
