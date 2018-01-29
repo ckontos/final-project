@@ -1,21 +1,26 @@
 var Article = require("../models/musicNews.js");
 var request = require("request");
 var cheerio = require("cheerio");
+var path = require("path");
 
 
 
 module.exports = function(app) {
-app.get('/scrape', function(req, res) {
-  request("http://rockmusic.com/", function(error, response, html) {
+app.get('/search', function(req, res) {
+  request("https://www.npr.org/series/100920965/music-articles/", function(error, response, html) {
     var $ = cheerio.load(html);
 
     $("article").each(function(i, element){
       var result = {};
-
-      result.title = $(this).children  ("header").children("h4").children("a").text();
+      result.image = $(this).children (".item-image").children(".imagewrap").children("a").children("img").attr("src");
+      console.log(result.image)
+      result.title = $(this).children  (".item-info").children("h2").children("a").text();
       if (result.title != "" && result.title != null) {
-        result.link = $(this).children("header").children("h4").children("a").attr("href");
-        result.summary = $(this).children(".entry-summary").children("p").text();
+
+        console.log("*********")
+        
+        result.link = $(this).children(".item-info").children("h2").children("a").attr("href");
+        result.summary = $(this).children(".item-info").children("p").text();
         //Checks to see if the article is already in the database, and if it isn't then it adds it
         Article.findOne({title: result.title}, function(err, doc) {
           if (doc == null) {
@@ -26,7 +31,7 @@ app.get('/scrape', function(req, res) {
                 console.log(err);
               }
               else {
-                console.log(doc);
+                //console.log(doc);
               }
             });
           }
@@ -39,7 +44,8 @@ app.get('/scrape', function(req, res) {
       }
     });
   });
-  res.send("Scrape Complete");
+  res.sendFile(path.join(__dirname, "../public/search.html"));
+  // res.send("Scrape Complete");
 });
 
 

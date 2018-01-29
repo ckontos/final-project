@@ -13,9 +13,10 @@ function renderNews(data) {
         $("#news").show();
         
         data.forEach(function(result) {
+            console.log("----------------------"+JSON.stringify(result))
             var div1 = $("<div>").append(
           "<div class='row'>" +
-          "<div class='col s10'>" + "<div class='card'>" + "<div class='card-image'>" + 
+          "<div class='col s10'>" + "<div class='card'>" + "<div class='card-image'>" + "<img src="+ result.image + ">" +
           "</div>" +
           "<div class='card-stacked'>" + "<div class='card-content'>" +
           "<h2>" + result.title + "</h2>" +
