@@ -129,7 +129,7 @@ function doStuff() {
    
     // get the users email
     var email = $("#forgot").val().trim(); // these are possible new passwords
-    var passwords = ["newpass", "hello", "dont4get", "word", "keepthis", "tryagain", "kitten", "dolphin", "hollabacksquirrel", "penguin", "alpha", "beta", "zeta", "test1234"];
+    var passwords = ["newPass", "hello", "dont4get", "word", "keepThis", "tryAgain", "kitten", "dolphin", "hollaBackSquirrel", "penguin", "alpha", "beta", "zeta", "test1234", "nadaMas", "qwerty", "hereYouGo", "cocoPuff", "dophPoodle", ];
    // get a random password for them
    var passwordValue = passwords[Math.floor(Math.random() * passwords.length)]
     var newPassword = passwordValue
