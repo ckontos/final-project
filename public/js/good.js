@@ -23,9 +23,16 @@ function renderNews(data) {
         
         data.forEach(function(result) {
             var div1 = $("<div>").append(
-                "<div class ='row'>" +
-                "<h1>" + result.title + "</h2>" +
-                "</div>"
+          "<div class='row'>" +
+          "<div class='col s10'>" + "<div class='card'>" + "<div class='card-image'>" + "<img src="+ + ">" + 
+          "</div>" +
+          "<div class='card-stacked'>" + "<div class='card-content'>" +
+          "<h2>" + result.title + "</h2>" +
+          "<p> Summary : " + result.summary + "</p>" +
+          "<p> Link : " + result.link + ' miles away' + "</p>" +
+          "</div>" +
+          "</div>" +
+          "</div>"
                 );
                 
                 $("#news").append(div1);

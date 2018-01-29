@@ -6,16 +6,16 @@ var cheerio = require("cheerio");
 
 module.exports = function(app) {
 app.get('/scrape', function(req, res) {
-  request("www.rollingstone.com", function(error, response, html) {
+  request("http://rockmusic.com/", function(error, response, html) {
     var $ = cheerio.load(html);
 
     $("article").each(function(i, element){
       var result = {};
 
-      result.title = $(this).children  ("header").children("h1").children("a").text();
+      result.title = $(this).children  ("header").children("h4").children("a").text();
       if (result.title != "" && result.title != null) {
-        result.link = $(this).children("header").children("h1").children("a").attr("href");
-        result.summary = $(this).children(".item__content").children(".entry-summary").children("p").text();
+        result.link = $(this).children("header").children("h4").children("a").attr("href");
+        result.summary = $(this).children(".entry-summary").children("p").text();
         //Checks to see if the article is already in the database, and if it isn't then it adds it
         Article.findOne({title: result.title}, function(err, doc) {
           if (doc == null) {

@@ -15,10 +15,6 @@ var ArticleSchema = new Schema({
   link: {
     type: String,
     required: true
-  },
-  saved: {
-    type: Boolean,
-    default: false
   }
 });
 
