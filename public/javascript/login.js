@@ -110,7 +110,7 @@ $(document).ready(function() {
 
   
 
-});
+
 
 
 var hotbod = document.querySelector("body");
@@ -119,39 +119,40 @@ function doStuff() {
     hotbod.className += " animate";
 }
 
-window.onload = function() {
-    doStuff();
-};
+ doStuff();
 
 
-
-
+ 
   // when the user forgets password
   $("#getPassword").on("click", function() {
   event.preventDefault();
-    // get the users email
-    var email = $("#forgot").val().trim();
    
-      $.get("/api/users/email/" + email, function(data, err) {
-      if (err != "success") {// if theres an error...
-        console.log(err);
-      }
-      else{// get password 
-       console.log(data);
-       
+    // get the users email
+    var email = $("#forgot").val().trim(); // these are possible new passwords
+    var passwords = ["newpass", "hello", "dont4get", "word", "keepthis", "tryagain", "kitten", "dolphin", "hollabacksquirrel", "penguin", "alpha", "beta", "zeta", "test1234"];
+   // get a random password for them
+   var passwordValue = passwords[Math.floor(Math.random() * passwords.length)]
+    var newPassword = passwordValue
+    
+    console.log("new password is: "  + passwordValue)
+     $.ajax({
+      method: "PUT",
+      url: "/api/users/email/" + email,
+      data: {
+        email: email,
+        password: newPassword
       }
       // now send them their password
-    }).done(function(data) {
-      console.log("sending lost password: email= " + data.email + " password= " + data.password);
+    }).done(function() {
+      console.log("sending new password: email= " + email + " password= " + passwordValue);
        // send the message
         $.get("/send", {
-                to: data.email,
-                subject: "Your Password",
-                html: "<p>" + "Your password is: " + data.password + "</p>"
-
+                to: email,
+                subject: "Your New Password",
+                html: "<p>" + "Your password new is: " + passwordValue + "</p>"
             },
             function(data) {
-                if (data == "sent") {
+                if (data !== "sent") {
                     console.log("Great Success!");
                 }
             });
@@ -164,4 +165,4 @@ window.onload = function() {
     
   })
   
-  
+});
