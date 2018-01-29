@@ -41,16 +41,7 @@ app.get('/scrape', function(req, res) {
   });
   res.send("Scrape Complete");
 });
-//     app.get("/search", function(req, res) {
-//   Article.find({"saved": false}, function(error, data) {
-//     if(error) {
-//       console.log(error);
-//     }
-//       else {
-//         res.render("/search")
-//       }
-//   });
-// });
+
 
 app.get("/articles", function(req, res) {
   // Grab every doc in the Articles array
@@ -65,5 +56,20 @@ app.get("/articles", function(req, res) {
     }
   });
 });
+
+
+
+// delete all articles
+app.delete("/articles/deleteAll", function(req, res) {
+  // Remove all the articles
+  Article.remove( { } ).then(function(err) {
+    res.json(err);
+  })
+  
+    
+});
+
+
+
 }
 
