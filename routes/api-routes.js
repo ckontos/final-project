@@ -1,5 +1,9 @@
 var passport = require("../config/passport");
 var db = require("../models");
+var Promise = require('bluebird');
+var bcrypt = Promise.promisifyAll(require('bcrypt-nodejs'));
+
+
 
 module.exports = function(app) {
     
@@ -40,19 +44,27 @@ app.get("/api/users", function(req, res) {
   });
   
   
-  //get user by email
-  app.get("/api/users/email/:email", function(req, res) {
-  
-    db.User.findOne({
+  // update password when user forgets theirs
+  app.put("/api/users/email/:email", function(req, res) {
+    console.log("beginning of email put route: " + JSON.stringify(req.body));
+    db.User.update({ // update password
+      password: bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10), null)
+    }, { // update it by email provided
       where: {
-        email: req.params.email
-      } 
+        email: req.body.email
+      }
     }).then(function(dbUser) {
+      console.log("working inside password update in api/routes: " + dbUser);
       res.json(dbUser);
-     
+    })
+    .catch(function(err) {
+      console.log("in the catch in email put route   " + err);
+      res.json(err);
     });
   });
-
+  
+  
+  
 // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
@@ -80,7 +92,10 @@ app.get("/api/users", function(req, res) {
         searchingFor: req.user.searchingFor,
         genre: req.user.genre,
         about: req.user.about,
-        userImage: req.user.userImage
+        userImage: req.user.userImage,
+        faceBook: req.user.faceBook,
+        reverbNation: req.user.reverbNation,
+        soundCloud: req.user.soundCloud
         
         
       });
@@ -115,7 +130,10 @@ app.get("/api/users", function(req, res) {
       genre: req.body.genre,
       about: req.body.about,
       userLocation: req.body.userLocation,
-      userImage: req.body.userImage
+      userImage: req.body.userImage,
+      faceBook: req.body.faceBook,
+      reverbNation: req.body.reverbNation,
+      soundCloud: req.body.soundCloud
     }).then(function(dbUser) {
            console.log("at the end of api/users");
       res.json(dbUser);
@@ -140,22 +158,6 @@ app.get("/api/users", function(req, res) {
 
   });
 
-// app.get('/api/users/', function(req, res){
-//   console.log("****++++******")
-//   console.log(req.query)
-//   let where = {}
-  
-//   db.User.findAll({
-//     where: {
-//       userFirstName: req.params.userFirstName,
-//       isBand: req.params.isBand,
-//       instrumentsPlayed: req.params.instrumentsPlayed
-      
-//     }
-//   }).then(function(dbUser) {
-//     res.json(dbUser)
-//   })
-// })
 
  // PUT route for updating user profile
   app.put("/api/users/username", function(req, res) {
@@ -168,7 +170,10 @@ app.get("/api/users", function(req, res) {
       instrumentsPlayed: req.body.instrumentsPlayed,
       searchingFor: req.body.searchingFor,
       genre: req.body.genre,
-      about: req.body.about
+      about: req.body.about,
+      faceBook: req.body.faceBook,
+      reverbNation: req.body.reverbNation,
+      soundCloud: req.body.soundCloud
     }, { // update it by id
       where: {
         username: req.body.username

@@ -92,7 +92,7 @@ window.onload = function() {
 
         var div = $("<div>").append(
           "<div class='row'>" +
-          "<div class='col s10'>" + "<div class='card horizontal'>" + "<div class='card-image'>" + "<img src="+ result.userImage + ">" +
+          "<div class='col s10'>" + "<div class='card'>" + "<div class='card-image'>" + "<img src="+ result.userImage + ">" + 
           "</div>" +
           "<div class='card-stacked'>" + "<div class='card-content'>" +
           "<h2>" + result.userFirstName + "</h2>" +
@@ -167,6 +167,10 @@ window.onload = function() {
       $("#inBand").text(data.isBand);
       $("#about").text(data.about);
       $(".profilePic").attr("src", data.userImage);
+      $("#userStuff").append("<a href='" + data.faceBook + "'>" + "FaceBook" + '</a>' + "<br>");
+      $("#userStuff").append("<a href='" + data.reverbNation + "'>" + "Reverb Nation" + '</a>' + "<br>");
+      $("#userStuff").append("<a href='" + data.soundCloud + "'>" + "SoundCloud" + '</a>');
+
     });
     }
 

@@ -26,10 +26,10 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/register.html"));
   });
   
-   // takes you to the search
-  app.get("/search", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/search.html"));
-  });
+  // takes you to the search
+  // app.get("/search", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/search.html"));
+  // });
   
    // takes you to the main
   app.get("/main", function(req, res) {
