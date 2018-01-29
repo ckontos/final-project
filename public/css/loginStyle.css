@@ -184,3 +184,23 @@ span1
     display: flex;
 
 }
+
+@media screen and (max-width: 750px) and (min-width: 200px) {
+    .test{
+        display: none;
+    
+    }
+    #userLogin{
+        text-align: center;
+        margin-top: 5px;
+        margin: 5px 5px 5px 5px;
+        /*overflow: auto;*/
+        border-radius: 40px;
+}
+.card{
+       margin-top: 5px;
+        margin: 5px 5px 5px 50px;
+        /*overflow: auto;*/
+        border-radius: 40px;
+}
+}
