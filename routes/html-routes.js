@@ -27,9 +27,9 @@ module.exports = function(app) {
   });
   
   // takes you to the search
-  app.get("/search", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/search.html"));
-  });
+  // app.get("/search", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/search.html"));
+  // });
   
    // takes you to the main
   app.get("/main", function(req, res) {
