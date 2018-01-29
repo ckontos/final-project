@@ -82,6 +82,12 @@ $(document).ready(function() {
     $("#inBand").text(data.isBand);
     $("#searchingFor").text(data.searchingFor);
     $("#about").text(data.about);
+    $("#reverbNation").text(data.reverbNation);
+    $("#soundCloud").text(data.soundCloud);
+    $("#userStuff").append("<a href='" + data.faceBook + "'>" + "FaceBook" + '</a>' + "<br>"); 
+    $("#userStuff").append("<a href='" + data.reverbNation + "'>" + "Reverb Nation" + '</a>' + "<br>");
+    $("#userStuff").append("<a href='" + data.soundCloud + "'>" + "SoundCloud" + '</a>' );
+
     
 
     // set value in delete
@@ -99,7 +105,9 @@ $(document).ready(function() {
 
     $("#instrumentsPlayedModal").val(data.instrumentsPlayed);
     $("#instrumentsPlayedModal").material_select();
-
+    $("#reverbNationModal").text(data.reverbNation);
+    $("#soundCloudModal").text(data.soundCloud);
+    $("#faceBookModal").text(data.faceBook);
 
     $("#searchingForModal").val(data.searchingFor);
     $("#searchingForModal").material_select();
@@ -127,6 +135,9 @@ $(document).ready(function() {
     var instrumentsPlayed = $("#instrumentsPlayedModal").val();
     var searchingFor = $("#searchingForModal").val();
     var username = $("#usernameModal").val();
+    var faceBook = $("#faceBook").val();
+    var soundCloud = $("#soundCloud").val();
+    var reverbNation = $("#reverbNation").val()
     event.preventDefault();
 
     console.log("isBand content in form: " + isBand);
@@ -143,7 +154,10 @@ $(document).ready(function() {
       isBand: isBand,
       instrumentsPlayed: instrumentsPlayed,
       searchingFor: searchingFor,
-      username: username
+      username: username,
+      faceBook: faceBook,
+      reverbNation: reverbNation,
+      soundCloud: soundCloud
     };
 
     console.log("about to update the user line 75: " + JSON.stringify(editedInfo));
@@ -159,6 +173,9 @@ $(document).ready(function() {
     $("#isBandModal").val("")
     $("#instrumentsPlayedModal").val("")
     $("#searchingForModal").val("")
+    $("#faceBook").val("");
+    $("#soundCloud").val("");
+    $("#reverbNation").val("")
   };
 
 
