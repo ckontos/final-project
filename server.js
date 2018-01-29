@@ -30,6 +30,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
+
+app.use(express.static("react-ad/build/static"));
 app.use(express.static("public"));
 
 // Routes
