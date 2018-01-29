@@ -1,5 +1,9 @@
 var passport = require("../config/passport");
 var db = require("../models");
+var Promise = require('bluebird');
+var bcrypt = Promise.promisifyAll(require('bcrypt-nodejs'));
+
+
 
 module.exports = function(app) {
     
@@ -40,19 +44,27 @@ app.get("/api/users", function(req, res) {
   });
   
   
-  //get user by email
-  app.get("/api/users/email/:email", function(req, res) {
-  
-    db.User.findOne({
+  // update password when user forgets theirs
+  app.put("/api/users/email/:email", function(req, res) {
+    console.log("beginning of email put route: " + JSON.stringify(req.body));
+    db.User.update({ // update password
+      password: bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10), null)
+    }, { // update it by email provided
       where: {
-        email: req.params.email
-      } 
+        email: req.body.email
+      }
     }).then(function(dbUser) {
+      console.log("working inside password update in api/routes: " + dbUser);
       res.json(dbUser);
-     
+    })
+    .catch(function(err) {
+      console.log("in the catch in email put route   " + err);
+      res.json(err);
     });
   });
-
+  
+  
+  
 // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
