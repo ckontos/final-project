@@ -3,9 +3,18 @@ var session = require("express-session");
 var bodyParser = require('body-parser')
 var cors = require('cors')
 var morgan = require('morgan')
+var logger = require("morgan");
+var mongoose = require("mongoose");
+var path = require('path');
 // var {sequelize} = require('./models')
 // var config = require('./config/config')
+
+var Article = require("./models/musicNews.js");
+
 var passport = require("./config/passport");
+
+var request = require("request");
+var cheerio = require("cheerio");
 
 // Sets up the Express App
 // =============================================================
@@ -35,9 +44,11 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 // require('./routes')(app)
+// require("./routes/scraper-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 require("./routes/email-routes.js")(app);
+
 
 // Syncing sequelize models and then starting our Express app
 // =============================================================
@@ -46,3 +57,15 @@ db.sequelize.sync({}).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+
+
+
+
+
+
+
+// Create a new note
+
+
+
