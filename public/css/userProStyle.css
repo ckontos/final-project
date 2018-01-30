@@ -6,8 +6,9 @@ html {
     border-radius: 60px;
     /*padding: 80px;*/
     margin-top: 50px;
-    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
-    opacity: .6;
+
+    box-shadow: 0 10px 25px 0 black, 0 10px 100px 0 black;
+
 
 }
 
@@ -20,11 +21,12 @@ html {
         }
 .userInfo {
     padding: 20px;
-    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
+
+    box-shadow: 0 10px 25px 0 black, 0 10px 25px 0 black;
     background-color: grey;
     opacity: .9;
     border-radius: 60px;
-    border: solid 1px #f06d06;
+
 }
 
 .imageBox {
@@ -65,14 +67,11 @@ main {
     border-radius: 60px;
     margin-top: 40px;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
-    opacity: .9;
-    border-radius: 60px;
-    border: solid 1px #f06d06;
 
-}
-footer{
+    border-radius: 60px;
     opacity: .9;
-}
+    border: 1px orange;
+
 
 #searchUser{
     border-radius: 60px;
@@ -84,10 +83,16 @@ footer{
     -webkit-box-shadow: 0 1px 0 0 black;
     -moz-box-shadow: 0 1px 0 0 black;
     box-shadow: 0 1px 0 0 black;
+    border: 1px orange;
+    border-radius: 60px;
+    opacity: .9;
 }
 
 .active {
     color: black!important;
+}
+footer{
+    opacity: .9;
 }
 
 .footerLink {
@@ -129,15 +134,16 @@ footer{
     margin-bottom: 10px;
 
     margin-right: 10px;
+
+    opacity: .9;
     border-radius: 60px;
-    border: solid 1px #f06d06;
 }
 
 #searchCard {
+    padding-bottom: 108px;
+    overflow: auto;
     opacity: .9;
     border-radius: 60px;
-    border: solid 1px #f06d06;
-
 }
 
 #profileContents {
@@ -145,8 +151,9 @@ footer{
     margin-top: 60px;
     margin-bottom: 5%;
 
+    opacity: .9;
     border-radius: 60px;
-
+    
 }
 
 #editProfile{
@@ -161,6 +168,10 @@ footer{
 
 #siteInfo {
     margin-top: 10%;
+}
+#questions{
+    border-radius: 60px;
+    opacity: .9;
 }
 
 #body3 {

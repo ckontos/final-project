@@ -31,7 +31,7 @@ app.get('/search', function(req, res) {
                 console.log(err);
               }
               else {
-                //console.log(doc);
+                console.log(doc);
               }
             });
           }
