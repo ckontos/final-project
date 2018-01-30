@@ -8,71 +8,75 @@ $(document).ready(function() {
   $('select').material_select();
   /* global firebase */
   /* global Firebase */
-  
-   
+
 
   $.get("api/user_data", {}, function(data) {
     console.log("getting all user_data: " + data);
     var config = {
-   apiKey: "AIzaSyBPF8oijoFmwqXhADisW_z9OJUb46kkmZM",
-   authDomain: "jam-clash.firebaseapp.com",
-   databaseURL: "https://jam-clash.firebaseio.com",
-   projectId: "jam-clash",
-   storageBucket: "jam-clash.appspot.com",
-   messagingSenderId: "135488279188"
-      };
-   firebase.initializeApp(config);
-  
-  // get elemtents
-  
-  var uploader = document.getElementById('uploader');
-  var fileButton = document.getElementById('fileButton');
-  var storageRef = firebase.storage().ref('profileImages/' + data.email +'/+file_name') 
-  
-  storageRef.getDownloadURL().then(function(url){
-  var img = document.getElementById("profilePic");
-  img.src = url
-  })
-  //listen for file selection
-  fileButton.addEventListener('change', function(e) {
-      //get file
-  var file = e.target.files[0];
-      // create a storage ref
-  // var storageRef = firebase.storage().ref('profileImages/' + data.email +'/+file_name') 
-  
-      //upload file
-  var task = storageRef.put(file);
-  storageRef.getDownloadURL().then(function(url){
-    console.log(url)
-    var updateData = {
-      email: data.email,
-      path: JSON.stringify(url)
+      apiKey: "AIzaSyBPF8oijoFmwqXhADisW_z9OJUb46kkmZM",
+      authDomain: "jam-clash.firebaseapp.com",
+      databaseURL: "https://jam-clash.firebaseio.com",
+      projectId: "jam-clash",
+      storageBucket: "jam-clash.appspot.com",
+      messagingSenderId: "135488279188"
+    };
+    firebase.initializeApp(config);
+
+    // get elemtents
+
+    var uploader = document.getElementById('uploader');
+    var fileButton = document.getElementById('fileButton');
+    var storageRef = firebase.storage().ref('profileImages/' + data.email + '/+file_name')
+
+
+    var img = document.getElementById("profilePic");
+    if (data.userImage === "./images/chicken.png") {
+      img.src = data.userImage
     }
-    updatePhoto(updateData)
-    // var img = document.getElementById("profilePic");
-    // img.src = url
-  })
+    else {
+      img.src = JSON.parse(data.userImage)
+    }
+
+    //listen for file selection
+    fileButton.addEventListener('change', function(e) {
+      //get file
+      var file = e.target.files[0];
+      // create a storage ref
+      // var storageRef = firebase.storage().ref('profileImages/' + data.email +'/+file_name') 
+
+      //upload file
+      var task = storageRef.put(file);
+      storageRef.getDownloadURL().then(function(url) {
+        console.log(url)
+        var updateData = {
+          email: data.email,
+          path: JSON.stringify(url)
+        }
+        updatePhoto(updateData)
+        // var img = document.getElementById("profilePic");
+        // img.src = url
+      })
       // update progress bar
-  task.on('state_changed',
-      
-      function progress(snapshot) {
+      task.on('state_changed',
+
+        function progress(snapshot) {
           var percentage = (snapshot.bytesTransferred /
-          snapshot.totalBytes) * 100;
+            snapshot.totalBytes) * 100;
           uploader.value = percentage;
-          
-      },
-      function error(err) {
+
+        },
+        function error(err) {
           throw err
-      },
-      function complete() {
-          
-      }
-      
-  )
-  
-  })
-  
-  
+        },
+        function complete() {
+
+        }
+
+      )
+
+    })
+
+
     // Sets account info into account info card
     $("#username").text(data.username);
     $("#name").text((data.userFirstName) + " " + (data.userLastName));
@@ -84,11 +88,11 @@ $(document).ready(function() {
     $("#about").text(data.about);
     $("#reverbNation").text(data.reverbNation);
     $("#soundCloud").text(data.soundCloud);
-    $("#userStuff").append("<a href='" + data.faceBook + "'>" + "FaceBook" + '</a>' + "<br>"); 
+    $("#userStuff").append("<a href='" + data.faceBook + "'>" + "FaceBook" + '</a>' + "<br>");
     $("#userStuff").append("<a href='" + data.reverbNation + "'>" + "Reverb Nation" + '</a>' + "<br>");
-    $("#userStuff").append("<a href='" + data.soundCloud + "'>" + "SoundCloud" + '</a>' );
+    $("#userStuff").append("<a href='" + data.soundCloud + "'>" + "SoundCloud" + '</a>');
 
-    
+
 
     // set value in delete
 
@@ -105,7 +109,7 @@ $(document).ready(function() {
 
     $("#instrumentsPlayedModal").val(data.instrumentsPlayed);
     $("#instrumentsPlayedModal").material_select();
-    $("#faceBook").html("<a href='" + data.faceBook + "'>" + "FaceBook" + '</a>' + "<br>" );
+    $("#faceBook").html("<a href='" + data.faceBook + "'>" + "FaceBook" + '</a>' + "<br>");
     $("#reverbNation").html("<a href='" + data.reverbNation + "'>" + "Reverb Nation" + '</a>' + "<br>");
     $("#soundCloud").html("<a href='" + data.soundCloud + "'>" + "SoundCloud" + '</a>');
 
@@ -183,7 +187,7 @@ $(document).ready(function() {
   // delete user account
   $("#handleDelete").click(function() {
 
-// get the users id
+    // get the users id
     $.get("api/user_data", {}, function(data) {
       var id = data.id
       console.log("email1: " + id);
@@ -203,7 +207,7 @@ $(document).ready(function() {
       method: "PUT",
       url: "/api/userPhoto",
       data: input
-    }).done(function(data){
+    }).done(function(data) {
       console.log("*************************")
       console.log(data)
     })
@@ -213,7 +217,8 @@ $(document).ready(function() {
     console.log("before updateUser ajax: " + JSON.stringify(user));
     $.ajax({
       method: "PUT",
-      url: "/api/users/username", username,
+      url: "/api/users/username",
+      username,
       data: user
     }).done(function(data) {
       console.log("data from updateUser: " + JSON.stringify(data));

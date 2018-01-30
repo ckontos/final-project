@@ -9,7 +9,8 @@ html {
     box-shadow: 0 10px 25px 0 black, 0 10px 100px 0 black;
     border-radius: 60px;
 }
-#card-image{
+
+#card-image {
     border-radius: 90px;
     margin: 2px 2px 2px 2px;
 
@@ -24,32 +25,32 @@ html {
 }
 
 .imageBox {
-  
+
     margin-left: 20px;
 }
 
 #body3 {
-display: flex;
-min-height: 100vh;
-width: 100%;
-padding: 0;
-margin: 0;
-align-content: center;
-justify-content: center;
-flex-direction: column;
-            }
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
 #uploader {
--webkit-apperance: none;
-appearance: none;
-width: 50%;
-margin-bottom: 10px;
-            }
+    -webkit-apperance: none;
+    appearance: none;
+    width: 50%;
+    margin-bottom: 10px;
+}
 
 
-#editProfile #deleteModal{
+#editProfile #deleteModal {
     margin-top: 5%px;
-   
+
 }
 
 body {
@@ -92,7 +93,8 @@ main {
 .active {
     color: black!important;
 }
-footer{
+
+footer {
     opacity: .9;
 }
 
@@ -133,36 +135,37 @@ footer{
     margin-bottom: 5%;
     opacity: .9;
     border-radius: 60px;
-    
+
 }
 
 
 #siteInfo {
     margin-top: 10%;
 }
-#questions{
+
+#questions {
     border-radius: 60px;
     opacity: .9;
 }
 
 #body3 {
-        display: flex;
-        min-height: 100vh;
-        width: 100%;
-        padding: 0;
-        margin: 6px 6px 6px 6px;
-        align-content: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-    
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 6px 6px 6px 6px;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 #uploader {
-        -webkit-apperance: none;
-        appearance: none;
-        width: 50%;
-        margin-bottom: 10px;
-    }
-    
+    -webkit-apperance: none;
+    appearance: none;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
 #modal2 {
     height: 500px;
     /*display: flex;*/
@@ -170,15 +173,39 @@ footer{
     background-image: url(http://clipart-library.com/images/6Ty5GE6ac.jpg)
 }
 
-#filebutton{
-    
+#filebutton {}
+
+#searchImage {
+    margin-top: 3%;
+    height: 245px;
 }
 
 @media screen and (max-width: 750px) and (min-width: 200px) {
-    .card-image{
+    .card-image {
         height: 300px;
         width: 250px;
         margin: 5px 5px 5px 5px;
     }
-    
+}
+
+#userImage #userCard {
+    margin-left: 5%;
+}
+
+#userCard:hover {
+    background-color: lightBlue;
+    opacity: .5;
+}
+
+.infoRow {
+    text-shadow: 2px 2px black;
+}
+
+.accountInfo {
+    color: LightSeaGreen;
+
+}
+
+#profilePic {
+    margin-top: 5%;
 }
