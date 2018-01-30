@@ -7,10 +7,9 @@
 #card-image{
     border-radius: 90px;
     margin: 2px 2px 2px 2px;
+
 }
-.card{
-    border-radius: 60px;
-}
+
 .userInfo {
     padding: 20px;
     box-shadow: 0 10px 25px 0 black, 0 10px 25px 0 black;
@@ -20,9 +19,8 @@
 }
 
 .imageBox {
+  
     margin-left: 20px;
-
-
 }
 
 #body3 {
