@@ -105,9 +105,9 @@ $(document).ready(function() {
 
     $("#instrumentsPlayedModal").val(data.instrumentsPlayed);
     $("#instrumentsPlayedModal").material_select();
-    $("#reverbNationModal").text(data.reverbNation);
-    $("#soundCloudModal").text(data.soundCloud);
-    $("#faceBookModal").text(data.faceBook);
+    $("#faceBook").html("<a href='" + data.faceBook + "'>" + "FaceBook" + '</a>' + "<br>" );
+    $("#reverbNation").html("<a href='" + data.reverbNation + "'>" + "Reverb Nation" + '</a>' + "<br>");
+    $("#soundCloud").html("<a href='" + data.soundCloud + "'>" + "SoundCloud" + '</a>');
 
     $("#searchingForModal").val(data.searchingFor);
     $("#searchingForModal").material_select();
