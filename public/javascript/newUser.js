@@ -54,6 +54,9 @@ getLocation();
     var searchingFor = $("#searchingFor").val();
     var username = $("#username").val();
     var userImage = $("#userImage").val();
+    var faceBook = $("#faceBook").val();
+    var reverbNation = $("#reverbNation").val();
+    var soundCloud = $("#soundCloud").val();
 
 
     event.preventDefault();
@@ -74,7 +77,10 @@ getLocation();
       genre: genre,
       about: about,
       userLocation: userAddress,
-      userImage: userImage
+      userImage: userImage,
+      faceBook: faceBook,
+      reverbNation: reverbNation,
+      soundCloud: soundCloud
 
 
     }; // submit the new user 
@@ -90,6 +96,9 @@ getLocation();
     $("#registerPassword").val("")
     $("#instrumentsPlayed").val("")
     $("#searchingFor").val("")
+    $("#soundCloud").val("")
+    $("#faceBook").val("")
+    $("#reverbNation").val("")
 
 
   }
