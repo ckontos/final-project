@@ -185,3 +185,16 @@ footer{
     background-color: lightBlue;
     opacity: .5;
 }
+
+.infoRow{
+    text-shadow: 2px 2px black;
+}
+
+.accountInfo{
+    color: LightSeaGreen;
+    
+}
+
+#profilePic{
+    margin-top: 5%;
+}
