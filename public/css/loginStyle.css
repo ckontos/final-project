@@ -1,3 +1,7 @@
+html { 
+    min-height: 100%;
+}
+
 #userLogin {
      overflow: auto;
     margin-top: 100px;
@@ -186,6 +190,7 @@ span1
 }
 
 footer{
+    text-align: center;
     opacity: .9;
 }
 

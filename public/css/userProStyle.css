@@ -1,3 +1,8 @@
+html { 
+    min-height: 100%;
+}
+
+
 #userImage {
     padding: 80px;
     margin-top: 50px;
@@ -49,7 +54,7 @@ margin-bottom: 10px;
 
 body {
     display: flex;
-    min-height: 100vh;
+    min-height: 100%;
     flex-direction: column;
     background-image: url(http://clipart-library.com/images/6Ty5GE6ac.jpg);
     background-repeat: no-repeat;
@@ -59,6 +64,7 @@ body {
 }
 
 main {
+    min-height: 100%;
     flex: 1 0 auto;
 }
 
@@ -107,7 +113,7 @@ footer{
 
 #stats {
     overflow: auto;
-    position: absolute;
+    position: scroll;
     height: 550px;
     margin-bottom: 10px;
     margin-right: 10px;
