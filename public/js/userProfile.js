@@ -10,7 +10,6 @@ $(document).ready(function() {
   /* global Firebase */
 
 
-
   $.get("api/user_data", {}, function(data) {
     console.log("getting all user_data: " + data);
     var config = {

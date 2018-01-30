@@ -169,11 +169,9 @@ footer {
 
 #filebutton {}
 
-
-
 #searchImage {
     margin-top: 3%;
-    height: 245px;
+    height: 24px;
 }
 
 @media screen and (max-width: 750px) and (min-width: 200px) {
@@ -182,5 +180,26 @@ footer {
         width: 250px;
         margin: 5px 5px 5px 5px;
     }
+}
 
+#userCard {
+    margin-left: 5%;
+}
+
+#userCard:hover {
+    background-color: lightBlue;
+    opacity: .5;
+}
+
+.infoRow {
+    text-shadow: 2px 2px black;
+}
+
+.accountInfo {
+    color: LightSeaGreen;
+
+}
+
+#profilePic {
+    margin-top: 5%;
 }
