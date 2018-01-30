@@ -169,9 +169,9 @@ window.onload = function() {
         $("#inBand").text(data.isBand);
         $("#about").text(data.about);
         $(".profilePic").attr("src", data.userImage);
-        $("#userStuff").append("<a href='" + data.faceBook + "'>" + "FaceBook" + '</a>' + "<br>");
-        $("#userStuff").append("<a href='" + data.reverbNation + "'>" + "Reverb Nation" + '</a>' + "<br>");
-        $("#userStuff").append("<a href='" + data.soundCloud + "'>" + "SoundCloud" + '</a>');
+        $("#userStuffMain").append("<a href='" + data.faceBook + "'>" + "FaceBook" + '</a>' + "<br>");
+        $("#userStuffMain").append("<a href='" + data.reverbNation + "'>" + "Reverb Nation" + '</a>' + "<br>");
+        $("#userStuffMain").append("<a href='" + data.soundCloud + "'>" + "SoundCloud" + '</a>');
 
       });
     }
