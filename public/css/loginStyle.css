@@ -178,10 +178,15 @@ span1
 
 }
 
+footer{
+    opacity: .9;
+}
 
 #questions {
     overflow: auto;
     display: flex;
+    border-radius: 60px;
+    opacity: .9;
 
 }
 
