@@ -2,7 +2,7 @@ window.onload = function() {
   var distanceAllowed = 60;
   var startLat;
   var startLng;
- 
+
 
   function distance(startLng, startLat, lon2, lat2, cb) {
     var R = 6371; // Radius of the earth in km
@@ -76,7 +76,7 @@ window.onload = function() {
           obj["distance"] = miles
           newData.push(obj)
         }
-        
+
       }
       console.log(newData)
       renderUsers(newData);
@@ -92,7 +92,7 @@ window.onload = function() {
 
         var div = $("<div>").append(
           "<div class='row'>" +
-          "<div class='col s10'>" + "<div class='card'>" + "<div class='card-image'>" + "<img src="+ result.userImage + ">" + 
+          "<div class='col l10 s12'>" + "<div class='card'>" + "<div class='card-image col l4 s12'>" + "<img src=" + result.userImage + ">" +
           "</div>" +
           "<div class='card-stacked'>" + "<div class='card-content'>" +
           "<h2>" + result.userFirstName + "</h2>" +
@@ -120,7 +120,7 @@ window.onload = function() {
     // go to the profile
     window.location.href = '/search';
   });
-  
+
   // route to main in nav
   $("#main").on("click", function(event) {
     event.preventDefault();
@@ -151,27 +151,27 @@ window.onload = function() {
   $('select').material_select();
   $('#viewProfileModal').modal({
     ready: function(modal, trigger) {
-      console.log("modal ready: "   )
+      console.log("modal ready: ")
       // gets the reciever email and hides it in #toEmail
 
       const username = trigger.data('id');
-        $.get("api/users/username/" + username, function(data) {
+      $.get("api/users/username/" + username, function(data) {
 
-      console.log("console logging data: " + data);
+        console.log("console logging data: " + data);
 
-      $("#username").text(data.username);
-      $("#name").text((data.userFirstName) + " " + (data.userLastName));
-      $("#email").text(data.email);
-      $("#instrument").text(data.instrumentsPlayed);
-      $("#genre").text(data.genre);
-      $("#inBand").text(data.isBand);
-      $("#about").text(data.about);
-      $(".profilePic").attr("src", data.userImage);
-      $("#userStuff").append("<a href='" + data.faceBook + "'>" + "FaceBook" + '</a>' + "<br>");
-      $("#userStuff").append("<a href='" + data.reverbNation + "'>" + "Reverb Nation" + '</a>' + "<br>");
-      $("#userStuff").append("<a href='" + data.soundCloud + "'>" + "SoundCloud" + '</a>');
+        $("#username").text(data.username);
+        $("#name").text((data.userFirstName) + " " + (data.userLastName));
+        $("#email").text(data.email);
+        $("#instrument").text(data.instrumentsPlayed);
+        $("#genre").text(data.genre);
+        $("#inBand").text(data.isBand);
+        $("#about").text(data.about);
+        $(".profilePic").attr("src", data.userImage);
+        $("#userStuff").append("<a href='" + data.faceBook + "'>" + "FaceBook" + '</a>' + "<br>");
+        $("#userStuff").append("<a href='" + data.reverbNation + "'>" + "Reverb Nation" + '</a>' + "<br>");
+        $("#userStuff").append("<a href='" + data.soundCloud + "'>" + "SoundCloud" + '</a>');
 
-    });
+      });
     }
 
   });
