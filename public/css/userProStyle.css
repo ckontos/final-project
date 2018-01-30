@@ -176,3 +176,12 @@ footer{
     }
     
 }
+
+#userCard{
+    margin-left: 5%;
+}
+
+#userCard:hover{
+    background-color: lightBlue;
+    opacity: .5;
+}
