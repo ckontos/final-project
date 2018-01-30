@@ -176,6 +176,14 @@ span1 {
 
 }
 
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px
+}
+
 @media screen and (max-width: 750px) and (min-width: 200px) {
     .test {
         display: none;
@@ -198,4 +206,6 @@ span1 {
 
 footer {
     height: 30%;
+    position: bottom;
+
 }
