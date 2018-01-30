@@ -1,54 +1,53 @@
-html {
-    min-height: 100%;
-}
-
 #userImage {
-    border-radius: 60px;
-    /*padding: 80px;*/
+    padding: 80px;
     margin-top: 50px;
-
     box-shadow: 0 10px 25px 0 black, 0 10px 100px 0 black;
-
-
+    border-radius: 60px;
 }
 
-#searchNav,
-#main,
-#logout
-        {
-            border:1px black;
-        color: teal;
-        }
+.card{
+    border-radius: 60px;
+}
 .userInfo {
     padding: 20px;
-
     box-shadow: 0 10px 25px 0 black, 0 10px 25px 0 black;
     background-color: grey;
     opacity: .9;
     border-radius: 60px;
-
 }
 
 .imageBox {
     margin-left: 20px;
 
 }
-.img{
-    height: 100px;
-    border: solid 1px #f06d06;
+
+#body3 {
+display: flex;
+min-height: 100vh;
+width: 100%;
+padding: 0;
+margin: 0;
+align-content: center;
+justify-content: center;
+flex-direction: column;
+            }
+
+#uploader {
+-webkit-apperance: none;
+appearance: none;
+width: 50%;
+margin-bottom: 10px;
+            }
+
+
+#editProfile #deleteModal{
+    margin-top: 5%px;
+   
 }
-
-#editProfile #deleteModal {
-
-    margin-top: 5px;
-
-}
-
-
 
 body {
     display: flex;
-    min-height: 100%;
+    min-height: 100vh;
     flex-direction: column;
     background-image: url(http://clipart-library.com/images/6Ty5GE6ac.jpg);
     background-repeat: no-repeat;
@@ -59,22 +58,16 @@ body {
 
 main {
     flex: 1 0 auto;
-    min-height: 100%;
 }
 
 #searchCard,
 #stats {
-    border-radius: 60px;
     margin-top: 40px;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
-
     border-radius: 60px;
     opacity: .9;
     border: 1px orange;
 
-
-#searchUser{
-    border-radius: 60px;
 }
 
 #locationSearchInput:focus,
@@ -99,7 +92,6 @@ footer{
     color: black;
 }
 
-
 [type="radio"]:checked+label:after,
 [type="radio"].with-gap:checked+label:after {
     background-color: #90a4ae;
@@ -111,30 +103,12 @@ footer{
     border: 2px solid #90a4ae;
 }
 
-.collapsible-header{
-    background-color: #008CBA; /* Green */
-    border: none;
-    margin: 10px 10px 10px 10px;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    border-radius: 9px;
-    font-size: 16px;
-
-}
 #stats {
-    border-radius: 60px;
-    opacity: .9;
-    overflow: scroll;
-    /*position: absolute;
-    */
+    overflow: auto;
+    position: absolute;
     height: 550px;
     margin-bottom: 10px;
-
     margin-right: 10px;
-
     opacity: .9;
     border-radius: 60px;
 }
@@ -147,24 +121,13 @@ footer{
 }
 
 #profileContents {
-    opacity: .6;
     margin-top: 60px;
     margin-bottom: 5%;
-
     opacity: .9;
     border-radius: 60px;
     
 }
 
-#editProfile{
-    border-radius: 60px;
-}
-#editImages{
-    border-radius: 60px;
-}
-#deleteBtn{
-    border-radius: 60px;
-}
 
 #siteInfo {
     margin-top: 10%;
@@ -175,23 +138,23 @@ footer{
 }
 
 #body3 {
-    display: flex;
-    min-height: 100vh;
-    width: 100%;
-    padding: 0;
-    margin: 6px 6px 6px 6px;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
+        display: flex;
+        min-height: 100vh;
+        width: 100%;
+        padding: 0;
+        margin: 6px 6px 6px 6px;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
 #uploader {
-    -webkit-apperance: none;
-    appearance: none;
-    width: 50%;
-    margin-bottom: 10px;
-}
-
+        -webkit-apperance: none;
+        appearance: none;
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    
 #modal2 {
     height: 500px;
     /*display: flex;*/
@@ -199,33 +162,15 @@ footer{
     background-image: url(http://clipart-library.com/images/6Ty5GE6ac.jpg)
 }
 
-#filebutton {}
-
-
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3%;
-    height: 100%;
-  
-    
+#filebutton{
     
 }
 
-
-@media screen and (max-width: 500px) and (min-width: 200px) {
-    img {
-       
-        width: 200px;
+@media screen and (max-width: 750px) and (min-width: 200px) {
+    .card-image{
+        height: 300px;
+        width: 250px;
         margin: 5px 5px 5px 5px;
     }
-
-}
-
-
-
-
-.footLink {
-    margin-top: 20px;
+    
 }
