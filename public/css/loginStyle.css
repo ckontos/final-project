@@ -101,7 +101,9 @@ body1
 
     color: #fc0;
 }
-
+#card-image{
+    border-radius: 60px;
+}
 .animate .ks
 {
     -webkit-transform: translateX(0);

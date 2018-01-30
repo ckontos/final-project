@@ -4,7 +4,10 @@
     box-shadow: 0 10px 25px 0 black, 0 10px 100px 0 black;
     border-radius: 60px;
 }
-
+#card-image{
+    border-radius: 90px;
+    margin: 2px 2px 2px 2px;
+}
 .card{
     border-radius: 60px;
 }
@@ -18,6 +21,7 @@
 
 .imageBox {
     margin-left: 20px;
+
 
 }
 
