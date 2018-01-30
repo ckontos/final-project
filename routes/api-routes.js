@@ -197,7 +197,7 @@ app.get("/api/users", function(req, res) {
       if (req.query.instrumentsPlayed) {
         //all true
         return where = {
-          userFirstName: req.query.userFirstName,
+          username: req.query.username,
           isBand: req.query.isBand,
           instrumentsPlayed: req.query.instrumentsPlayed
         }
@@ -205,20 +205,20 @@ app.get("/api/users", function(req, res) {
       else{
         //first 2 true last false
         return where = {
-          userFirstName: req.query.userFirstName,
+          username: req.query.username,
           isBand: req.query.isBand
         }
       }
     } else if (req.query.instrumentsPlayed) {
       //first and 3rd true 2nd false
       return where = {
-        userFirstName: req.query.userFirstName,
+        username: req.query.username,
         instrumentsPlayed: req.query.instrumentsPlayed
       }
     } else {
       //first true
       return where = {
-        userFirstName: req.query.userFirstName
+        username: req.query.username
       }
     }
   }

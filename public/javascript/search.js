@@ -1,5 +1,5 @@
 window.onload = function() {
-  var distanceAllowed = 60;
+  // var distanceAllowed = 60;
   var startLat;
   var startLng;
 
@@ -48,13 +48,15 @@ window.onload = function() {
   //Click handler for search submit button 
   $("#searchUser").on("click", function(event) {
     event.preventDefault();
-    var userFirstName = $("#profileSearchInput").val();
+    var username = $("#profileSearchInput").val();
     var isBand = $("input[name=group2]:checked").val();
     var instrumentsPlayed = $("input[name=group1]:checked").val();
+    var distanceAllowed = $("input[name=group3]:checked").val();
+
     var params = {
-      "userFirstName": userFirstName,
+      "username": username,
       "isBand": isBand,
-      "instrumentsPlayed": instrumentsPlayed
+      "instrumentsPlayed": instrumentsPlayed,
     }
 
 
