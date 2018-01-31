@@ -15,7 +15,10 @@ html {
 }
 
 
-
+#userCard {
+    background-color: black;
+    color: white;
+}
 #userImage {
     padding: 80px;
     margin-top: 50px;
@@ -85,7 +88,7 @@ main {
 #searchCard,
 #stats {
 
-    /*margin-top: 40px;*/
+    margin-top: 40px;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
     border-radius: 60px;
     opacity: .9;
