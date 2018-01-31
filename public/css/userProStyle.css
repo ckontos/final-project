@@ -3,6 +3,7 @@ html {
 }
 
 
+
 .contact, .view {
     margin-bottom: 2%;
 }
@@ -13,7 +14,6 @@ html {
 .userCard {
     width: 500px;
 }
-
 
 
 #userImage {
@@ -220,6 +220,7 @@ footer {
         width: 250px;
         margin: 5px 5px 5px 5px;
     }
+
     
    .newsCard {
        width: 300px;
@@ -246,6 +247,7 @@ footer {
     width: 360px;
     height: 500px;
     padding: 30px;
+
 }
 
 }

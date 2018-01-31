@@ -1,6 +1,4 @@
 window.onload = function() {
-  // hide the carousel
-  $("#carouselDiv").hide();
   // var distanceAllowed = 60;
   var startLat;
   var startLng;
@@ -88,6 +86,7 @@ window.onload = function() {
   });
 
 
+
 // function to initialize our carousel
 function carouselInit() {
     $('.carousel').carousel({
@@ -112,9 +111,9 @@ function carouselInit() {
     
         var carousel = $("<div class='carousel'>"); //create brand new carousel div element
          $("#carouselDiv").append(carousel);
+
       data.forEach(function(result) {
-        var div = $("<a class='carousel-item' href='#" + result.id + "'>").append(
-        
+
 
            "<div class='card card-stacked-on-med-and-down horizontal-on-large userCard' id ='userCard'>" + "<div class='card-image'>" + "<img id='searchImage' src=" + result.userImage + ">" +
 
@@ -124,20 +123,19 @@ function carouselInit() {
           "<p> Primary Instrument: " + result.instrumentsPlayed + "<br>" +
           " User is: " + result.distance + ' miles away' + "<br>" +
           "<p> Looking to jam with someone who plays: " + result.searchingFor + "</p>" +
+
           "<button data-target='contactModal' class='btn modal-trigger contact'  data-id='" + result.email + "'>Contact User</button>" +
           "<button data-target='viewProfileModal' class='btn modal-trigger view'  data-id='" + result.username + "'>View Profile</button>" +
           "</div>" +
           "</div>" +
+
          
           "</a>"
+
         );
-         
-        $(".carousel").append(div);
+        $("#stats").append(div);
         //End for loop
       })
- $(document).ready(function() {
-                setTimeout(function() { carouselInit() }, 1750) //wait 3 seconds before running carouselinit
-            });
 
     }
   }
