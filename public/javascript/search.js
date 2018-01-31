@@ -87,10 +87,26 @@ window.onload = function() {
     });
   });
 
+
+// function to initialize our carousel
+function carouselInit() {
+    $('.carousel').carousel({
+        height: 500,
+        width: 600,
+        padding: 100,
+        shift: 50,
+        dist: -100,
+
+        //indicators: true, //uncomment if you want indicators, although you will have to stylize them to show.
+    });
+}
+
+
+
   function renderUsers(data) {
     if (data.length !== 0) {
-      $("#stats").hide();
-      $('.carousel').carousel();
+      $("#siteInfo").hide();
+      
     
       $("#carouselDiv").show();
     
@@ -100,7 +116,7 @@ window.onload = function() {
         var div = $("<a class='carousel-item' href='#" + result.id + "'>").append(
         
 
-           "<div class='card' id ='userCard'>" + "<div class='card-image>" + "<img id='searchImage' src=" + result.userImage + ">" +
+           "<div class='card userCard' id ='userCard'>" + "<div class='card-image>" + "<img id='searchImage' src=" + result.userImage + ">" +
 
           "</div>" +
           "<div class='card-stacked'>" + "<div class='card-content'>" +
@@ -117,10 +133,11 @@ window.onload = function() {
         );
          
         $(".carousel").append(div);
-
-       
         //End for loop
       })
+ $(document).ready(function() {
+                setTimeout(function() { carouselInit() }, 1750) //wait 3 seconds before running carouselinit
+            });
 
     }
   }
