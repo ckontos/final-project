@@ -2,14 +2,7 @@ html {
     min-height: 100%;
 }
 
-.carousel {
-    /*margin-top: 10%;*/
-    margin-bottom: 10%;
-}
 
-.userCard {
-    width: 500px;
-}
 #userImage {
     padding: 80px;
     margin-top: 50px;
@@ -193,24 +186,6 @@ footer {
         width: 250px;
         margin: 5px 5px 5px 5px;
     }
-    
-    #stats {
-        width: 300px;
-    overflow: auto;
-    position: scroll;
-    height: 550px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    opacity: .9;
-    border-radius: 60px;
-}
-
-.carousel {
-    /*margin-top: 10%;*/
-    margin-bottom: 10%;
-    width: 250px;
-}
-
 }
 
 #userImage #userCard {
