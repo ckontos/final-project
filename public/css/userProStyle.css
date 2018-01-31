@@ -7,9 +7,13 @@ html {
     margin-bottom: 10%;
 }
 
+
+
+
 .userCard {
     width: 500px;
 }
+
 #userImage {
     padding: 80px;
     margin-top: 50px;
@@ -24,7 +28,7 @@ html {
 }
 
 .userInfo {
-    padding: 20px;
+    /*padding: 20px;*/
     box-shadow: 0 10px 25px 0 black, 0 10px 25px 0 black;
     background-color: grey;
     opacity: .9;
@@ -78,6 +82,7 @@ main {
 
 #searchCard,
 #stats {
+
     margin-top: 40px;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
     border-radius: 60px;
@@ -184,18 +189,27 @@ footer {
 
 #searchImage {
     margin-top: 3%;
-    height: 245px;
+    height: 120px;
+    width: 200px;
 }
 
 @media screen and (max-width: 750px) and (min-width: 200px) {
     .card-image {
-        height: 300px;
+        height: 100px;
         width: 250px;
         margin: 5px 5px 5px 5px;
     }
     
+   
+    
+    .userCard {
+    width: 300px;
+    height: 400px;
+  
+}
+    
     #stats {
-        width: 300px;
+    width: auto;
     overflow: auto;
     position: scroll;
     height: 550px;
@@ -208,19 +222,22 @@ footer {
 .carousel {
     /*margin-top: 10%;*/
     margin-bottom: 10%;
-    width: 250px;
+    width: 300px;
+    height: 600px;
+    padding: 30px;
 }
 
 }
 
 #userImage #userCard {
     margin-left: 5%;
+    margin-bottom: 10%;
 }
 
-#userCard:hover {
-    background-color: lightBlue;
-    opacity: .5;
-}
+/*#userCard:hover {*/
+/*    background-color: lightBlue;*/
+/*    opacity: .5;*/
+/*}*/
 
 .infoRow {
     text-shadow: 2px 2px black;

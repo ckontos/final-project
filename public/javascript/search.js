@@ -93,9 +93,9 @@ function carouselInit() {
     $('.carousel').carousel({
         height: 500,
         width: 600,
-        padding: 100,
+        padding: 200,
         shift: 50,
-        dist: -100,
+        // dist: -100,
 
         //indicators: true, //uncomment if you want indicators, although you will have to stylize them to show.
     });
@@ -110,16 +110,16 @@ function carouselInit() {
     
       $("#carouselDiv").show();
     
-        var carousel = $("<div class='carousel carousel-slider'>"); //create brand new carousel div element
+        var carousel = $("<div class='carousel'>"); //create brand new carousel div element
          $("#carouselDiv").append(carousel);
       data.forEach(function(result) {
         var div = $("<a class='carousel-item' href='#" + result.id + "'>").append(
         
 
-           "<div class='card userCard' id ='userCard'>" + "<div class='card-image>" + "<img id='searchImage' src=" + result.userImage + ">" +
+           "<div class='card horizontal-vertical-on-med-and-down userCard' id ='userCard'>" + "<div class='card-image'>" + "<img id='searchImage' src=" + result.userImage + ">" +
 
           "</div>" +
-          "<div class='card-stacked'>" + "<div class='card-content'>" +
+           "<div class='card-content'>" +
           "<h2>" + result.userFirstName + "</h2>" +
           "<p> Primary Instrument: " + result.instrumentsPlayed + "</p>" +
           "<p> User is: " + result.distance + ' miles away' + "</p>" +
@@ -128,7 +128,7 @@ function carouselInit() {
           "<button data-target='viewProfileModal' class='btn modal-trigger view'  data-id='" + result.username + "'>View Profile</button>" +
           "</div>" +
           "</div>" +
-          "</div>" +
+         
           "</a>"
         );
          
