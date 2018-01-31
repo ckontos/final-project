@@ -3,19 +3,6 @@ html {
 }
 
 
-
-.contact, .view {
-    margin-bottom: 2%;
-}
-
-.card-content{
-    padding: 1%;
-}
-.userCard {
-    width: 500px;
-}
-
-
 #userImage {
     padding: 80px;
     margin-top: 50px;
@@ -30,7 +17,7 @@ html {
 }
 
 .userInfo {
-    /*padding: 20px;*/
+    padding: 20px;
     box-shadow: 0 10px 25px 0 black, 0 10px 25px 0 black;
     background-color: grey;
     opacity: .9;
@@ -84,8 +71,7 @@ main {
 
 #searchCard,
 #stats {
-
-    /*margin-top: 40px;*/
+    margin-top: 40px;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
     border-radius: 60px;
     opacity: .9;
@@ -187,12 +173,29 @@ footer {
     background-image: url(http://clipart-library.com/images/6Ty5GE6ac.jpg)
 }
 
-#userImage #userCard {
-    margin-left: 5%;
-    margin-bottom: 10%;
+#filebutton {}
+
+#searchImage {
+    margin-top: 3%;
+    height: 245px;
 }
 
+@media screen and (max-width: 750px) and (min-width: 200px) {
+    .card-image {
+        height: 300px;
+        width: 250px;
+        margin: 5px 5px 5px 5px;
+    }
+}
 
+#userImage #userCard {
+    margin-left: 5%;
+}
+
+#userCard:hover {
+    background-color: lightBlue;
+    opacity: .5;
+}
 
 .infoRow {
     text-shadow: 2px 2px black;
@@ -206,49 +209,3 @@ footer {
 #profilePic {
     margin-top: 5%;
 }
-
-
-#searchImage {
-    margin-top: 3%;
-    height: 120px;
-    width: 200px;
-}
-
-@media screen and (max-width: 750px) and (min-width: 200px) {
-    .card-image {
-        height: 100px;
-        width: 250px;
-        margin: 5px 5px 5px 5px;
-    }
-
-    
-   .newsCard {
-       width: 300px;
-   }
-    
-    .userCard {
-    width: 300px;
-    height: 470px;
-  
-}
-    
-    #stats {
-    width: auto;
-    overflow: auto;
-    position: scroll;
-    height: 550px;
-    margin-bottom: 10px;
-    margin-left: 5%;
-    opacity: .9;
-    border-radius: 60px;
-}
-
-.carousel {
-    width: 360px;
-    height: 500px;
-    padding: 30px;
-
-}
-
-}
-

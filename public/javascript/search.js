@@ -85,53 +85,31 @@ window.onload = function() {
     });
   });
 
-
-
-// function to initialize our carousel
-function carouselInit() {
-    $('.carousel').carousel({
-        height: 600,
-        width: 600,
-        padding: 200,
-        shift: 50,
-        // dist: -100,
-
-        //indicators: true, //uncomment if you want indicators, although you will have to stylize them to show.
-    });
-}
-
-
-
   function renderUsers(data) {
     if (data.length !== 0) {
-      $("#siteInfo").hide();
-      
-    
-      $("#carouselDiv").show();
-    
-        var carousel = $("<div class='carousel'>"); //create brand new carousel div element
-         $("#carouselDiv").append(carousel);
+      $("#stats").empty();
+      $("#stats").show();
 
       data.forEach(function(result) {
 
+        var div = $("<div>").append(
+          "<div class='row'>" +
 
-           "<div class='card card-stacked-on-med-and-down horizontal-on-large userCard' id ='userCard'>" + "<div class='card-image'>" + "<img id='searchImage' src=" + result.userImage + ">" +
+          "<div class='col l10 s12'>" + "<div class='card' id ='userCard'>" + "<div class='card-image col l4 s12'>" + "<img id='searchImage' src=" + result.userImage + ">" +
 
           "</div>" +
-           "<div class='card-content'>" +
-          "<h5>" + result.username + "</h5>" +
-          "<p> Primary Instrument: " + result.instrumentsPlayed + "<br>" +
-          " User is: " + result.distance + ' miles away' + "<br>" +
-          "<p> Looking to jam with someone who plays: " + result.searchingFor + "</p>" +
-
+          "<div class='card-stacked'>" + "<div class='card-content'>" +
+          "<h2>" + result.userFirstName + "</h2>" +
+          "<p> Primary Instrument: " + result.instrumentsPlayed + "</p>" +
+          "<p> User is: " + result.distance + ' miles away' + "</p>" +
+          "<p> Looking to jam with: " + result.searchingFor + "</p>" +
           "<button data-target='contactModal' class='btn modal-trigger contact'  data-id='" + result.email + "'>Contact User</button>" +
           "<button data-target='viewProfileModal' class='btn modal-trigger view'  data-id='" + result.username + "'>View Profile</button>" +
           "</div>" +
           "</div>" +
-
-         
-          "</a>"
-
+          "</div>" +
+          "</div>" +
+          "</div>"
         );
         $("#stats").append(div);
         //End for loop
