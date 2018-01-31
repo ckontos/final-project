@@ -109,7 +109,10 @@ main {
 }
 
 footer {
+    bottom: 0;
+    width: 100%;
     opacity: .9;
+    margin-top: 5%;
 }
 
 .footerLink {
@@ -215,6 +218,15 @@ footer {
 }
 
 @media screen and (max-width: 750px) and (min-width: 200px) {
+    
+    
+    footer {
+    bottom: 3;
+    width: 100%;
+    opacity: .9;
+    margin-top: 5%;
+}
+
     .card-image {
         height: 100px;
         width: 250px;
