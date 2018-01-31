@@ -147,7 +147,7 @@
             </div>
 
             <!--------------------- Profile queries column ----------------------------->
-            <div class="col m9">
+            <div class="col m9" id="contentArea">
                 <div class="card blue-grey darken-2 center-align" id="stats">
                     <div id="siteInfo">
                         <div class="card-content white-text">
@@ -157,9 +157,23 @@
                                 users prefer to play, proximity to your current location, bands looking for new members or all of the above!</p>
                         </div>
                     </div>
-                </div>
-            </div>
+               
+            <!--</div>-->
 
+            <!--carousel goes here-->
+             <div  id="couroselDiv">
+                 <div class="row">
+                     <div class="col m2"></div>
+                     <div class="col m8">
+                    <div class="carousel carousel-slider-on-med-and-down">
+                        </div>
+                        <div class="col m2"></div>
+                        </div>
+                        </div>
+                    </div>
+ </div>
+</div>
+                    
             <!-- contact modal -->
             <div id="contactModal" class="modal blue-grey darken-2">
                 <div class="modal-content">
@@ -238,8 +252,7 @@
         $(document).ready(function() {
             $('.collapsible').collapsible();
             $(".button-collapse").sideNav();
-
-
+            
         });
     </script>
     <script src="./javascript/search.js"></script>

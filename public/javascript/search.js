@@ -1,4 +1,6 @@
 window.onload = function() {
+  // hide the carousel
+  $("#carouselDiv").hide();
   // var distanceAllowed = 60;
   var startLat;
   var startLng;
@@ -85,35 +87,57 @@ window.onload = function() {
     });
   });
 
+
+// function to initialize our carousel
+function carouselInit() {
+    $('.carousel').carousel({
+        height: 500,
+        width: 600,
+        padding: 100,
+        shift: 50,
+        dist: -100,
+
+        //indicators: true, //uncomment if you want indicators, although you will have to stylize them to show.
+    });
+}
+
+
+
   function renderUsers(data) {
     if (data.length !== 0) {
-      $("#stats").empty();
-      $("#stats").show();
-
+      $("#siteInfo").hide();
+      
+    
+      $("#carouselDiv").show();
+    
+        var carousel = $("<div class='carousel carousel-slider'>"); //create brand new carousel div element
+         $("#carouselDiv").append(carousel);
       data.forEach(function(result) {
+        var div = $("<a class='carousel-item' href='#" + result.id + "'>").append(
+        
 
-        var div = $("<div>").append(
-          "<div class='row'>" +
-
-          "<div class='col l10 s12'>" + "<div class='card' id ='userCard'>" + "<div class='card-image col l4 s12'>" + "<img id='searchImage' src=" + result.userImage + ">" +
+           "<div class='card userCard' id ='userCard'>" + "<div class='card-image>" + "<img id='searchImage' src=" + result.userImage + ">" +
 
           "</div>" +
           "<div class='card-stacked'>" + "<div class='card-content'>" +
           "<h2>" + result.userFirstName + "</h2>" +
           "<p> Primary Instrument: " + result.instrumentsPlayed + "</p>" +
           "<p> User is: " + result.distance + ' miles away' + "</p>" +
-          "<p> Looking to jam with: " + result.searchingFor + "</p>" +
+          "<p> Looking to jam with someone who plays: " + result.searchingFor + "</p>" +
           "<button data-target='contactModal' class='btn modal-trigger contact'  data-id='" + result.email + "'>Contact User</button>" +
           "<button data-target='viewProfileModal' class='btn modal-trigger view'  data-id='" + result.username + "'>View Profile</button>" +
           "</div>" +
           "</div>" +
           "</div>" +
-          "</div>" +
-          "</div>"
+          "</a>"
         );
-        $("#stats").append(div);
+         
+        $(".carousel").append(div);
         //End for loop
       })
+ $(document).ready(function() {
+                setTimeout(function() { carouselInit() }, 1750) //wait 3 seconds before running carouselinit
+            });
 
     }
   }
