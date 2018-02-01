@@ -1,5 +1,6 @@
 window.onload = function() {
   // var distanceAllowed = 60;
+ 
   var startLat;
   var startLng;
 
@@ -48,6 +49,10 @@ window.onload = function() {
   //Click handler for search submit button 
   $("#searchUser").on("click", function(event) {
     event.preventDefault();
+       $("#cardDiv").empty();
+      $("#carouselDiv").empty();
+
+
     var username = $("#profileSearchInput").val();
     var isBand = $("input[name=group2]:checked").val();
     var instrumentsPlayed = $("input[name=group1]:checked").val();
@@ -82,6 +87,8 @@ window.onload = function() {
       }
       console.log(newData)
       renderUsers(newData);
+      renderCards(newData);
+
     });
   });
 
@@ -94,7 +101,6 @@ function carouselInit() {
         shift: 50,
         // dist: -100,
 
-        //indicators: true, //uncomment if you want indicators, although you will have to stylize them to show.
     });
 }
 
@@ -143,6 +149,53 @@ function carouselInit() {
 
     }
   }
+  
+  
+  
+  function renderCards(data) {
+    if (data.length !== 0) {
+      $("#siteInfo").hide();
+      // $("#cardInfo").show();
+
+      data.forEach(function(result) {
+
+        var div = $("<div class='hide-on-large-only'>").append(
+          "<div class='row'>" +
+          "<div class='col l10 s12'>" + "<div class='card searchCard'>" + "<div class='card-image col l4 s12'>" + "<img id='searchImage' src=" + result.userImage + ">" +
+          "</div>" +
+          "<div class='card-stacked'>" + "<div class='card-content'>" +
+          "<h2>" + result.userFirstName + "</h2>" +
+          "<p> Primary Instrument: " + result.instrumentsPlayed + "</p>" +
+          "<p> User is: " + result.distance + ' miles away' + "</p>" +
+          "<p> Looking to jam with: " + result.searchingFor + "</p>" +
+          "<button data-target='contactModal' class='btn modal-trigger contact'  data-id='" + result.email + "'>Contact User</button>" +
+          "<button data-target='viewProfileModal' class='btn modal-trigger view'  data-id='" + result.username + "'>View Profile</button>" +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</div>"
+        );
+        $("#cardDiv").append(div);
+        //End for loop
+      })
+
+    }
+  }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   // route to search in nav
   $("#searchNav").on("click", function(event) {
