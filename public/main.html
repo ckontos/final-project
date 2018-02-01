@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
     <!-- Compiled and minified CSS -->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">-->
 
     <!-- Compiled and minified JavaScript -->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js"></script>-->
-            
+
     <link rel="stylesheet" href="css/userProStyle.css" type="text/css" />
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -58,32 +58,14 @@
                             <div class="col m12">
                                 <ul class="collapsible popout" data-collapsible="accordion">
                                     <li>
-                                        <div class="collapsible-header"><i class="material-icons">headset</i>Location</div>
-                                        <div class="collapsible-body white">
-                                            <form action="#" id="searchForm">
-                                                <p>
-                                                    <input class="with-gap" name="group3" type="radio" id="search10" value="16.0934" />
-                                                    <label for="search10" class="black-text">10 miles</label>
-                                                </p>
-                                                <p>
-                                                    <input class="with-gap" name="group3" type="radio" id="search25" value="40.2336" />
-                                                    <label for="search25" class="black-text">25 miles</label>
-                                                </p>
-                                               
-                                                 <p>
-                                                    <input class="with-gap" name="group3" type="radio" id="search50" value="80.4672" />
-                                                    <label for="search50" class="black-text">50 miles</label>
-                                                </p>
-                                                <p>
-                                                    <input class="with-gap" name="group3" type="radio" id="search75" value="120.701" />
-                                                    <label for="search75" class="black-text">75 miles</label>
-                                                </p>
-                                                <p>
-                                                    <input class="with-gap" name="group3" type="radio" id="search100" value="160.934" />
-                                                    <label for="search100" class="black-text">100 miles</label>
-                                                </p>
-                                            </form>
-                                        </div>
+
+                                        <form action="#">
+                                            <p class="range-field">
+                                                Select max range:
+                                                <input type="range" id="test5" min="0" max="100" />
+                                            </p>
+                                        </form>
+
                                     </li>
                                     <li>
                                         <div class="collapsible-header"><i class="material-icons">headset</i>Who are you looking to jam with?</div>
@@ -146,7 +128,7 @@
                                 </ul>
                             </div>
                             <div class="center-align">
-                                <a href="#" id="searchUser" class="btn waves-effect waves-light blue-grey lighten-3" style="margin-top: 15px; width: 150px;"><span class="black-text"><i class="material-icons">search</i> Search</span></a>
+                                <a href="#stats" id="searchUser" class="btn waves-effect waves-light blue-grey lighten-3" style="margin-top: 15px; width: 150px;"><span class="black-text"><i class="material-icons">search</i> Search</span></a>
                             </div>
 
                         </div>
@@ -155,7 +137,7 @@
             </div>
 
             <!--------------------- Profile queries column ----------------------------->
-            <div class="col m9">
+            <div id="scrollHere" class="col m9">
                 <div class="card blue-grey darken-2 center-align" id="stats">
                     <div id="siteInfo">
                         <div class="card-content white-text">
@@ -165,22 +147,22 @@
                                 users prefer to play, proximity to your current location, bands looking for new members or all of the above!</p>
                         </div>
                     </div>
-                    
+
                     <!--carousel goes here-->
-             <div  id="cauroselDiv" class="hide-on-med-and-down">
-                 
-                    <div class="carousel ">
+                    <div id="cauroselDiv" class="hide-on-med-and-down">
+
+                        <div class="carousel ">
                         </div>
-                       
+
                     </div>
                     <!--end carousel-->
-                   
-                   
+
+
                     <!--begin mobile view-->
-                     <div  id="cardDiv" class="hide-on-large-only"></div>
-                  
+                    <div id="cardDiv" class="hide-on-large-only"></div>
+
                     <!--end mobile view-->
-                    
+
                 </div>
             </div>
 
@@ -212,24 +194,24 @@
 
 
 
-                <!-- profile modal -->
-                <div id="viewProfileModal" class="modal blue-grey darken-2">
-                    <div class="modal-content">
-                        <input id="toSearch" type="hidden">
-                        <!--<h4 id="accountName"></h4>-->
-                        <div class="col m12">
-                            <h3 id="accountHead">Account Info</h3>
-                            <h5 class="white-text">Username: <span class="accountInfo" id="username"></span></h5>
-                            <h5 class="white-text">Name: <span class="accountInfo" id="name"></span></h5>
-                            <h5 class="white-text">Email: <span class="accountInfo" id="email"></span></h5>
-                            <h5 class="white-text">Instrument: <span class="accountInfo" id="instrument"></span></h5>
-                            <h5 class="white-text">Prefered Genre: <span class="accountInfo" id="genre"></span></h5>
-                            <h5 class="white-text">In a Band: <span class="accountInfo" id="inBand"></span></h5>
-                            <h5 class="white-text">About: <span class="accountInfo" id="about"></span></h5>
-                            <div id="userStuff1"></div>
-                            <div id="userStuff2"></div>
-                            <div id="userStuff3"></div>
-                                
+            <!-- profile modal -->
+            <div id="viewProfileModal" class="modal blue-grey darken-2">
+                <div class="modal-content">
+                    <input id="toSearch" type="hidden">
+                    <!--<h4 id="accountName"></h4>-->
+                    <div class="col m12">
+                        <h3 id="accountHead">Account Info</h3>
+                        <h5 class="white-text">Username: <span class="accountInfo" id="username"></span></h5>
+                        <h5 class="white-text">Name: <span class="accountInfo" id="name"></span></h5>
+                        <h5 class="white-text">Email: <span class="accountInfo" id="email"></span></h5>
+                        <h5 class="white-text">Instrument: <span class="accountInfo" id="instrument"></span></h5>
+                        <h5 class="white-text">Prefered Genre: <span class="accountInfo" id="genre"></span></h5>
+                        <h5 class="white-text">In a Band: <span class="accountInfo" id="inBand"></span></h5>
+                        <h5 class="white-text">About: <span class="accountInfo" id="about"></span></h5>
+                        <div id="userStuff1"></div>
+                        <div id="userStuff2"></div>
+                        <div id="userStuff3"></div>
+
 
 
 
@@ -239,9 +221,9 @@
                 </div>
                 <!--<div class="modal-footer">-->
                 <!--    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>-->
-                </div>
             </div>
-            <!--end modal-->
+        </div>
+        <!--end modal-->
 
 
         </div>
