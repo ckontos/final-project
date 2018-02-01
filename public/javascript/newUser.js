@@ -1,38 +1,34 @@
-
-
-
-
 window.onload = function() {
-  
-  
-var userAddress;
-var myLatLng;
 
-function getLocation() {
-	function showPosition(position) {
-		console.log("getting location")
 
-		var startLat = position.coords.latitude;
-		var startLng = position.coords.longitude;
-		myLatLng = {lat: startLat, lng: startLng }
-		userAddress = JSON.stringify(myLatLng)
-	
-		// 	//Once the user's address is saved in the userAddress variable, call the initMap function to load the map
-			console.log(myLatLng)
+  var userAddress;
+  var myLatLng;
 
-	
-	};
-	//if geolocation is supported, the getCurrentPosition will be called
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition);
-	}
-	else {
-		lattitude.innerHTML = "Geolocation is not supported by this browser.";
-	}
+  function getLocation() {
+    function showPosition(position) {
+      console.log("getting location")
 
-}
+      var startLat = position.coords.latitude;
+      var startLng = position.coords.longitude;
+      myLatLng = { lat: startLat, lng: startLng }
+      userAddress = JSON.stringify(myLatLng)
 
-getLocation(); 
+      // 	//Once the user's address is saved in the userAddress variable, call the initMap function to load the map
+      console.log(myLatLng)
+
+
+    };
+    //if geolocation is supported, the getCurrentPosition will be called
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    }
+    else {
+      lattitude.innerHTML = "Geolocation is not supported by this browser.";
+    }
+
+  }
+
+  getLocation();
 
 
   /// its in meters that is the  compared lon and lat
@@ -53,7 +49,7 @@ getLocation();
     var instrumentsPlayed = $("#instrumentsPlayed").val();
     var searchingFor = $("#searchingFor").val();
     var username = $("#username").val();
-    var userImage = $("#userImage").val();
+    var userImage = "./images/chicken.png";
     var faceBook = $("#faceBook").val();
     var reverbNation = $("#reverbNation").val();
     var soundCloud = $("#soundCloud").val();
@@ -106,15 +102,15 @@ getLocation();
   function submitToApi(user) {
     console.log("about to create user");
     $.post("/api/users", user, function(data, err) {
-      
-         console.log(JSON.stringify(data));
-         console.log(JSON.stringify(err));
+
+      console.log(JSON.stringify(data));
+      console.log(JSON.stringify(err));
       if (err != "success") {
         console.log(err)
       }
-      else{
-      // console.log("Great Success!  " + JSON.stringify(data));
-      window.location.href='/login';
+      else {
+        // console.log("Great Success!  " + JSON.stringify(data));
+        window.location.href = '/login';
       }
       // If there's an error, handle it by throwing up an alert
     }).catch(handleErr);
@@ -128,7 +124,7 @@ getLocation();
     $("#alert").fadeIn(500);
   }
 
- // login button up in nav
+  // login button up in nav
   $("#loginNav").on("click", function(event) {
     event.preventDefault();
     // go to the profile

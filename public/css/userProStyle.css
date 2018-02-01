@@ -1,17 +1,42 @@
+html {
+    min-height: 100%;
+}
+
+
+.contact,
+.view {
+    margin-bottom: 2%;
+}
+
+.card-content {
+    padding: 1%;
+}
+
+.userCard {
+    width: 500px;
+}
+
+
+#userCard {
+    background-color: black;
+    color: white;
+}
+
 #userImage {
     padding: 80px;
     margin-top: 50px;
     box-shadow: 0 10px 25px 0 black, 0 10px 100px 0 black;
     border-radius: 60px;
 }
-#card-image{
+
+#card-image {
     border-radius: 90px;
     margin: 2px 2px 2px 2px;
 
 }
 
 .userInfo {
-    padding: 20px;
+    /*padding: 20px;*/
     box-shadow: 0 10px 25px 0 black, 0 10px 25px 0 black;
     background-color: grey;
     opacity: .9;
@@ -19,37 +44,37 @@
 }
 
 .imageBox {
-  
+
     margin-left: 20px;
 }
 
 #body3 {
-display: flex;
-min-height: 100vh;
-width: 100%;
-padding: 0;
-margin: 0;
-align-content: center;
-justify-content: center;
-flex-direction: column;
-            }
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
 #uploader {
--webkit-apperance: none;
-appearance: none;
-width: 50%;
-margin-bottom: 10px;
-            }
+    -webkit-apperance: none;
+    appearance: none;
+    width: 50%;
+    margin-bottom: 10px;
+}
 
 
-#editProfile #deleteModal{
+#editProfile #deleteModal {
     margin-top: 5%px;
-   
+
 }
 
 body {
     display: flex;
-    min-height: 100vh;
+    min-height: 100%;
     flex-direction: column;
     background-image: url(http://clipart-library.com/images/6Ty5GE6ac.jpg);
     background-repeat: no-repeat;
@@ -59,11 +84,13 @@ body {
 }
 
 main {
+    min-height: 100%;
     flex: 1 0 auto;
 }
 
 #searchCard,
 #stats {
+
     margin-top: 40px;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.7), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
     border-radius: 60px;
@@ -86,8 +113,12 @@ main {
 .active {
     color: black!important;
 }
-footer{
+
+footer {
+    bottom: 0;
+    width: 100%;
     opacity: .9;
+    margin-top: 5%;
 }
 
 .footerLink {
@@ -107,7 +138,7 @@ footer{
 
 #stats {
     overflow: auto;
-    position: absolute;
+    position: scroll;
     height: 550px;
     margin-bottom: 10px;
     margin-right: 10px;
@@ -122,41 +153,51 @@ footer{
     border-radius: 60px;
 }
 
+
+.userStuff {
+    margin-top: 10%;
+    padding-bottom: 108px;
+    overflow: auto;
+    opacity: .9;
+    border-radius: 60px;
+}
+
 #profileContents {
     margin-top: 60px;
     margin-bottom: 5%;
     opacity: .9;
     border-radius: 60px;
-    
+
 }
 
 
 #siteInfo {
     margin-top: 10%;
 }
-#questions{
+
+#questions {
     border-radius: 60px;
     opacity: .9;
 }
 
 #body3 {
-        display: flex;
-        min-height: 100vh;
-        width: 100%;
-        padding: 0;
-        margin: 6px 6px 6px 6px;
-        align-content: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-    
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 6px 6px 6px 6px;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 #uploader {
-        -webkit-apperance: none;
-        appearance: none;
-        width: 50%;
-        margin-bottom: 10px;
-    }
-    
+    -webkit-apperance: none;
+    appearance: none;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
 #modal2 {
     height: 500px;
     /*display: flex;*/
@@ -164,37 +205,34 @@ footer{
     background-image: url(http://clipart-library.com/images/6Ty5GE6ac.jpg)
 }
 
-#filebutton{
-    
-}
-
-@media screen and (max-width: 750px) and (min-width: 200px) {
-    .card-image{
-        height: 300px;
-        width: 250px;
-        margin: 5px 5px 5px 5px;
-    }
-    
-}
-
-#userCard{
+#userImage #userCard {
     margin-left: 5%;
+    margin-bottom: 10%;
 }
 
-#userCard:hover{
-    background-color: lightBlue;
-    opacity: .5;
-}
 
-.infoRow{
+
+.infoRow {
     text-shadow: 2px 2px black;
 }
 
-.accountInfo{
+.accountInfo {
     color: LightSeaGreen;
-    
+
 }
 
+#profilePic {
+    margin-top: 10%;
+}
+
+
+#searchImage {
+    margin-top: 3%;
+    height: 120px;
+    width: 200px;
+}
+
+<<<<<<< HEAD
 #profilePic{
     margin-top: 5%;
 }
@@ -207,3 +245,64 @@ footer{
    width: 25%;
 }
 
+=======
+@media screen and (max-width: 750px) and (min-width: 200px) {
+
+
+    footer {
+        bottom: 3;
+        width: 100%;
+        opacity: .9;
+        margin-top: 5%;
+    }
+
+    /*.card-image {*/
+    /*    height: 100px;*/
+    /*    width: 250px;*/
+    /*    margin: 5px 5px 5px 5px;*/
+    /*}*/
+    #searchImage {
+        margin-left: 15%;
+        margin-top: 3%;
+        height: 120px;
+        width: 200px;
+    }
+
+    .newsCard {
+        width: 300px;
+    }
+
+    .userCard {
+        width: 300px;
+        height: 470px;
+
+    }
+
+
+    .searchCard {
+        /*background-color: black;*/
+        /*color: white;*/
+        width: 300px;
+        height: 400px;
+
+    }
+
+    #stats {
+        width: auto;
+        overflow: auto;
+        position: scroll;
+        height: 550px;
+        margin-bottom: 10px;
+        margin-left: 5%;
+        opacity: .9;
+        border-radius: 60px;
+    }
+
+    .carousel {
+        width: 360px;
+        height: 500px;
+        padding: 30px;
+    }
+
+}
+>>>>>>> fd7b91159352e2a7c89ce38be57dfbb5b5ec1701
