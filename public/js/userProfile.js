@@ -27,6 +27,7 @@ $(document).ready(function() {
     var uploader = document.getElementById('uploader');
     var fileButton = document.getElementById('fileButton');
     var storageRef = firebase.storage().ref('profileImages/' + data.email + '/+file_name')
+    // var close = document.getElementById("Close");
 
 
     var img = document.getElementById("profilePic");
@@ -69,7 +70,15 @@ $(document).ready(function() {
           throw err
         },
         function complete() {
-
+          setTimeout(function(){
+          $('.modal').hide();
+          window.location.reload('/userProfile')
+          
+          }, 500)
+            
+                      // setTimeout(function() { carouselInit() }, 500) //wait before running carouselinit
+                      //       // have page scroll down to carousel
+                      //           scroll(carousel)
         }
 
       )
