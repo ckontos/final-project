@@ -122,21 +122,59 @@ function carouselInit() {
       data.forEach(function(result) {
         var div = $("<a class='carousel-item' href='#" + result.id + "'>").append(
         
+          "<div class = 'card revealCard' >" +
+            "<div class = 'card-image waves-effect waves-block waves-light'>" +
+              "<img class='carouselPic activator' src =" + result.userImage + ">" + 
+            "</div>" +
+            "<div class = 'card-content'>" +
+              "<span class='card-title activator grey-text text-darken-4 revealGlance'>" + result.username +  "</span>" +
+              "<span class='card-title activator grey-text text-darken-4 revealGlance'>" + result.instrumentsPlayed + "<i class = 'material-icons right'>more_vert</i>" + "</span>" +
+            "</div>" +
+            "<div class ='card-reveal'>" +
+              "<span class ='card-title activator grey-text text-darken-4'>" + result.username + "<i class='material-icons right'>close</i>" + "</span>" +
+              "<p class= 'revealGlance'> Primary Instrument: " + result.instrumentsPlayed + "<br>" +
+              " User is: " + result.distance + ' miles away' + "<br>" +
+              "<p class = 'revealGlance' text='strong' > Looking to jam with someone who plays: " + result.searchingFor + "</p>" +
+              "<button data-target='contactModal' class='btn modal-trigger contact'  data-id='" + result.email + "'>Contact User</button>" +
+              "<button data-target='viewProfileModal' class='btn modal-trigger view'  data-id='" + result.username + "'>View Profile</button>" +
+              "</div>" +
+              "</div>"
+          
+          
+          
+          
+          
+          
+          // <div class="card">
+          //   <div class="card-image waves-effect waves-block waves-light">
+          //     <img class="activator" src="images/office.jpg">
+          //   </div>
+          //   <div class="card-content">
+          //     <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+          //     <p><a href="#">This is a link</a></p>
+          //   </div>
+          //   <div class="card-reveal">
+          //     <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+          //     <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          //   </div>
+          // </div>
+            
+          
+          
+          // "<div class='card card-stacked-on-med-and-down horizontal-on-large userCard' id ='userCard'>" + "<div class='card-image'>" + "<img id='searchImage' src=" + result.userImage + ">" +
 
-           "<div class='card card-stacked-on-med-and-down horizontal-on-large userCard' id ='userCard'>" + "<div class='card-image'>" + "<img id='searchImage' src=" + result.userImage + ">" +
-
-          "</div>" +
-           "<div class='card-content'>" +
-          "<h5>" + result.username + "</h5>" +
-          "<p> Primary Instrument: " + result.instrumentsPlayed + "<br>" +
-          " User is: " + result.distance + ' miles away' + "<br>" +
-          "<p> Looking to jam with someone who plays: " + result.searchingFor + "</p>" +
-          "<button data-target='contactModal' class='btn modal-trigger contact'  data-id='" + result.email + "'>Contact User</button>" +
-          "<button data-target='viewProfileModal' class='btn modal-trigger view'  data-id='" + result.username + "'>View Profile</button>" +
-          "</div>" +
-          "</div>" +
+          // "</div>" +
+          // "<div class='card-content'>" +
+          // "<h5>" + result.username + "</h5>" +
+          // "<p> Primary Instrument: " + result.instrumentsPlayed + "<br>" +
+          // " User is: " + result.distance + ' miles away' + "<br>" +
+          // "<p> Looking to jam with someone who plays: " + result.searchingFor + "</p>" +
+          // "<button data-target='contactModal' class='btn modal-trigger contact'  data-id='" + result.email + "'>Contact User</button>" +
+          // "<button data-target='viewProfileModal' class='btn modal-trigger view'  data-id='" + result.username + "'>View Profile</button>" +
+          // "</div>" +
+          // "</div>" +
          
-          "</a>"
+          // "</a>"
         );
          
         $(".carousel").append(div);
