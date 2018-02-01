@@ -187,6 +187,7 @@ module.exports = function(app) {
         res.json(err);
       });
   });
+
   app.get('/api/users/search', function(req, res) {
     console.log("****++++******")
     console.log(req.query)
@@ -209,6 +210,7 @@ module.exports = function(app) {
               isBand: req.query.isBand
             }
           }
+
         }
         else if (req.query.instrumentsPlayed) {
           //first and 3rd true 2nd false

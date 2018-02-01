@@ -49,10 +49,12 @@ window.onload = function() {
   //Click handler for search submit button 
   $("#searchUser").on("click", function(event) {
     event.preventDefault();
+
     $("#cardDiv").empty();
     $(".carousel").empty();
     $('.carousel').removeClass('initialized');
     console.log($("#test5").val())
+
 
 
     var username = $("#profileSearchInput").val();
@@ -67,7 +69,8 @@ window.onload = function() {
       "isBand": isBand,
       "instrumentsPlayed": instrumentsPlayed,
     }
-
+    
+  
 
 
     $.get('/api/users/search', params, function(data) {
@@ -92,7 +95,7 @@ window.onload = function() {
       console.log(newData)
       renderUsers(newData);
       renderCards(newData);
-
+      document.forms['searchForm'].reset();
     });
   });
 
@@ -143,6 +146,7 @@ window.onload = function() {
         );
 
         $(".carousel").append(div);
+         
         //End for loop
       })
       carouselInit()
@@ -183,8 +187,12 @@ window.onload = function() {
           "</div>" +
           "</div>"
         );
+        
         $("#cardDiv").append(div);
+        
         //End for loop
+
+
       })
 
     }
