@@ -8,13 +8,7 @@ $(document).ready(function() {
   $('select').material_select();
   /* global firebase */
   /* global Firebase */
-<<<<<<< HEAD
-  
-$('#userAccountCard').addClass('animated bounceInLeft');
-   
-=======
 
->>>>>>> fd7b91159352e2a7c89ce38be57dfbb5b5ec1701
 
   $.get("api/user_data", {}, function(data) {
     console.log("getting all user_data: " + data);
