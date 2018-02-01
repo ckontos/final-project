@@ -1,6 +1,6 @@
 window.onload = function() {
   // var distanceAllowed = 60;
- 
+
   var startLat;
   var startLng;
 
@@ -49,8 +49,8 @@ window.onload = function() {
   //Click handler for search submit button 
   $("#searchUser").on("click", function(event) {
     event.preventDefault();
-       $("#cardDiv").empty();
-      $("#carouselDiv").empty();
+    $("#cardDiv").empty();
+    $("#carouselDiv").empty();
 
 
     var username = $("#profileSearchInput").val();
@@ -92,39 +92,39 @@ window.onload = function() {
     });
   });
 
- // function to initialize our carousel
-function carouselInit() {
+  // function to initialize our carousel
+  function carouselInit() {
     $('.carousel').carousel({
-        height: 600,
-        width: 600,
-        padding: 200,
-        shift: 50,
-        // dist: -100,
+      height: 600,
+      width: 600,
+      padding: 200,
+      shift: 50,
+      // dist: -100,
 
     });
-}
+  }
 
- function scroll(id) {
-     return 'a[href="#' + id + '"]';
-    }
+  function scroll(id) {
+    return 'a[href="#' + id + '"]';
+  }
 
   function renderUsers(data) {
     if (data.length !== 0) {
       $("#siteInfo").hide();
-      
-    
+
+
       $("#carouselDiv").show();
-    
-        var carousel = $("<div class='carousel section scrollspy'>"); //create brand new carousel div element
-         $("#carouselDiv").append(carousel);
+
+      var carousel = $("<div class='carousel section scrollspy'>"); //create brand new carousel div element
+      $("#carouselDiv").append(carousel);
       data.forEach(function(result) {
         var div = $("<a class='carousel-item' href='#" + result.id + "'>").append(
-        
 
-           "<div class='card card-stacked-on-med-and-down horizontal-on-large userCard' id ='userCard'>" + "<div class='card-image'>" + "<img id='searchImage' src=" + result.userImage + ">" +
+
+          "<div class='card card-stacked-on-med-and-down horizontal-on-large userCard' id ='userCard'>" + "<div class='card-image'>" + "<img id='searchImage' src=" + result.userImage + ">" +
 
           "</div>" +
-           "<div class='card-content'>" +
+          "<div class='card-content'>" +
           "<h5>" + result.username + "</h5>" +
           "<p> Primary Instrument: " + result.instrumentsPlayed + "<br>" +
           " User is: " + result.distance + ' miles away' + "<br>" +
@@ -133,25 +133,25 @@ function carouselInit() {
           "<button data-target='viewProfileModal' class='btn modal-trigger view'  data-id='" + result.username + "'>View Profile</button>" +
           "</div>" +
           "</div>" +
-         
+
           "</a>"
         );
-         
+
         $(".carousel").append(div);
         //End for loop
       })
- $(document).ready(function() {
-                setTimeout(function() { carouselInit() }, 500) //wait before running carouselinit
-                            // have page scroll down to carousel
-                                scroll(carousel)
-                               
-            });
+      $(document).ready(function() {
+        setTimeout(function() { carouselInit() }, 500) //wait before running carouselinit
+        // have page scroll down to carousel
+        scroll(carousel)
+
+      });
 
     }
   }
-  
-  
-  
+
+
+
   function renderCards(data) {
     if (data.length !== 0) {
       $("#siteInfo").hide();
@@ -183,19 +183,19 @@ function carouselInit() {
     }
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // route to search in nav
   $("#searchNav").on("click", function(event) {

@@ -14,8 +14,13 @@ html {
 
 .userCard {
     width: 500px;
+    position: absolute;
+    /*left: -75%;*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)!important;
+    overflow: visible;
 }
-
 
 #userCard {
     background-color: black;
