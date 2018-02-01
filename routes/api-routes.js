@@ -192,7 +192,7 @@ app.get("/api/users", function(req, res) {
   console.log(req.query)
   let where = {}
   let conditionals = function() {
-    if (req.query.userFirstName) {
+    if (req.query.username) {
     if (req.query.isBand) {
       if (req.query.instrumentsPlayed) {
         //all true
