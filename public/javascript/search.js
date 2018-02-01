@@ -51,6 +51,7 @@ window.onload = function() {
     event.preventDefault();
        $("#cardDiv").empty();
       $("#carouselDiv").empty();
+     
 
 
     var username = $("#profileSearchInput").val();
@@ -63,7 +64,8 @@ window.onload = function() {
       "isBand": isBand,
       "instrumentsPlayed": instrumentsPlayed,
     }
-
+    
+  
 
 
     $.get('/api/users/search', params, function(data) {
@@ -88,7 +90,7 @@ window.onload = function() {
       console.log(newData)
       renderUsers(newData);
       renderCards(newData);
-
+      document.forms['searchForm'].reset();
     });
   });
 
@@ -138,6 +140,7 @@ function carouselInit() {
         );
          
         $(".carousel").append(div);
+         
         //End for loop
       })
  $(document).ready(function() {
@@ -176,8 +179,12 @@ function carouselInit() {
           "</div>" +
           "</div>"
         );
+        
         $("#cardDiv").append(div);
+        
         //End for loop
+
+
       })
 
     }
