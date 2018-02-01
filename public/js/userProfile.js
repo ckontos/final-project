@@ -9,7 +9,7 @@ $(document).ready(function() {
   /* global firebase */
   /* global Firebase */
   
-
+$('#userAccountCard').addClass('animated bounceInLeft');
    
 
   $.get("api/user_data", {}, function(data) {

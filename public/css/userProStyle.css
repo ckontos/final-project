@@ -198,3 +198,12 @@ footer{
 #profilePic{
     margin-top: 5%;
 }
+
+#editImages,
+#editProfile,
+#deleteBtn {
+   display: inline-block;
+   margin: auto;
+   width: 25%;
+}
+
