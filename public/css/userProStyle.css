@@ -1,15 +1,17 @@
-html { 
+html {
     min-height: 100%;
 }
 
 
-.contact, .view {
+.contact,
+.view {
     margin-bottom: 2%;
 }
 
-.card-content{
+.card-content {
     padding: 1%;
 }
+
 .userCard {
     width: 500px;
 }
@@ -19,6 +21,7 @@ html {
     background-color: black;
     color: white;
 }
+
 #userImage {
     padding: 80px;
     margin-top: 50px;
@@ -230,47 +233,61 @@ footer {
 }
 
 @media screen and (max-width: 750px) and (min-width: 200px) {
-    
-    
+
+
     footer {
-    bottom: 3;
-    width: 100%;
-    opacity: .9;
-    margin-top: 5%;
-}
-
-    .card-image {
-        height: 100px;
-        width: 250px;
-        margin: 5px 5px 5px 5px;
+        bottom: 3;
+        width: 100%;
+        opacity: .9;
+        margin-top: 5%;
     }
-    
-   .newsCard {
-       width: 300px;
-   }
-    
+
+    /*.card-image {*/
+    /*    height: 100px;*/
+    /*    width: 250px;*/
+    /*    margin: 5px 5px 5px 5px;*/
+    /*}*/
+    #searchImage {
+        margin-left: 15%;
+        margin-top: 3%;
+        height: 120px;
+        width: 200px;
+    }
+
+    .newsCard {
+        width: 300px;
+    }
+
     .userCard {
-    width: 300px;
-    height: 470px;
-  
-}
-    
+        width: 300px;
+        height: 470px;
+
+    }
+
+
+    .searchCard {
+        /*background-color: black;*/
+        /*color: white;*/
+        width: 300px;
+        height: 400px;
+
+    }
+
     #stats {
-    width: auto;
-    overflow: auto;
-    position: scroll;
-    height: 550px;
-    margin-bottom: 10px;
-    margin-left: 5%;
-    opacity: .9;
-    border-radius: 60px;
-}
+        width: auto;
+        overflow: auto;
+        position: scroll;
+        height: 550px;
+        margin-bottom: 10px;
+        margin-left: 5%;
+        opacity: .9;
+        border-radius: 60px;
+    }
 
-.carousel {
-    width: 360px;
-    height: 500px;
-    padding: 30px;
-}
+    .carousel {
+        width: 360px;
+        height: 500px;
+        padding: 30px;
+    }
 
 }
-
