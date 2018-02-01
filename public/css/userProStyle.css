@@ -77,6 +77,13 @@ html {
 
 }
 
+.carousel {
+    margin-top: 3%;
+    height: 500px;
+}
+
+
+
 body {
     display: flex;
     min-height: 100%;
@@ -117,6 +124,12 @@ main {
 
 .active {
     color: black!important;
+}
+
+.range-field {
+    padding-top: 3%;
+    text-align: center;
+    background-color: white;
 }
 
 footer {
@@ -217,6 +230,8 @@ footer {
 
 
 
+
+
 .infoRow {
     text-shadow: 2px 2px black;
 }
@@ -233,8 +248,9 @@ footer {
 
 #searchImage {
     margin-top: 3%;
-    height: 120px;
+    height: 200px;
     width: 200px;
+    margin-left: 3%;
 }
 
 @media screen and (max-width: 750px) and (min-width: 200px) {
