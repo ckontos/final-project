@@ -12,7 +12,7 @@
 ### Description
 This application is a  full stack application with a front end constructed using HTML/CSS and elements from the Materialize framework. The backend constructed with Node.js and Express connecting to mongoDB for a news feed, Sequelize for user authentication and firebase for photo storage. 
 
-The user may create an account which stores their location to be rendered in searches. Once a user creates an account they can search for other users within the proximity they define, who play select instruments or are searching for new members to join a band. The user may also search by username. Once a search has been performed the user is shown all users within their network who meet the parameters of the search. The user may then view the profiles and message other users. Users also have an option to update their profiles and delete them if they so desire. 
+The user may create an account which stores their location to be rendered in searches. Once a user creates an account they can search for other users within the proximity they define, who play select instruments or are searching for new members to join a band. The user may also search by username. Once a search has been performed the user is shown all users within their network who meet the parameters of the search. The user may then view the profiles and message other users. Users also have an option to update their profiles and delete them if they so desire. Our news section scrapes NPR for the latest in music news.
 
 
 ### Installation
