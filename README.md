@@ -7,6 +7,7 @@
 * mongoDB
 * firebase
 * passport
+* nodemailer
 * materialize
 
 ### Description
