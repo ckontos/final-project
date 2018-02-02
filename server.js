@@ -6,8 +6,6 @@ var morgan = require('morgan')
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var path = require('path');
-// var {sequelize} = require('./models')
-// var config = require('./config/config')
 
 var Article = require("./models/musicNews.js");
 
@@ -61,7 +59,7 @@ db.sequelize.sync({}).then(function() {
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/findscraper"
 mongoose.connect("mongodb://heroku_lsh61zsr:ghp82sdqup681fe1smnjo5cv44@ds247587.mlab.com:47587/heroku_lsh61zsr");
 var db = mongoose.connection;
-// mongodb://heroku_lsh61zsr:ghp82sdqup681fe1smnjo5cv44@ds247587.mlab.com:47587/heroku_lsh61zsr
+
 db.on("error", function(error) {
   console.log("Mongoose Error: ", error);
 });
@@ -69,14 +67,5 @@ db.on("error", function(error) {
 db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
-
-
-
-
-
-
-
-// Create a new note
-
 
 

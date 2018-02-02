@@ -1,6 +1,5 @@
 window.onload = function() {
-  // var distanceAllowed = 60;
-
+ 
   var startLat;
   var startLng;
 
@@ -56,7 +55,6 @@ window.onload = function() {
     console.log($("#test5").val())
 
 
-
     var username = $("#profileSearchInput").val();
     console.log($("#profileSearchInput").val())
     var isBand = $("input[name=group2]:checked").val();
@@ -79,7 +77,6 @@ window.onload = function() {
         let resultLatLng = JSON.parse(data[i].userLocation)
         let resultLat = resultLatLng.lat
         let resultLng = resultLatLng.lng
-        // let { resultLat, resultLng } = JSON.parse(data[i].userLocation);
 
         let d = distance(startLng, startLat, resultLng, resultLat)
         console.log("distance from click handler:")
@@ -95,7 +92,12 @@ window.onload = function() {
       console.log(newData)
       renderUsers(newData);
       renderCards(newData);
-      document.forms['searchForm'].reset();
+         document.forms['maxRange'].reset();
+      document.forms['bandSearch'].reset();
+      document.forms['instrumentSearched'].reset();
+      $("#profileSearchInput").val("");
+
+
     });
   });
 
@@ -106,15 +108,12 @@ window.onload = function() {
       width: 600,
       padding: 200,
       shift: 50,
-      // dist: -100,
-
+     
     })
 
   }
 
-  function scroll(id) {
-    return 'a[href="#' + id + '"]';
-  }
+ 
 
   function renderUsers(data) {
     if (data.length !== 0) {
@@ -151,13 +150,6 @@ window.onload = function() {
       })
       carouselInit()
 
-      // $(document).ready(function() {
-      //   setTimeout(function() { carouselInit() }, 2000) //wait before running carouselinit
-      //   // have page scroll down to carousel
-      //   scroll(carousel)
-
-      // });
-
     }
   }
 
@@ -166,8 +158,7 @@ window.onload = function() {
   function renderCards(data) {
     if (data.length !== 0) {
       $("#siteInfo").hide();
-      // $("#cardInfo").show();
-
+  
       data.forEach(function(result) {
 
         var div = $("<div class='hide-on-large-only'>").append(
@@ -197,17 +188,6 @@ window.onload = function() {
 
     }
   }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

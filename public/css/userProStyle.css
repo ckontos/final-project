@@ -41,7 +41,7 @@ html {
 }
 
 .userInfo {
-    /*padding: 20px;*/
+  
     box-shadow: 0 10px 25px 0 black, 0 10px 25px 0 black;
     background-color: grey;
     opacity: .9;
@@ -263,11 +263,7 @@ footer {
         margin-top: 5%;
     }
 
-    /*.card-image {*/
-    /*    height: 100px;*/
-    /*    width: 250px;*/
-    /*    margin: 5px 5px 5px 5px;*/
-    /*}*/
+  
     #searchImage {
         margin-left: 15%;
         margin-top: 3%;
@@ -287,8 +283,7 @@ footer {
 
 
     .searchCard {
-        /*background-color: black;*/
-        /*color: white;*/
+      
         width: 300px;
         height: 400px;
 

@@ -7,10 +7,10 @@ $('#delete').on("click", function() {
       method: "DELETE",
       url: "/articles/deleteAll",
     })
-    
-    .done(function(data) { 
-    console.log("heyahdflsihaskfhj")// refresh the page
- window.location.reload();
+
+    .done(function(data) {
+      console.log("heyahdflsihaskfhj") // refresh the page
+      window.location.reload();
     });
 
 });

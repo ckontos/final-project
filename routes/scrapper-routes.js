@@ -13,7 +13,7 @@ app.get('/search', function(req, res) {
     $("article").each(function(i, element){
       var result = {};
       result.image = $(this).children (".item-image").children(".imagewrap").children("a").children("img").attr("src");
-      console.log(result.image)
+     
       result.title = $(this).children  (".item-info").children("h2").children("a").text();
       if (result.title != "" && result.title != null) {
 
@@ -45,7 +45,6 @@ app.get('/search', function(req, res) {
     });
   });
   res.sendFile(path.join(__dirname, "../public/search.html"));
-  // res.send("Scrape Complete");
 });
 
 

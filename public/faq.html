@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="./css/loginStyle.css" type="text/css" />
     <link rel="stylesheet" href="./css/userProfile.css" type="text/css" />
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -21,25 +21,25 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="#" id="myProfile">My Profile</a></li>
                     <li><a href="#" id="main">Main</a></li>
-                     <li><a href="#" id="sideSearch">News</a></li>
+                    <li><a href="#" id="sideSearch">News</a></li>
                     <li><a href="#" id="logout">Logout</a></li>
                 </ul>
             </div>
         </nav>
 
-      
-        
-         <!--sideNav hidden on large scrrens-->
-      
+
+
+        <!--sideNav hidden on large scrrens-->
+
         <ul id="slide-out" class="side-nav hide-on-large blue-grey darken-2">
-       <li><a href="/main" class="white-text" id="mainSide">Main</a></li>
-        <li><a href="/userProfile" class="white-text" id="myProfileSide">My Profile</a></li>
-         <li><a href="/search" class="white-text" id="sideSearch">News</a></li>
-       <li><a href="" class="white-text modal-trigger" href="" data-target="contactWebmaster">Contact Webmaster</a></li>
-        <li><a href="/logout" class="white-text" id="logoutSide">Logout</a></li>
-    </ul>
-   
-    <!--end side nav-->
+            <li><a href="/main" class="white-text" id="mainSide">Main</a></li>
+            <li><a href="/userProfile" class="white-text" id="myProfileSide">My Profile</a></li>
+            <li><a href="/search" class="white-text" id="sideSearch">News</a></li>
+            <li><a href="" class="white-text modal-trigger" href="" data-target="contactWebmaster">Contact Webmaster</a></li>
+            <li><a href="/logout" class="white-text" id="logoutSide">Logout</a></li>
+        </ul>
+
+        <!--end side nav-->
 
         <div class="row">
             <div class="container col m3"></div>
@@ -56,8 +56,8 @@
                         <h5>I accidentally deleted my account, what now?</h5>
                         <p>Sorry, we asked you if you were sure that you wanted to delete it and told you that it cannot be undone. Deal with it.</p>
                         <h5>I am moving to another city, how will others know how close I am if I'm in a new state?</h5>
-                        <p>You can either delete and recreate your account to get a new location added to your profile. Or this application gets your current GPS location every time you search. So if your profile says you live in North Carolina but
-                            you are currently in Colorado, you will only get results within Colorado. However users in Colorado will see that you are in North Carolina so you will have to be the first to reach out.</p>
+                        <p>You can either delete and recreate your account to get a new location added to your profile. Or this application gets your current GPS location every time you search. So if your profile says you live in North Carolina but you are
+                            currently in Colorado, you will only get results within Colorado. However users in Colorado will see that you are in North Carolina so you will have to be the first to reach out.</p>
                         <h5>My profile isn't updating....</h5>
                         <p>First check to make sure all required fields are complete before submitting and if they are and the problem persists, contact the webmaster.</p>
                         <h5>Why does it log me out whenever I update my profile?</h5>
@@ -71,32 +71,32 @@
             <div class="container col m3"></div>
         </div>
     </main>
-    
-    
-      <!-- contactWebmaster modal -->
-                <div id="contactWebmaster" class="modal blue-grey darken-2">
-                    <div class="modal-content">
-                        <h4>Message</h4>
-                        <form class="col m12">
-                            <div class="row">
-                                <div class="input-field col m12">
-                                    <input id="message" type="text" class="validate">
-                                    <label for="message">Input message here</label>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="input-field">
-                                    <a href="#" id="submitMessage" class="btn waves-effect waves-light blue-grey lighten-3 col m5 offset-s1" style="margin-left: 180px; margin-top: 15px;"><span class="black-text">Send</span></a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+
+    <!-- contactWebmaster modal -->
+    <div id="contactWebmaster" class="modal blue-grey darken-2">
+        <div class="modal-content">
+            <h4>Message</h4>
+            <form class="col m12">
+                <div class="row">
+                    <div class="input-field col m12">
+                        <input id="message" type="text" class="validate">
+                        <label for="message">Input message here</label>
                     </div>
                 </div>
-                <!--end modal-->
+
+                <div class="row">
+                    <div class="input-field">
+                        <a href="#" id="submitMessage" class="btn waves-effect waves-light blue-grey lighten-3 col m5 offset-s1" style="margin-left: 180px; margin-top: 15px;"><span class="black-text">Send</span></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+    <!--end modal-->
 
     <footer class="page-footer blue-grey darken-2 ">
         <div class="footer-copyright ">
@@ -115,7 +115,7 @@
         $(document).ready(function() {
             $('.collapsible').collapsible();
             $(".button-collapse").sideNav();
-             $('.modal').modal();
+            $('.modal').modal();
 
         });
     </script>

@@ -5,13 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-    <!-- Compiled and minified CSS -->
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">-->
-
-    <!-- Compiled and minified JavaScript -->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js"></script>-->
-
     <link rel="stylesheet" href="css/userProStyle.css" type="text/css" />
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -59,7 +52,7 @@
                                 <ul class="collapsible popout" data-collapsible="accordion">
                                     <li>
 
-                                        <form action="#">
+                                        <form action="#" id="maxRange">
                                             <p class="range-field">
                                                 Select max range:
                                                 <input type="range" id="test5" min="0" max="100" />
@@ -70,7 +63,7 @@
                                     <li>
                                         <div class="collapsible-header"><i class="material-icons">headset</i>Who are you looking to jam with?</div>
                                         <div class="collapsible-body white">
-                                            <form action="#">
+                                            <form action="#" id="instrumentSearched">
                                                 <p>
                                                     <input class="with-gap" name="group1" type="radio" id="lookingForGuitarists" value="guitar" />
                                                     <label for="lookingForGuitarists" class="black-text">Guitarists</label>
@@ -100,7 +93,7 @@
                                             <span>
                                                 Are you looking for someone in a band?
                                             </span>
-                                            <form action="#">
+                                            <form action="#" id="bandSearch">
                                                 <p>
                                                     <input class="with-gap" name="group2" type="radio" id="lookingForBand" value="yes" />
                                                     <label for="lookingForBand" class="black-text">Yes</label>
@@ -138,7 +131,7 @@
 
             <!--------------------- Profile queries column ----------------------------->
             <div id="scrollHere" class="col m9">
-                <div class="card blue-grey darken-2 center-align" id="stats">
+                <div class="card blue-grey darken-2 center-align section scrollspy" id="stats">
                     <div id="siteInfo">
                         <div class="card-content white-text">
                             <span class="card-title">Welcome to Jam-Clash!</span>
@@ -219,8 +212,7 @@
 
                     </div>
                 </div>
-                <!--<div class="modal-footer">-->
-                <!--    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>-->
+
             </div>
         </div>
         <!--end modal-->

@@ -1,7 +1,3 @@
-// Initialize Firebase
-
-
-
 
 $(document).ready(function() {
   $('.modal').modal();
@@ -22,13 +18,12 @@ $(document).ready(function() {
     };
     firebase.initializeApp(config);
 
-    // get elemtents
+    // get elements
 
     var uploader = document.getElementById('uploader');
     var fileButton = document.getElementById('fileButton');
     var storageRef = firebase.storage().ref('profileImages/' + data.email + '/+file_name')
-    // var close = document.getElementById("Close");
-
+  
 
     var img = document.getElementById("profilePic");
     if (data.userImage === "./images/chicken.png") {
@@ -42,9 +37,7 @@ $(document).ready(function() {
     fileButton.addEventListener('change', function(e) {
       //get file
       var file = e.target.files[0];
-      // create a storage ref
-      // var storageRef = firebase.storage().ref('profileImages/' + data.email +'/+file_name') 
-
+     
       //upload file
       var task = storageRef.put(file);
       storageRef.getDownloadURL().then(function(url) {
@@ -54,8 +47,7 @@ $(document).ready(function() {
           path: JSON.stringify(url)
         }
         updatePhoto(updateData)
-        // var img = document.getElementById("profilePic");
-        // img.src = url
+      
       })
       // update progress bar
       task.on('state_changed',
@@ -76,9 +68,6 @@ $(document).ready(function() {
           
           }, 500)
             
-                      // setTimeout(function() { carouselInit() }, 500) //wait before running carouselinit
-                      //       // have page scroll down to carousel
-                      //           scroll(carousel)
         }
 
       )
@@ -101,33 +90,22 @@ $(document).ready(function() {
     $("#userStuff").append("<a href='" + data.reverbNation + "'>" + "Reverb Nation" + '</a>' + "<br>");
     $("#userStuff").append("<a href='" + data.soundCloud + "'>" + "SoundCloud" + '</a>');
 
-
-
-    // set value in delete
-
-
-
     //Sets account info into edit profile modal
     $("label").addClass('active');
     $("#userFirstNameModal").val(data.userFirstName);
     $("#userLastNameModal").val(data.userLastName);
     $("#usernameModal").val(data.username);
-
     $("#inBandModal").val(data.isBand);
     $("#inBandModal").material_select();
-
     $("#instrumentsPlayedModal").val(data.instrumentsPlayed);
     $("#instrumentsPlayedModal").material_select();
     $("#faceBook").html("<a href='" + data.faceBook + "'>" + "FaceBook" + '</a>' + "<br>");
     $("#reverbNation").html("<a href='" + data.reverbNation + "'>" + "Reverb Nation" + '</a>' + "<br>");
     $("#soundCloud").html("<a href='" + data.soundCloud + "'>" + "SoundCloud" + '</a>');
-
     $("#searchingForModal").val(data.searchingFor);
     $("#searchingForModal").material_select();
-
     $("#genreModal").val(data.genre);
     $("#genreModal").material_select();
-
     $("#aboutModal").val(data.about);
     $("#registerEmailModal").val(data.email);
   });
@@ -240,7 +218,6 @@ $(document).ready(function() {
 
 // button to logout
 $("#logout").on("click", function(event) {
-  // event.preventDefault();
   $.get("/logout", function(data) {
     window.location.href = '/login';
   });

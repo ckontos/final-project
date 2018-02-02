@@ -109,7 +109,7 @@ window.onload = function() {
         console.log(err)
       }
       else {
-        // console.log("Great Success!  " + JSON.stringify(data));
+
         window.location.href = '/login';
       }
       // If there's an error, handle it by throwing up an alert

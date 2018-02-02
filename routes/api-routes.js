@@ -19,9 +19,7 @@ module.exports = function(app) {
   });
 
   app.put("/api/userPhoto", function(req, res) {
-    console.log("+++++++++++++++++++")
-    console.log(req.body.path)
-    console.log(req.body.email)
+  
     db.User.update({
       userImage: req.body.path
     }, {
@@ -46,7 +44,7 @@ module.exports = function(app) {
 
   // update password when user forgets theirs
   app.put("/api/users/email/:email", function(req, res) {
-    console.log("beginning of email put route: " + JSON.stringify(req.body));
+   
     db.User.update({ // update password
         password: bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10), null)
       }, { // update it by email provided
@@ -54,11 +52,11 @@ module.exports = function(app) {
           email: req.body.email
         }
       }).then(function(dbUser) {
-        console.log("working inside password update in api/routes: " + dbUser);
+   
         res.json(dbUser);
       })
       .catch(function(err) {
-        console.log("in the catch in email put route   " + err);
+   
         res.json(err);
       });
   });
@@ -103,20 +101,16 @@ module.exports = function(app) {
   });
 
 
-
+// login route
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
-    // So we're sending the user back the route to the members page because the redirect will happen on the front end
-    // They won't get this or even be able to access this page if they aren't authed
-    // console.log("-------------------------- " + JSON.stringify(res));
+   
     res.redirect("/search");
 
   });
 
   // create new user
   app.post("/api/users", function(req, res) {
-    console.log("at begining of api/users");
-    console.log(req.body)
+   
     // take all this info
     db.User.create({
         email: req.body.email,
@@ -135,18 +129,18 @@ module.exports = function(app) {
         reverbNation: req.body.reverbNation,
         soundCloud: req.body.soundCloud
       }).then(function(dbUser) {
-        console.log("at the end of api/users");
+       
         res.json(dbUser);
-        // res.redirect("/login");
+       
 
       }) // if an error happends catch it
       .catch(function(err) { // then throw some json
-        console.log("at the catch of api/users  " + err);
+     
         res.json(err);
       });
   });
 
-  // route to delete use account (should probably be only for admin or user)
+  // route to delete use account 
   app.delete("/api/users/:id", function(req, res) {
     db.User.destroy({
       where: {
@@ -179,9 +173,9 @@ module.exports = function(app) {
           username: req.body.username
         }
       }).then(function(dbUser) {
-        console.log("working inside put route: " + dbUser);
+       
         res.json(dbUser);
-        // res.redirect("http://google.com");
+     
       })
       .catch(function(err) {
         res.json(err);
@@ -189,8 +183,7 @@ module.exports = function(app) {
   });
 
   app.get('/api/users/search', function(req, res) {
-    console.log("****++++******")
-    console.log(req.query)
+  
     let where = {}
     let conditionals = function() {
       if (req.query.username) {
@@ -254,7 +247,7 @@ module.exports = function(app) {
     }
     conditionals();
 
-    console.log("*********" + JSON.stringify(where))
+   
     db.User.findAll({
       where: where
     }).then(function(dbUser) {

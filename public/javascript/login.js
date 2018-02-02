@@ -108,11 +108,6 @@ $(document).ready(function() {
    
    
 
-  
-
-
-
-
 var hotbod = document.querySelector("body");
 
 function doStuff() {
@@ -122,7 +117,6 @@ function doStuff() {
  doStuff();
 
 
- 
   // when the user forgets password
   $("#getPassword").on("click", function() {
   event.preventDefault();
