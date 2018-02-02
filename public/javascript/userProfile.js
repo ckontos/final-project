@@ -195,7 +195,6 @@ $(document).ready(function() {
       url: "/api/userPhoto",
       data: input
     }).done(function(data) {
-      console.log("*************************")
       console.log(data)
     })
   }
