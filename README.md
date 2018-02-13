@@ -19,7 +19,7 @@ The user may create an account which stores their location to be rendered in sea
 ### Installation
 #### To run the application locally, first clone this repository with the following command.
 
-* git clone git@github.com:JoshJancula/final-project.git
+* git clone git@github.com:ckontos/final-project.git
 
 * Next cd into final-project and run an npm install.
 
@@ -28,3 +28,5 @@ The user may create an account which stores their location to be rendered in sea
 * Now, open the local application on port 3000 at the URL: http://localhost:3000/.
 
 * Create an account, browse and meet new people!
+
+<a href="www.jam-clash.com">Visit the site Here!</a>
