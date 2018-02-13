@@ -29,4 +29,4 @@ The user may create an account which stores their location to be rendered in sea
 
 * Create an account, browse and meet new people!
 
-<a href="www.jam-clash.com">Visit the site Here!</a>
+<a href="https://jam-clash.herokuapp.com">Visit the site Here!</a>
